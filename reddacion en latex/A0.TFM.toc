@@ -4,36 +4,38 @@
 \contentsline {part}{I\hspace {1em}Introducci\'on}{3}{part.1}
 \contentsline {xpart}{Introducci\'on}{5}{part.1}
 \contentsline {starchapter}{Introducci\'on y visi\'on general}{5}{chapter*.6}
-\contentsline {section}{Objetivo}{6}{section*.7}
-\contentsline {section}{Estado del arte}{6}{section*.7}
-\contentsline {section}{Metodolog\IeC {\'\i }a y directrices seguidas}{6}{section*.7}
-\contentsline {section}{Estructura del documento}{6}{section*.7}
-\contentsline {section}{\'Ambito de aplicaci\'on}{6}{section*.7}
-\contentsline {part}{II\hspace {1em}Desarrollo del proyecto}{7}{part.2}
-\contentsline {xpart}{Desarrollo del proyecto}{9}{part.2}
-\contentsline {chapter}{\numberline {1}Manual b\'asico de \LaTeX }{9}{chapter.1}
-\contentsline {section}{\numberline {1.1}Estructura y formato del proyecto}{10}{section.1.1}
-\contentsline {section}{\numberline {1.2}Apartados de la plantilla}{10}{section.1.2}
-\contentsline {section}{\numberline {1.3}Referencias Cruzadas}{13}{section.1.3}
-\contentsline {section}{\numberline {1.4}Figuras}{13}{section.1.4}
-\contentsline {section}{\numberline {1.5}Tablas}{15}{section.1.5}
-\contentsline {section}{\numberline {1.6}C\'odigo fuente}{16}{section.1.6}
-\contentsline {section}{\numberline {1.7}S\IeC {\'\i }mbolos matem\'aticos y f\IeC {\'\i }sicos}{18}{section.1.7}
-\contentsline {section}{\numberline {1.8}Referencias bibliogr\'aficas}{20}{section.1.8}
-\contentsline {section}{\numberline {1.9}Formato de los Ap\'endices}{20}{section.1.9}
-\contentsline {section}{\numberline {1.10}Glosario de t\'erminos}{21}{section.1.10}
-\contentsline {section}{\numberline {1.11}Sobre los correctores ortogr\'aficos}{21}{section.1.11}
-\contentsline {section}{\numberline {1.12}Dec\'alogo del usuario novel de \LaTeX }{21}{section.1.12}
-\contentsline {section}{\numberline {1.13}Otras recomendaciones}{22}{section.1.13}
-\contentsline {chapter}{\numberline {2}T\IeC {\'\i }tulo del cap\IeC {\'\i }tulo}{25}{chapter.2}
-\contentsline {section}{\numberline {2.1}T\IeC {\'\i }tulo del apartado}{25}{section.2.1}
-\contentsline {section}{\numberline {2.2}T\IeC {\'\i }tulo del apartado}{25}{section.2.2}
-\contentsline {chapter}{\numberline {3}T\IeC {\'\i }tulo del cap\IeC {\'\i }tulo}{27}{chapter.3}
-\contentsline {part}{III\hspace {1em}Parte tercera.}{29}{part.3}
-\contentsline {xpart}{Parte tercera.}{31}{part.3}
-\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{31}{chapter*.8}
-\contentsline {part}{IV\hspace {1em}Ap\'endices}{33}{part.4}
-\contentsline {xpart}{Ap\'endices}{35}{part.4}
-\contentsline {chapter}{\numberline {A}Ap\'endice}{35}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Primera secci\'on}{35}{section.Alph1.1}
+\contentsline {section}{Objetivo}{7}{section*.7}
+\contentsline {section}{Estado del arte}{7}{section*.7}
+\contentsline {section}{Metodolog\IeC {\'\i }a y directrices seguidas}{7}{section*.7}
+\contentsline {section}{Estructura del documento}{7}{section*.7}
+\contentsline {section}{\'Ambito de aplicaci\'on}{7}{section*.7}
+\contentsline {part}{II\hspace {1em}Desarrollo del proyecto}{9}{part.2}
+\contentsline {xpart}{Desarrollo del proyecto}{11}{part.2}
+\contentsline {chapter}{\numberline {1}Manual b\'asico de \LaTeX }{11}{chapter.1}
+\contentsline {section}{\numberline {1.1}Estructura y formato del proyecto}{13}{section.1.1}
+\contentsline {section}{\numberline {1.2}Apartados de la plantilla}{13}{section.1.2}
+\contentsline {section}{\numberline {1.3}Referencias Cruzadas}{16}{section.1.3}
+\contentsline {section}{\numberline {1.4}Figuras}{16}{section.1.4}
+\contentsline {section}{\numberline {1.5}Tablas}{18}{section.1.5}
+\contentsline {section}{\numberline {1.6}C\'odigo fuente}{19}{section.1.6}
+\contentsline {section}{\numberline {1.7}S\IeC {\'\i }mbolos matem\'aticos y f\IeC {\'\i }sicos}{21}{section.1.7}
+\contentsline {section}{\numberline {1.8}Referencias bibliogr\'aficas}{23}{section.1.8}
+\contentsline {section}{\numberline {1.9}Formato de los Ap\'endices}{23}{section.1.9}
+\contentsline {section}{\numberline {1.10}Glosario de t\'erminos}{24}{section.1.10}
+\contentsline {section}{\numberline {1.11}Sobre los correctores ortogr\'aficos}{24}{section.1.11}
+\contentsline {section}{\numberline {1.12}Dec\'alogo del usuario novel de \LaTeX }{24}{section.1.12}
+\contentsline {section}{\numberline {1.13}Otras recomendaciones}{25}{section.1.13}
+\contentsline {chapter}{\numberline {2}T\IeC {\'\i }tulo del cap\IeC {\'\i }tulo}{27}{chapter.2}
+\contentsline {section}{\numberline {2.1}T\IeC {\'\i }tulo del apartado}{27}{section.2.1}
+\contentsline {section}{\numberline {2.2}T\IeC {\'\i }tulo del apartado}{27}{section.2.2}
+\contentsline {chapter}{\numberline {3}T\IeC {\'\i }tulo del cap\IeC {\'\i }tulo}{29}{chapter.3}
+\contentsline {part}{III\hspace {1em}Parte tercera.}{31}{part.3}
+\contentsline {xpart}{Parte tercera.}{33}{part.3}
+\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{33}{chapter*.8}
+\contentsline {part}{IV\hspace {1em}Ap\'endices}{35}{part.4}
+\contentsline {xpart}{Ap\'endices}{37}{part.4}
+\contentsline {chapter}{\numberline {A}Ap\'endice}{37}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Primera secci\'on}{37}{section.Alph1.1}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{39}{appendix*.9}
+\contentsline {chapter}{\'Indice alfab\'etico}{41}{section*.10}
 \contentsfinish 

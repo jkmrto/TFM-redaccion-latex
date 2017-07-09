@@ -1,0 +1,36 @@
+\begin{thebibliography}{CPCA13}
+
+\bibitem[CPCA13]{GuiaEstilo}
+Eduardo Casilari~Pérez and José~Antonio Cortés~Arrabal.
+\newblock {\em Breves notas de estilo para la redacción de Proyectos Fin de
+  Carrera y Trabajos Fin de Grado}.
+\newblock ETSIT, Universidad de Málaga, 2013.
+\newblock \url{http://www.uma.es/media/files/Manual_de_Estilo_TFG_ETSIT.pdf}.
+
+\bibitem[Ent05]{IDST}
+J.T. Entrambasaguas.
+\newblock {\em Ingeniería de Desarrollo de sistemas de Telecomunicación,
+  \emph{apuntes de clase}}.
+\newblock ETSIT-UMA, Curso 2004-2005.
+
+\bibitem[ETS01]{ProgDoc}
+ETSIT.
+\newblock {\em Programación docente}.
+\newblock ETSIT-UMA, Curso 2000-2001.
+
+\bibitem[ETS08]{MTS-1}
+ETSI.
+\newblock {MTS: Methods for Testing Specifications}.
+\newblock \url{http://portal.etsi.org/mbs/Testing/testing.htm}, 2008.
+
+\bibitem[Lam99]{Lamport}
+Leslie Lamport.
+\newblock {\em \LaTeX : a Document Preparation System}.
+\newblock AddisonWesley Longman, Inc, 2nd edition, August 1999.
+\newblock It includes user's Guide and Reference manual. ISBN: 0-201-52983-1.
+
+\bibitem[min14]{minted}
+Minted: a highlighted source code for latex.
+\newblock \url{https://code.google.com/p/minted/}, 2014.
+
+\end{thebibliography}

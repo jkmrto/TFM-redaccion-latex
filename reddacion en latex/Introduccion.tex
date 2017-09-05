@@ -1,0 +1,64 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Documento LaTeX 																						%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título:		Capítulo 1
+% Autor:  	Ignacio Moreno Doblas
+% Fecha:  	2014-02-01
+% Versión:	0.5.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapterbegin{Introduccion}
+%%\minitoc
+
+La demencia engloba un amplio grupo de enfermedades mentales que provocan el deterioro progresivo de las facultades mentales de la persona que la padece tales como la memoria, el aprendizaje, el lenguaje o la orientación. 
+\par La enfermedad del Alzheimer (AD) es la forma de demencia mas cómun en personas de la tercera edad.  La AD es un desorden neurodegenerativeo que afecta a la memoria en primer lugar, y progresivamente al resto de funciones cognitivas, provocando desajustes en el comportamiento de la persona que la padece. \cite{Alzheimer1}. 
+\par Actualmente esta enfermedad afecta a 30 millones de personas y se prevée que esta cifra alcance los 100 millones afectados en los próximos 50 años, por lo que además de ser un problema global de salud supone un reto socioecónico para los países desarrollados y especialmente para aquellos países en vías de desarrollo.
+\par La AD aún no tiene cura por ello es que la mayoría de las líneas de investigación relativas a esta enfermedad se centran en el diagnóstico temprano, con objeto de aplicar tratamientos que refuercen el mantenimiento de la reserva cognitiva cerebral para la prevencion de su avance. Esta reserva cognitiva es la resistencia de nuestro cerebro frente a esta enfermedad \cite{ReservaCognitiva}.
+\par Las imagenes por resonancia magnética (MRI) son  ampliamente empleadas como herramienta de soporte para el diagnóstico de problemas cerebrales, formando parte de la rutina habitual para el diagnóstico del Alzheimer. No obstante los cambios estructurales no pueden ser detectados hasta una etapa avanazada de la AD, por ello es que se han desarrollado técnicas de representación estrucural más avanzadas como las imágenes volumétricas. Por otro lado, las imágenes funcionales del cerebro tales como la tomografía de emisión de positrones (PET) permiten identificar cambios más sútiles en el metabolismo del cerebro en una etapa más temprana de la enfermedad en comparación con las imágenes MRI \cite{DiagnosticoNormal}. 
+
+\par Se conoce como Diagnóstico Ayudado por Computer (CAD, del inglés Computer Aided Diagnosis) al conjunto de técnicas que usan imágenes médicas cerebrales con objeto de detectar la AD en una etapa temprana de la enfermedad. Existen multitud de aproximaciones, tanto empleando las clásicas imagenes MRI \cite{MRIsurvey} o imágenes PET \cite{introPET}, o incluso ambos tipos de imágenes de forma combinada \cite{PETMRIMultimodal} \cite{PETMRIMultimodal2} conocidas como modelos Multimodal.
+\par Las técnicas CAD emplean diferentes procedimientos estadísticos capaces de estraer características relevantes de las imágenes y en última instancia determinar si la imagen pertenece a una persona que padece AD en función de dichas características relevantes \cite{Survey} \cite{Survey2}. 
+
+\par Uno de los principales problemas asociados al análisis estadístico de imágenes médicas es la maldición de la dimensionalidad (CoD, del ingés \textit{Curse of dimensionality}). Este término fué ya expuesto en 1961 por Richard Bellman debido a los problemas encontrados en procesos de optimización \cite{CoD}. La maldición de la dimensionalidad hace referencia a la aparente intratabilidad de sistematicamente obtener una función determinista sobre un espacion muestral de alta dimensionalidad, esto es, la inherente dificultad de integrar alta dimensionalidad en una única función  \cite{CoD2}. Este problema ve acrecenteda su repercusión debido a la escasez muestras, esto es lo que lo combierte en un ámbito de interés en el estudio de las imagenes cerebrales dado el número limitado de ejemplares. 
+
+\par Historicamente en el anáisis estadístico de imágenes médicas cerebrales se han empleado técnicas de reducción de características capaces reducir la dimensionalidad del espacio muestral tales como Analisis de Componentes Principales (PCA), Analis de Componentes Independientes (ICA) o \textit{Sparse Filtering} \cite{ReduceDimensionality}.
+\par En la actualidad un amplio colectivo científico involucrado en el diagnóstico temprano del AD  ha desarrollado diferentes métodos de detección basados en Deep Learning \cite{DeepLearning1} \cite{DeepLearning2}. Se identifica por \textit{Deep Learning} a una rama del aprendizaje automático que emplea redes neuronales de una o mas capas ocultas inspiradas con el propio cerebro humano. Esta técnica permite la modelación y abstracción de características complejas del espacio muestral sobre el que se aplica. 
+\par En la aproximación que se desarrollará en este trabajo se pretende aplicar técnicas de \textit{Deep Learning} generativas tales como el Autoencoder Variacional \cite{AutoEncoderVariational}. Este método nos permite generar imágenes cerebrales no predefinidas, lo cual sería de utilidad a la hora de ampliar el espacio muestral tan limitado.
+\section{Motivacion}
+
+\par En este trabajo se empleará un auto-encoder, especificamente el autoencoder variacional, con objeto de generar sintéticamente imagenes médicas. 
+\par Se conoce como auto-encoder a una modelo estadístico que pretende de generar muestras de salida lo más parecidas posibles a las muestras de entrada dadas, esto es, con la menos distorsión posible, por lo que es necesario extraer las relaciones inherentes en el espacio muestral. 
+\par Aunque  conceptualmente simples, han tomado un rol muy importante en el aprendizaje automático, afrotando el paradigma clásico de los sistemas de aprendizajes auto-organizables \cite{AutoEncoderOrigin1}, capaces de adaptar su estructura en función de los datos de manera no supervisada.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{images/basic_autoencoder.png}
+\caption{Esquema cláisco de auto-encoder}
+\label{autoencoder_schema}
+\label{contexto:figura}
+\end{figure}
+
+\par Un auto-encoder esta basado en el paradigma codificador-decodificador \ref{autoencoder_schema}, donde el codificador se encarga de transformar la entrada en, tipicamente, en una repesentación de baja dimensiaonalidad, mientras que el decodificador trata de usar esa salida de baja dimensionalidad para reconstruir la entrada original \cite{AutoEncoderSurvey}. Esta capa intermedia recibe habitualemente el nombre de espacio latente. 
+\par La versión clásica de este modelo estadístico solo contenía una capa oculpa, la cual era una representación de baja dimensionalidad de los datos de entrada. En la última década, el auge de las redes neuronales profundas, ámbito más conocido por \textit{Deep Learning}, ha provocado el uso de arquitecturas más complejas en los autoencoders, con varias capas ocultas tanto en el codificador como en el decodificador. En comparación con los modelos cásicos de auto-encoders se han mejorado ampliamente los resultados, aún cuando el número de parámetros a caracterizar es el mismo en ambos sistemas. 
+ 
+ \par Un auto-encoder basado en aprendizaje profundo es capaz de extraer características de manera jerarquica gracias a sus distintas capas ocultas. Existen diferentes aproximaciones entre las que cabe destacar el auto-encoder de filtrado (\textit{Denoising auto-encoder})\cite{AutoEncoderDenoising}, el auto-encoder variacional (\textit{Variational auto-eencoder})\cite{AutoEncoderVariational} o las redes generativas adversarias (del inglés \textit{Generative Adversarial Networks}).
+ 
+ \par Los auto-encoders variacionales constituyen una execelente herramienta para la extracción de las características principales o de patrones de un espacio muestral, pero tambien pueden ser considerados un modelo generativo\cite{DeepGenerativeModels}, esto es, son capaces de generar datos sintéticos.  Este modelo es capaz de asociar una distribución gausiana a cada uno de los parámetros fundamentales extraídos por el propio sistema, esto es, es capaz de caracterizar estadísticamente a lo que anteriormente denominamos como espacio latente\cite{AutoEncoderVariational}. Esta capacidad es fundamental en cualquier sistema generativo. 
+ 
+ \par Los modelos generativos tienen un amplio rango de aplicacions como son la compresión, el filtrado, el aprendizaje no supervisado de características o la síntesis de datos.  
+
+\section{Objetivos}
+
+\begin{itemize}
+\item Elaborar un auto-encoder variacional basado en redes neuronales densas.
+\item Elaborar un auto-encoder variacional convolucional en 3d basado en redes neuronales convolucionales.
+\item Obtener características discriminantes por region capaces de clasificar imágenes médicas a partir de los auto-encoder elaborados. 
+\item
+\item
+\item
+\item
+\end{itemize}
+
+
+
+ 
+\chapterend{}

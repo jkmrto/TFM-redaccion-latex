@@ -1,35 +1,18 @@
 \BOOKMARK [0][-]{chapter*.1}{Acr\363nimos}{}% 1
-\BOOKMARK [0][-]{chapter*.5}{Pr\363logo}{}% 2
-\BOOKMARK [-1][-]{part.1}{I Introducci\363n}{}% 3
-\BOOKMARK [0][-]{chapter*.6}{Introducci\363n y visi\363n general}{part.1}% 4
-\BOOKMARK [1][-]{section*.7}{Objetivo}{chapter*.6}% 5
-\BOOKMARK [1][-]{section*.7}{Estado del arte}{chapter*.6}% 6
-\BOOKMARK [1][-]{section*.7}{Metodolog\355a y directrices seguidas}{chapter*.6}% 7
-\BOOKMARK [1][-]{section*.7}{Estructura del documento}{chapter*.6}% 8
-\BOOKMARK [1][-]{section*.7}{\301mbito de aplicaci\363n}{chapter*.6}% 9
-\BOOKMARK [-1][-]{part.2}{II Desarrollo del proyecto}{}% 10
-\BOOKMARK [0][-]{chapter.1}{1 Manual b\341sico de LaTeX}{part.2}% 11
-\BOOKMARK [1][-]{section.1.1}{1.1 Estructura y formato del proyecto}{chapter.1}% 12
-\BOOKMARK [1][-]{section.1.2}{1.2 Apartados de la plantilla}{chapter.1}% 13
-\BOOKMARK [1][-]{section.1.3}{1.3 Referencias Cruzadas}{chapter.1}% 14
-\BOOKMARK [1][-]{section.1.4}{1.4 Figuras}{chapter.1}% 15
-\BOOKMARK [1][-]{section.1.5}{1.5 Tablas}{chapter.1}% 16
-\BOOKMARK [1][-]{section.1.6}{1.6 C\363digo fuente}{chapter.1}% 17
-\BOOKMARK [1][-]{section.1.7}{1.7 S\355mbolos matem\341ticos y f\355sicos}{chapter.1}% 18
-\BOOKMARK [1][-]{section.1.8}{1.8 Referencias bibliogr\341ficas}{chapter.1}% 19
-\BOOKMARK [1][-]{section.1.9}{1.9 Formato de los Ap\351ndices}{chapter.1}% 20
-\BOOKMARK [1][-]{section.1.10}{1.10 Glosario de t\351rminos}{chapter.1}% 21
-\BOOKMARK [1][-]{section.1.11}{1.11 Sobre los correctores ortogr\341ficos}{chapter.1}% 22
-\BOOKMARK [1][-]{section.1.12}{1.12 Dec\341logo del usuario novel de LaTeX}{chapter.1}% 23
-\BOOKMARK [1][-]{section.1.13}{1.13 Otras recomendaciones}{chapter.1}% 24
-\BOOKMARK [0][-]{chapter.2}{2 T\355tulo del cap\355tulo}{part.2}% 25
-\BOOKMARK [1][-]{section.2.1}{2.1 T\355tulo del apartado}{chapter.2}% 26
-\BOOKMARK [1][-]{section.2.2}{2.2 T\355tulo del apartado}{chapter.2}% 27
-\BOOKMARK [0][-]{chapter.3}{3 T\355tulo del cap\355tulo}{part.2}% 28
-\BOOKMARK [-1][-]{part.3}{III Parte tercera.}{}% 29
-\BOOKMARK [0][-]{chapter*.8}{Conclusiones y l\355neas futuras}{part.3}% 30
-\BOOKMARK [-1][-]{part.4}{IV Ap\351ndices}{}% 31
-\BOOKMARK [0][-]{appendix.Alph1}{A Ap\351ndice}{part.4}% 32
-\BOOKMARK [1][-]{section.Alph1.1}{A.1 Primera secci\363n}{appendix.Alph1}% 33
-\BOOKMARK [0][-]{appendix*.9}{Bibliograf\355a}{part.4}% 34
-\BOOKMARK [0][-]{section*.10}{\315ndice alfab\351tico}{part.4}% 35
+\BOOKMARK [0][-]{chapter*.5}{Resumen}{}% 2
+\BOOKMARK [0][-]{chapter.1}{1 Introduccion}{}% 3
+\BOOKMARK [1][-]{section.1.1}{1.1 Motivacion}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{1.2 Objetivos}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{2 Contexto}{}% 6
+\BOOKMARK [1][-]{section.2.1}{2.1 La enfermedad del Alzheimer}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Fases de la AD}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.2}{2.1.2 S\355ntomas}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.3}{2.1.3 Histopatolog\355a}{section.2.1}% 10
+\BOOKMARK [1][-]{section.2.2}{2.2 Base de datos ADNI}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{2.3 Estado del Arte}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.4}{2.4 Entorno de desarrollo}{chapter.2}% 13
+\BOOKMARK [0][-]{chapter.3}{3 El auto-encoder variacional}{}% 14
+\BOOKMARK [0][-]{chapter*.14}{Conclusiones y l\355neas futuras}{}% 15
+\BOOKMARK [0][-]{appendix.Alph1}{A Ap\351ndice}{}% 16
+\BOOKMARK [1][-]{section.Alph1.1}{A.1 Primera secci\363n}{appendix.Alph1}% 17
+\BOOKMARK [0][-]{section*.16}{\315ndice alfab\351tico}{}% 18

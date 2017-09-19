@@ -168,6 +168,47 @@ permite identificar rápidamente la enfermedad. También se podrá conocer la efect
 
 \newpage
 \section{Estado del Arte}
+\par El presente proyecto tiene como principal objetivo la búsqueda de un modelo estadístico que nos permita generar neuroimágenes del cerebro, es por ello conveniente exponer algunos métodos clasicos de modelado generativo así como otros más novedosos en la sección que sigue a continuación. 
+\par No obstante, dado qué no existen estudios de la aplicación de la técnica usada con un fin generativo sobre neuroimágenes, se expondrá algunos de los trabajos relativos a la detección y el diagnóstico temprano de AD mediante computador con objeto de mostrar el alto índice de acierto en el diagnóstico de las técnicas actuales. 
+
+
+\subsection{Modelos Generadores}
+\par En estadística, se define por modelo generador aquel sistema o modelo capaz de generar muestras (u observables) pertenecientes a una determinada clase o tipo respetando la función de distribución conjunta, esto es, una función de distribución multivariada asociada a dicho tipo. 
+
+\subsubsection{Modelos clásicos}
+ 
+\par Un modelo generador viene definido por un conjunto de distribuciones de probabilidad las cuales son capaces de aproximar de manera adecuada un conjunto de datos. 
+\par Uno de los métodos tradicionalmente más empleados es el \textbf{Modelo de Mezcla de Gausianas}. Se trata de un modelo probabilístico que asume que todos los observables de un conjunto de datos son generados por un conjunto finito de gausianas. La obtención del modelo se basa en estimadores de maxima verosimilitud.
+
+\begin{figure}[b]
+\centering
+\includegraphics[scale=0.5]{images/captura_GMM.png}
+\caption{(Izquierda) Modelo de una única Gausiana, (Derecha) Modelo de mezcla de Gausianas}
+\label{gmm}
+\label{contexto:figura}
+\end{figure}
+
+\par EL GMM es una de las técnicas más usadas para el modelado de datos del mundo de real. Intuitivamente podemos pensar en este método como la mezcla de varias gausianas mono-modales. 
+
+\par Un \textbf{Modelo Oculto de Márkov} (HMM, del inglés \textit{Hidden Markov Model}) es un modelo generador que asume que el proceso o sistema a modelar es un proceso de Markov. El objetivo es determinar los parámetros desconocidos de dicha cadena a partir de los parámetros.  
+\par Un HMM  genera de manera explicita la distribución de probabilidad de los estados del proceso evaluado debido a la probabilidad condicional de transición entre estados, es por ello que es considerado un modelo generativo. Este tipo de  modelos han sido ampliamente usado ámbitos como el reconocimiento del habla o en teoría de colas. 
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.4]{images/markov_chain.png}
+\caption{(Izquierda) Modelo de una única Gausiana, (Derecha) Modelo de mezcla de Gausianas}
+\label{markov}
+\label{contexto:figura}
+\end{figure}
+
+
+\subsubsection{La Máquina de Boltzmann}
+\par Una Máquina de Boltzman (BM del inglés \textit{Boltzmann Machine}) es un tipo de red neuronal estocástica. Esta técnica puede emplearse para la obtención o aprendizaje de la distribución de probabilidad del conjunto de muestras en cuestión. 
+\par Dado que  este proceso es costoso, se suele imponer un conjunto de restricciones en la topología de la red neuronal lo cual se conoce como máquina restrictiva de Bolzman (RBM, del ingles \textit{Restrictive Bolzmann Machine}). \cite{rbm} 
+\par Una RBM es un modelo generativo parametrizado que representa una probabilidad de distribución. Dado un conjunto de observaciones, la elaboración de una RBM implica el ajuste de los parámetros con el objetivo de que la distribución de probabilidad asocia a la BM sea lo más similar posible a los datos. 
+
+\subsection{Diagnósticos Asistido por Computador de AD}
 Mirar la wikipedia
 Diagnosis of AD and the prediction of future AD[edit]
 ADNI data has been used to test many diagnostic and prognostic machine learning algorithms.[9] The most successful to date have used deep learning approaches that combine longitudinal data chronicling changes in biomarkers over time from more than one imaging, genetic, or biological modality.

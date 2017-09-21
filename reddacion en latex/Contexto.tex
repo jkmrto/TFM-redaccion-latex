@@ -206,9 +206,21 @@ permite identificar rápidamente la enfermedad. También se podrá conocer la efect
 \subsubsection{La Máquina de Boltzmann}
 \par Una Máquina de Boltzman (BM del inglés \textit{Boltzmann Machine}) es un tipo de red neuronal estocástica. Esta técnica puede emplearse para la obtención o aprendizaje de la distribución de probabilidad del conjunto de muestras en cuestión. 
 \par Dado que  este proceso es costoso, se suele imponer un conjunto de restricciones en la topología de la red neuronal lo cual se conoce como máquina restrictiva de Bolzman (RBM, del ingles \textit{Restrictive Bolzmann Machine}). \cite{rbm} 
-\par Una RBM es un modelo generativo parametrizado que representa una probabilidad de distribución. Dado un conjunto de observaciones, la elaboración de una RBM implica el ajuste de los parámetros con el objetivo de que la distribución de probabilidad asocia a la BM sea lo más similar posible a los datos. 
+\par Una RBM es un modelo generativo parametrizado que representa una probabilidad de distribución. Dado un conjunto de observaciones, la elaboración de una RBM implica el ajuste de los parámetros con el objetivo de que la distribución de probabilidad asociada a la BM sea lo más similar posible a  la distribución real de los datos. 
+
+\par Tras un proceso de aprendizaje exitoso, uno RBM es capaz de extraer la distribución de probabilidad latente u oculta en un conjutno de datos. Esto puede ser empleado como referencia a la comparar con nuevas muestras, lo que se conoce como proceso de clustering clasificatorio,  o puede permitirnos extraer muestras del conjunto muestreando a partir de la distribución aprendida.  
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.5]{images/RB.png}
+\caption{(Izquierda) Modelo de una única Gausiana, (Derecha) Modelo de mezcla de Gausianas}
+\label{markov}
+\label{contexto:figura}
+\end{figure}
+
 
 \subsection{Diagnósticos Asistido por Computador de AD}
+
 Mirar la wikipedia
 Diagnosis of AD and the prediction of future AD[edit]
 ADNI data has been used to test many diagnostic and prognostic machine learning algorithms.[9] The most successful to date have used deep learning approaches that combine longitudinal data chronicling changes in biomarkers over time from more than one imaging, genetic, or biological modality.

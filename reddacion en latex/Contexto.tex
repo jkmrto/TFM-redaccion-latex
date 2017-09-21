@@ -213,12 +213,28 @@ permite identificar rápidamente la enfermedad. También se podrá conocer la efect
 \begin{figure}[t]
 \centering
 \includegraphics[scale=0.5]{images/RB.png}
-\caption{(Izquierda) Modelo de una única Gausiana, (Derecha) Modelo de mezcla de Gausianas}
-\label{markov}
+\caption{Módelo básido de RBM}
+\label{rbm}
 \label{contexto:figura}
-\end{figure}
+\end{figure} 
+
+\par En la figura \ref{rbm} se puede observar un modelo clásico de RBM. Las caracteísticas principales de este modelo son:
+\begin{itemize}
+\item Esta constituido por dos partes bien diferenciadas; una capa de unidades ocultas y otra de unidades visibles. A menudo la unidades visibles son referenciadas como estados visibles.
+\item No hay conexiones entre unidades de una misma capa.
+\item Las unidades ocultas estan probabilisticamente condicionadas a las unidades visibles, aunque son independientes entre sí. 
+\item El uso de RBM concatenadas permite la extracción de características mas complejas. Este modelo es denominado \textit{stacked RBMs}.
+\end{itemize}
+
+\par Las RBM son consideradas redes neuronales aplicables para el aprendizaje no supervisado, capaces de caracterizar un espacio muestral. Otra modelo similar es el Autoencoder, técnica empleada en este trabajo.  
+
+\subsubsection{Autoencoder}
 
 
+\subsubsection{Redes Generativas Adversarias}
+
+
+\newpage
 \subsection{Diagnósticos Asistido por Computador de AD}
 
 Mirar la wikipedia

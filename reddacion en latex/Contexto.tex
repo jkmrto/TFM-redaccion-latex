@@ -147,7 +147,14 @@ veáse la Fig. \ref{ovillos}.
 \subsubsection{Imágenes MRI}
 \par Las imágenes de resonancia magnética (MRI, del inglés \textit{Magnetic Resonance Image}) son imágenes estructurales obtenidas en base a la aplicación de campos magnéticos sobre un cuerpo.
 \par La técnica MRI esta basada en la resonancia magnética nuclear (NMR, del inglés \textit{Nuclear Magnetic Resonance}). Ciertos núcleos atómicos son capaces de emitir energía a una determinada frecuencia al entrar en contacto con un campo magnético externo \cite{MRIOrigin3}. Generalmente, son átomos de hidrógeno los utilizados para la extracción de estas imágenes dado que este tipo de átomos  existen de manera natural en las personas. Por esta razon, los escáneres evalúan la localización de la señal en el espacio, generando una imágen en función de la intensidad de la señal generada. Es posible variar el tipo de señal generada cambiando el tipo de campo magnético empleado.
-
+\begin{figure}[b]
+\centering
+\includegraphics[scale=0.5]{images/mri_brain.png}
+\caption{(a) Cerebro con funciones cognitivas normales. (b) Cerebro con funciones cognitivas d}
+\label{ovillos}
+\label{contexto:figura}
+\end{figure}
+\
 \par Esta técnica fué inventada por Paul C. Lauterbur en Septiembre de 1971 \cite{MRIOrigin}, siendo aplicada por primera vez en el estudio del cerebro por Ian Robert Young y Hugh Clow en 1986 \cite{MRIOrigin2}. Desde entonces es considerada una técnica esencial tanto para el estudio del cuerpo humano como parea la investigación biomédica, covirtiendóse en una herramienta esencial de diagnóstico. 
 
 \par Una de las principales limitaciones de las imágenes MRI es el ruido. El bajo nivel SNR es provocado pr diversos factores, como es la alta emperatura de ruido generada por el escáner o el movimiento del cuerpo explorado. Es por ello  que el procesado de filtrado de ruido es uno de los principales ámbitos de investigación en torno as las imágenes MRI \cite{MRINoise}. La tecnología de los escanéres empleados ha evolucionado en aspectos como la resolución espacial o la disminución del tiempo de adquisición muestral.
@@ -295,35 +302,97 @@ permite identificar rápidamente la enfermedad. También se podrá conocer la efect
 \par Es por ello que el entrenamiento de este sistema es realmente complejo, considerandose más complicado de conseguir unos valores de entrenamiento óptimos que con respecto al VAE.
 
 
+\subsubsection{Trabajos Previos}
+
+\par En la búsqueda de estudios similares al aquí desarrollado nos encontramos con el trabajo desarrollado por Eunbyung Park de la universidad de Carolina del Norte, Estados Unidos. Este trabajo parte con el objetivo de la extracción de características útiles de imágenes MRI tanto para el diagnóstico del AD como para su uso generativo \cite{vae_2d}. 
+\par En dicho trabajo se usa un autoencoder variacional convoluciaonal 2d, lo cual difiere de los empleados en nuestro trabajo que, como se explcará más adelante, son convolucionales 3D o totalmente densos. 
+\par Se expone como dicho modelo es capaz de caracterizar componentes estrucuturales de las imágenes, permitiendo diferneciar la información generad en un espacio 2d, aplicando reducción de dimensionalidad mediante T-SNE. No obstante, se menciona como las imágenes regeneradas son algo borrosa, algo característico del VAE.  
 
 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{images/tsne_generative.png}
+\caption{Visualización del espacio de dimensionalidad reducida conseguido en el trabajo \cite{vae_2d}. Las imágenes superpuestas corresponden a las imagenes reales, no a las generadas}
+\label{tsne}
+\label{contexto:figura}
+\end{figure}
+
+\par Ea figura \ref{tsne} se aprecia como es posible la diferenciación por características principales de las imágenes MRI en un espacion de dos dimensiones. 
 
 \newpage
-\subsection{Diagnósticos Asistido por Computador de AD}
+\subsection{Diagnóstico Asistido por Computador de AD}
+\par Aunque el objetivo final del trabajo es generar imágenes útiles para el diagnóstico y estudio del AD debido a los escasos trabajos que apliquen el VAE a este fin, se cree conveniente la exposición de las siguientes técnicas de diagnóstico, ya que es necesario para comprender la utilidad y el estado actual de las diferentes herramientas del ámbito tratado. 
+\par Durante la última década se han desarrollado todo tipo de aproximaciones para el diagnóstico de AD asistido por computador. Este gran desarrollo es debido, en parte, a asociacones de gran calado como ADNI. 
+\par En este tipo de técnicas CAD, normalmente nos encontramos con dos fases bien diferenciadas, una es la extracción de características mientras que la siguiente es la clasificación realizada sobre dichas características.
 
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{images/basic.png}
+\caption{Esquema clásico básico de un sistema de diagnóstico de AD asistido por computador}
+\label{basic_cad}
+\label{contexto:figura}
+\end{figure}
+
+\subsubsection{Métodos Clasicos}
+
+\par Algunas técnicas clásicas de extracción de características son las siguientes \cite{mri_survey}: 
+
+\begin{itemize}
+\item Análisis de componenets independientes (ICA, del inglés \textit{Indepenedent Component Analysis}). Esta técnica de transformación de parámetros permita capturar información de un orden alto de dimensionalidad y transformarlo a un orden menor, utilizando componentes vectoriles estadísticiamente diferentes. \cite{ica}
+\item Análisis de Componentes Principales (PCA, del inglés \textit{Principal Component Analysis}). Esta técnica es usada cuando el objetivo es reducir el número de características y convertirlas a un espacio de alta varianza y menor dimensionalidad \cite{pca}. 
+
+\item \textit{Wavelets}. Se trata de un conjunto de funciones matemáticas encargadas de descomponer los datos en función de la frecuncia. La Transformada de Fourier solo genera información  frecuencial relativa al contenido, es por ello, que la Transformada \textit{Wavelet} es una mejor herramienta para el estudio de las imágenes. \cite{wavelet}
+
+\item Matriz de co-ocurrencieas de niveles de gris (\textbf{GLCM} del inglés \textit{Gray Level Co-Occurence Matrix}). Esta técnica está basada en la estracción de características estadísticas de la imagen. La matriz caracteriza la distribución de los niveles de gris de una imagen o de una region.
+
+\end{itemize}  
 
 
+\par Algunos de los métodos que se expondrán a continuación son utilizados para la clasificación de los vectores de datos generados por los métodos de extracción de características.
 
-Mirar la wikipedia
-Diagnosis of AD and the prediction of future AD[edit]
-ADNI data has been used to test many diagnostic and prognostic machine learning algorithms.[9] The most successful to date have used deep learning approaches that combine longitudinal data chronicling changes in biomarkers over time from more than one imaging, genetic, or biological modality.
+\begin{itemize}
+\item Clasificador KNN (del inglés \textit{K-Nearest neighbor}). Este método de clasificación es uno de los más usados historicamente \cite{knn}. Este clasificador se basa en la evaluación de la distancia de una muestra en cuestión $x_i$ con respecto al conjunto de clases o instancias posibles $M$, previamente predefinidas durante el entrenamiento. Se considerará que la muestra $x_i$ pertenecerá a la clase $m$ con respecto a la cual la distancia sea la mínima.  
 
-Diagnosis
+\item Clasificador de Bayes (\textit{Naïve bayes Classifier}). Se trata de un clasificador basado en el teorema de Bayes. En este clasificador se considera que todas las características contribuyen de manera independiente a la probabilidad de pertener a una clase u otra, sin tener en cuenta la presencia del resto de variables. 
 
-One example [9] of a combination of biomarkers that can accurately diagnose AD is:
+\item  Maquina de Vectores de Soporte (SVM del inglés \textit{Support Vector Machine}). Este método de clasificación es uno de los mejores algoritmos de aprendizaje supervisado, siendo diseñado originariamente para la clasificación binaria. 
+\par Este será el método usado en este trabajo  para la evaluación de las características extraídas por el sistema usado, en nuestro caso es un Autoencoder Variacional, siendo las características los valores de la capa latente. Algunos detalles de este algoritmo serán expuestos en siguientes capítulos.
+\end{itemize}  
 
-Changes in brain atrophy patterns over time (measured by MRI)
-Levels of ?-amyloid and tau (measured in CSF)
-A second approach to diagnosis is to extract the most pertinent information from MRI scans alone.[9] Deep learning algorithms can diagnose AD with greater than 95% accuracy,[30][31][32][33][34] and can diagnose MCI due to AD with greater than 82% accuracy.[31][35][36]
+\subsection{Métodos de Aprendizaje Profundo}
 
-As imaging scans are expensive and sometimes unavailable, and the analysis of CSF requires an invasive lumbar puncture procedure, ADNI blood samples are being used to develop diagnostic blood tests for clinical use. These are currently not as accurate as other methods.[37][38]
+\par Aunque las técnicas anteriormente expuestas constituyen los métodos clásicos relativos a las herramientas CAD, son los métodos basados en aprendizaje profundo (\textit{deep learning}) los que han conseguido los mejores resultados de clasificación \cite{deep_learning}. 
+\par En estas técnicas de aprendizaje se han conseguido más de un 95\% de precisión en el diagnóstico del Alzheimer \cite{deep_learning_2}\cite{deep_learning_3}. 
+\par Estas técnicas hacen uso de redes neuronales capaces de extraer características complejas de las imágenes. En algunos casos, se emplean un primer tipo de red, como por ejemplo de un Autoencoder, como método de extracción de características y seguidamente un método de clasificación ya se clásico o basado también en aprendidaje profundo. 
+\par Generalmente se usa un tipo de red neuronal denominadas redes neuronales convolucionales (CNN del inglés \textit{Convolutional Neural Networks}), ideales para la extracción de información de las imágenes. Este tipo de redes estan basadas en el comportamiento de la vista humana, ya que son capacades de extraer información espacial de los datos, lo cual es ideal para las imágenes 
 
-Prediction
+\par En el trabajo realizado por Ehsan Hossini-Asl y Robert Keynton  se consiguen resultados de exactitud de 97.6\% en la diferenciación de pacientes AD de los NC, mientras que consigue hasta un 90\% en la diferenciación de los MCI de los AD \cite{cnn_ad_1}. Este trabajo emplea un modelo  convolucional 3D, capaz de aprender características genericas empleando para ello un Autoencoder, el cual es entrenado para capturar las variaciones estructurales en las imágenes MRI. 
+\par El planteamiento realizado en este trabajo es diferente al nuestro dado que se emplea un tipo de autoencoder en el que se capturan variables locales debido al uso de conexión mediante nodos locales en lugar de conexión global que es nuestro caso. A priori, el empleo de conexiones no globales puede dificultar la extracción de características, pero permite reducir de forma notable el tiempo necesario para el entrenamiento del sistema. Por otro lado, en nuestro trabajo se evalúan imágenes seccionadas por regiones cerebrales, en lugar de emplear imágenes completas.  
 
-Deep learning algorithms which extract the most pertinent information from MRI scans can also predict the progression of MCI patients to AD several years in advance with accuracies of greater than 90%.[39]
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{images/autoencoder_2.png}
+\caption{Diagrama del Autoencoder Convolucional 3D empleado en el trabajo \cite{cnn_ad_1} para la extracción de características}
+\label{basic_cad}
+\label{contexto:figura}
+\end{figure}
 
+\par Como método de clasificación se empleó una red neuronal densa, esto es, totalmente conectada entre las unidades de capas adyacentes, la cual  recibía los datos generados por el Autoencoder. 
 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.4]{images/autoencoder_3.png}
+\caption{Diagrama general del método desarrollado en el trabajo \cite{cnn_ad_2}}
+\label{SA_2}
+\label{contexto:figura}
+\end{figure}
+
+\par Uno de los primeros estudios enfocados a la aplicación de aprendizaje profundo para el diagnóstido de AD fue el desarrollado por Heung-Il y Dinggang Shen en 2013 \cite{cnn_ad_2}. Es interesante notar como un Autoencoder es usado como método de extracción de características. El modelo propuesto en este estudio es el de la imagen \ref{SA_2}.
+\par La principal innovación de este método es la capacidad de extracción de correlaciones no lineales entre los datos gracias al uso de un autoencoder, lo cual teoricamente permite la extracción de mejores características globales.  
+\par Se trata de un modelo de diagnóstico multimodal ya que emplea diferentes tipos de neuroimágenes como son MRI, PET y CSF. Se emplea un Autoencoder en cascada, que permite la extracción de característcas, pero a diferencia del modelo Variacional, usado en este trabajo, este modelo de Autoencoder emplea una función determinista en lugar de probabilística. Como herramienta de clasificación se emplea un SVM multikernel, aplicado cada kernel a las diferentes fuentes de datos. 
+\par Los resultados indicados son de un 95\% de exactitud en la diferenciación  AD sobre NC. 
 \newpage
 \section{Entorno de desarrollo}
 

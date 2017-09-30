@@ -383,7 +383,7 @@ permite identificar rápidamente la enfermedad. También se podrá conocer la efect
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.4]{images/autoencoder_3.png}
+\includegraphics[scale=0.45]{images/autoencoder_3.png}
 \caption{Diagrama general del método desarrollado en el trabajo \cite{cnn_ad_2}}
 \label{SA_2}
 \label{contexto:figura}
@@ -396,8 +396,19 @@ permite identificar rápidamente la enfermedad. También se podrá conocer la efect
 \newpage
 \section{Entorno de desarrollo}
 
+\par Los diferentes elemtnos software generados en este proyecto han sido desarrollados sobre Python. Este lenguaje de programación cuenta con una comunidad científica en auge. Los principales motivos por lo que se ha seleccionado son: 
+\begin{itemize}
+\item Se trata de un lenguaje de código libre, lo cual evita cualquier tipo de coste asociado a la licencia de lenguaje. 
+\item Cuenta con reconocidas librerías de métodos númericos y estadísticos que agilizan el desarrollo de los modelos. Algunas de estas librerías son \textit{SciPy, Numpy o Sklearn}. \textit{Numpy} es una librería que trabaja con vectores, lo cual resulta ideal para cieníficos provenientes del entorno Matlab.
+\item Debido a su amplia comunidad hay una gran cantidad de código en repositorios públicos los cuales son útiles como referencia. 
+\end{itemize}
 
+\par Para el desarrollo de los algoritmos basados en aprendizaje profundo hemos hecho uso de \textit{Tensorflow} \cite{tensorflow}. Esta biblioteca desarrollado por \textit{Google} constituye una interfaz para el desarrollo de algoritmos de aprendizaje que facilita la implementación de dichos algoritmos. 
 
+\par El código de esta librería fué hecho público por \textit{Google} el 9 de Noviembre de 2015. \textit{Tensorflow} fué originalmente desarrollado por el equipo \textit{Google Brain} desde 2011, denominándose \textit{DisBelief}.
+
+\par Basado en la unión de grafos de las diferentes unidades del algoritmo implementado, esta librería esta principalmente orientada al desarrollo de redes neuronales, proveyendo métodos para generar redes neuronales densas y convolucionales. 
+\par Otro punto que fomenta el uso \textit{Tensorflow} es la posibilidad de ejecutar los algoritmos sobre tarjetas gráficas (GPU, del ingles, \textit{Graphical Processing Unit}) en lugar de sobre el procesador central (CPU, del ingles \textit{Central Processing Unite}).
 
 
 

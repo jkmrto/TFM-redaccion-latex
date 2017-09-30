@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Documento LaTeX 																						%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título:		Capítulo 2
+% Autor:  	Ignacio Moreno Doblas
+% Fecha:  	2014-02-01
+% Versión:	0.5.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapterbegin{Fundamentos Teóricos}
+\label{chp:Utiliz}
+%\minitoc
+
+\par El trabajo realizado en este proyecto es englobado dentro de la temática denomiada visión por computador, dado que los métodos empleados se basan en la detección de patrónes sobre las imágenes dadas, en nuestro caso neuroimágenes. 
+
+\par En el ámbito de la visión por computador cada imagen en sí misma es una muestra de miles dimensiones, cada uno de los pixeles. Un modelo generativo trata de capturar la relación entre las multiples dimensiones de los datos. En nuestro caso el modelo empleado para capturar dichas relaciones el Autoencoder Variacional.
+
+\par Es por ello que este capítulo se centrará en la exposición de este método en primer lugar y posteriormen se explicará, de forma breve, otros métodos usados de manera auxiloiar en el desarrollo del proyecto. 
+
+\section{Autoencoder Variacional}
+
+\subsection{Modelo de Variables Latentes}
+\par A lo largo del entrenamiento o la caracterización de un modelo generativo, la parte mas complicada es la extracción de las dependencias entre las múltiples dimensiones. Son estas relaciones multidimensionales las que permiten generar muestras artificiales pertenecientes a clases distintas. Se denomina variable latente, a las unidades del modelo generativo capaces de discernir entre las distintas clases, esto es, capacitan al modelo para generar elementos diferenciados.
+\par Un modelo generativo es representativo de un espacio muestral $(X)$ si para cada una de las muestras de dicho espacio $(x)$ hay al menos alguna configuración de las variables latentes $(z)$ que genera un variable $(\hat{x})$ muy similar a la original. Formalmente, dada una función  $f(z, \theta)$ parametrizada por un vector $\theta$ en un espacio $\Theta$ tal que:
+\begin{center}
+\begin{equation} \label{eq:space}
+f : 	Z \times \Theta  \rightarrow  X  
+\end{equation}
+\end{center}
+\par El objetivo es maximizar la probabilidad de cada $x$ de el espacio muestral de acuerdo con:
+\begin{center}
+\begin{equation} \label{eq:int_1}
+P(X)  = \int_{}^{}P(X|z;\theta) 
+\end{equation}
+\end{center}
+\par En la ecuación \ref{eq:int_1}, $f(z;\theta)$ es reemplazada por la distribución $P(X| z;\theta)$, la cual nos permite hacer explícita la dependencia de $X$ sobre $z$, debido a la probabilidad condicionada. 
+La idea de detrás de dicha expresión es principio de máxima verosimilitud (ML, del inglés \textit{Maximum Likehood}), el cual indica que si el modelo es capaz de generar muestras del espacio $X$, entonces será probable que le modelo generativo construya muestras similares.
+
+\par En el VAE, la función de probabilidad $P(X|z;\theta)$ es las siguiente:
+
+\begin{center}
+\begin{equation} \label{eq:p_x_gausiana}
+P(X|z; \theta)  = N(X| f(z;\theta), \sigma^{2}*I) 
+\end{equation}
+\end{center}
+
+\par El uso de una distribución gausiana nos permite realizar un descenso en gradiente durante la optimización, con objeto de caracterizar el modelo. Esta caracterización permite incrementar $P(X)$, entendidada como la probabilidad global de generar algún tipo de muestra de dicho espacio. Esto no sería posible si esta función de probabilidad fuera una delta de Dirac. 
+
+
+
+
+
+
+\newpage
+\section{Herramientas Complementarias}
+
+
+\chapterend{}

@@ -14,12 +14,12 @@
 \contentsline {figure}{\numberline {2.8}{\ignorespaces \textit {Stacked} RBMs}}{18}{figure.2.8}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Autoencoder Lineal}}{19}{figure.2.9}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Esquema de una Red Generativa Adversaria}}{21}{figure.2.10}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Visualizaci\'on del espacio de dimensionalidad reducida conseguido en el trabajo \cite {vae_2d}}}{22}{figure.2.11}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Visualizaci\'on del espacio de dimensionalidad reducida conseguido en el trabajo \cite {vae_2d}. Las im\'agenes superpuestas corresponden a las imagenes reales, no a las generadas}}{22}{figure.2.11}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Esquema cl\'asico b\'asico de un sistema de diagn\'ostico de AD asistido por computador}}{23}{figure.2.12}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Diagrama del Autoencoder Convolucional 3D empleado en el trabajo \cite {cnn_ad_1} para la extracci\'on de caracter\IeC {\'\i }sticas}}{25}{figure.2.13}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Diagrama general del m\'etodo desarrollado en el trabajo \cite {cnn_ad_2}}}{26}{figure.2.14}
 \addvspace {10\p@ }
-\contentsline {xchapter}{El Autoencoder Variacional}{29}{chapter.3}
+\contentsline {xchapter}{Fundamentos Te\'oricos}{29}{chapter.3}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Ap\'endice}{33}{appendix.Alph1}
+\contentsline {xchapter}{Ap\'endice}{35}{appendix.Alph1}
 \contentsfinish 

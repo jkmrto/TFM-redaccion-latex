@@ -12,20 +12,37 @@
 
 \par El trabajo realizado en este proyecto es englobado dentro de la temática denomiada visión por computador, dado que los métodos empleados se basan en la detección de patrónes sobre las imágenes dadas, en nuestro caso neuroimágenes. 
 
-\par En el ámbito de la visión por computador cada imagen en sí misma es una muestra de miles dimensiones, cada uno de los pixeles. Un modelo generativo trata de capturar la relación entre las multiples dimensiones de los datos. En nuestro caso el modelo empleado para capturar dichas relaciones el Autoencoder Variacional.
+\par En el ámbito de la visión por computador cada imagen en sí misma es una muestra de miles dimensiones, cada uno de los pixeles. Un modelo generativo trata de capturar la relación entre las multiples dimensiones de los datos. En nuestro caso el modelo empleado para capturar dichas relaciones es el Autoencoder Variacional.
 
-\par Es por ello que este capítulo se centrará en la exposición de este método en primer lugar y posteriormen se explicará, de forma breve, otros métodos usados de manera auxiloiar en el desarrollo del proyecto. 
+\par Es por ello que este capítulo se centrará en la exposición de este método en primer lugar. Dado el VAE esta fundamentado en el aprendizaje profundo, se dedicará la siguiente sección a las redes neuronales, haciendo especial hincapie a aquellas empleadas en este trabajo. Finalmente se expondrán brevemente los métodos estadísticos usados de manera auxiliar a lo largo de este proyecto.  
 
 \section{Autoencoder Variacional}
 
+\par Este apartado está dedicado a la exposición del  Autoencoder Variacional desde una perspectiva meramente teórica  con objeto de mostrar los fundamentos y, en última instancia, la capacidad de convergencia del método, basada en una función objetivo sobre la cual se puede aplicar descenso en gradiente estocástico. 
+
 \subsection{Modelo de Variables Latentes}
+
+\par
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.25]{images/ModeloVariablesLatentes.png}
+\caption{Modelo gráfico de variables latentes para el modelo generativo del VAE. $Z$ es el espacio de variables lo más similar posible a un distribución normal $(N(0,I))$. El elemento $\theta$ es el conjunto de parámetros que aplicados de manera funcional sobre las variables latentes son capaces de generar el conjunto muestral $X$ }
+\label{latentes_variables}
+\end{figure}
+
 \par A lo largo del entrenamiento o la caracterización de un modelo generativo, la parte mas complicada es la extracción de las dependencias entre las múltiples dimensiones. Son estas relaciones multidimensionales las que permiten generar muestras artificiales pertenecientes a clases distintas. Se denomina variable latente, a las unidades del modelo generativo capaces de discernir entre las distintas clases, esto es, capacitan al modelo para generar elementos diferenciados.
+
+
+
 \par Un modelo generativo es representativo de un espacio muestral $(X)$ si para cada una de las muestras de dicho espacio $(x)$ hay al menos alguna configuración de las variables latentes $(z)$ que genera un variable $(\hat{x})$ muy similar a la original. Formalmente, dada una función  $f(z, \theta)$ parametrizada por un vector $\theta$ en un espacio $\Theta$ tal que:
 \begin{center}
 \begin{equation} \label{eq:space}
 f : 	Z \times \Theta  \rightarrow  X  
 \end{equation}
 \end{center}
+
+\subsection{Modelo Probabilístico}
 \par El objetivo es maximizar la probabilidad de cada $x$ de el espacio muestral de acuerdo con:
 \begin{center}
 \begin{equation} \label{eq:int_1}
@@ -43,15 +60,300 @@ P(X|z; \theta)  = N(X| f(z;\theta), \sigma^{2}*I)
 \end{equation}
 \end{center}
 
-\par El uso de una distribución gausiana nos permite realizar un descenso en gradiente durante la optimización, con objeto de caracterizar el modelo. Esta caracterización permite incrementar $P(X)$, entendidada como la probabilidad global de generar algún tipo de muestra de dicho espacio. Esto no sería posible si esta función de probabilidad fuera una delta de Dirac. 
+\par El uso de una distribución gausiana nos permite emplear descenso en gradiente durante la optimización, con objeto de caracterizar el modelo. Esta caracterización permite incrementar $P(X)$, entendidada como la probabilidad global de generar algún tipo de muestra de dicho espacio. Esto no sería posible si esta función de probabilidad fuera una delta de Dirac. Es importante notar que es fundamental disponener de una función $P(X|z)$ que sea computable y continua sobre $\theta$.
+
+\par Teóricamente, para la mayoría de los valores $z$, $P(X|z)$ será aproximadaente cero, y por lo tanto su contribuciónpara la estimación de $P(X)$ será prácticamente nula.
+
+\subsection{Función Objetivo}
+
+\par La principal idea en la que se fundamenta el VAE es en muestrear los valores de $z$ a partir de $X$, esto es, necesitamos una nueva función $Q(z|X)$ que nos permita generar el conjunto de valores del espacio $Z$ a paritr de $X$. Esto nos reduce el espacio de $Z$ ya que, teóricamente, este se verá limitado en $Q(z|X)$. En última instacia, esto nos permitirá estimar  $E[P(X|z)]$, siendo esta el valor esperado de la distribución de probabilidad de los valores de X generados. 
+\par La relacion entre $E(P(X|z))$ y $P(X)$ es uno de los fundamentos de los métodos variacionales Bayesianos. Comencemos con la definición de la divergencia de KUllback-Leibler (\textit{KL}  o \textit{D}) entre una distribución $P(z|X)$ y $Q(z)$:
+
+
+\begin{center}
+\begin{equation} \label{eq:KL_1}
+D[Q(z)||P(z|X)] = E[log(Q(x)) - log(P(z|X))] 
+\end{equation}
+\end{center}
+
+\par La expresión anterior, ecuación  \ref{eq:KL_1}, es una medida no simétrica de la similitud o diferencia entre las dos funciones de probabilidad $P(X|z) y Q(z)$. Dicha expresión mide diferencia (o el extra de información) entre un coódigo $P(x)$ y uno $Q(z)$. Aplicando la regla de Bayes sobre la expresión anterior conseguimos dejarlo en función de $P(X)$ y $P(X|z)$:
+
+\begin{center}
+\begin{equation} \label{eq:KL_2}
+D[Q(z)||P(z|X)] = E_{z}[log(Q(x)) - log(P(X|z)) - log(P(z)) + log(p(X))]  
+\end{equation}
+\end{center}
+
+\par Ordenando la expresión anterior, y teniendo en cuenta que $log(p(X))$ no depende de $z$ por lo que puede salir del valor esperado:
+
+\begin{center}
+\begin{equation} \label{eq:KL_3}
+log(p(X))- D[Q(z)||P(z|X)]  = E_{z}[log(P(X|z)]) - D[Q(z)||P(z)].  
+\end{equation}
+\end{center}
+
+\par Llegados a este punto es importante notar que el espacio $X$ es fijo y por lo tanto también lo  es su función de probabilidad $P(X)$. No obstante $Q(z)$ puede ser cualquier distribución, siempre que nos permita generar $Z$ a partir de $X$.
+\par Dado que en nuestro caso estamos intersados en inferir $P(X)$, es necesario generar una función $Q$ dependiente sobre $X$ que permita que la divergencia $D[Q(z)||P(z|X)]$ sea pequeña, esto es, haya la menor perdida de información entre ambas distribuciones.
+
+ \begin{center}
+\begin{equation} \label{eq:KL_4}
+log(p(X))- D[Q(z|X)||P(z|X)]  = E_{z}[log(P(X|z)]) - D[Q(z|X)||P(z)].  
+\end{equation}
+\end{center}
+
+\par La expresión anterior, ecuación \ref{eq:KL_4}, es la principal del VAE, por lo que es necesario examinarla detenidamente. Analizando cada término por separado:
+\begin{itemize}
+\item La expresión de la izquierda representa la cantidad que se prentende maximizar: $log(P(x))$, mas un término de error reperesentado por D[Q(z)||P(z|X)] que es la capacidad de generar $z$ a partir de $X$. Este término de error será disminuido si $Q$ es de alta capacidad. 
+\par Se trata de maximizar $log(P(X))$ mientras simultaneamente $D[Q(z|X)||P(z)]$ se minimiza . El término de probabilidad $P(z|X)$ no es computable analíticamente, describe la distribución de valores de $z$ que son capacades de generar $X$.
+\item La expresión de la derecha es lo que se pretende optimar mediante el descenso en gradiente, dada una correcta seleccion de $Q(x)$.
+\par Este segundo término fuerza la similitud entre $(Q(z|X))$ y$ P(X|z)$. Asumiendo que el término $Q(z|X)$ es de alta capacidad, tendrémos que el término de divergencia KL será cercano a cero. En última instancia, conseguiremos manejar de forma ana?itica $P(z|X)$ gracias a su similitud con $Q(z|X)$ 
+\end{itemize}
+
+\subsection{Optimización de la función objetivo}
+
+\par Con objeto de poder realizar el descenso en gradiente sobre la expresión de la derecha de la ecuación \ref{eq:KL_4}, necesitamos definir de manera más exacta la forma de $Q(z|X)$. La elección habiutual es la siguiente:
+
+ \begin{center}
+\begin{equation} \label{eq:OFU_1}
+Q(z|X)  = N(z|\mu(X;\vartheta), \Sigma(X; \vartheta))  
+\end{equation}
+\end{center}
+
+donde $\mu$ y $\Sigma$ son funciones determistas con una serie de parámetros $\vartheta$ (en las siguientes expresiones se omitirá $\vartheta$). Normalmente tanto $\mu$ como $\Sigma$ son implementados mediante redes neuronales y $\Sigma$ esta limitada a un función diagonal, que permite facilitar los cálculos.
+
+\par El segundo término de la expersion \ref{eq:KL_4}, $D[Q(z|X)||P(z)]$, al ser una divergencia KL entre dos funciones de gausianas multivaradas queda definda por:
+
+
+ \begin{align*}
+ \begin{split}
+D(N(\mu_{0}(X), \Sigma_{0}(X)|| N(\mu_{1}(X), \Sigma_{1}(X)))  = \\
+\frac{1}{2}\left(tr(\Sigma_{1}^{-1}\Sigma_{0}) + (\mu_{1} - \mu_{0})^{T} \Sigma_{1}^{-1}(\mu_{1} - \mu_{0}) - k + log (\frac{det\Sigma_{1}}{det\Sigma_{0}})  \right)
+\end{split} 
+ \end{align*}  \label{eq:OFU_2}
+ 
+donde $k$ es la dimensionalidad de la distribución, la expresión queda de la siguiente manera:
+
+ \begin{align}
+ \begin{split}
+D[N(\mu(X), \Sigma(X)) || N(0, I))] = \\
+\frac{1}{2} \left( tr(\Sigma(X)) + (\mu(X))^{T}(\mu(X) - k -log(det(\Sigma(X)))) \right)
+\end{split} 
+ \end{align}  \label{eq:OFU_3}
+
+\par El primer término de la expresion \ref{eq:KL_4}, $E_{z}[log(P(X|z))]$, es algo más complicado de determinar, aunque a priori se podría estimar usando un número suficentes de $z$ y aplicando al función $f$ asociada a $P(X|z)$, aunque esto sería tremendamente costoso computacionalmente. 
+\par En  su lugar, se aplica un procedimiento denomidado Descenso en Gradiente Estocástico (SGD, del inglés \textit{Stochastic Gradient Descent}), que se basa en tomar úmicamente un valor de $z$ aplicarlo sobre $P(X|z)$, por lo que se obtendría una aproximación de $E_{z}[log(P(X|z))]$. Durante este proceso, estamos tomando como referencia cada una de las muestras $X$ de un conjunto de datos $D$ a la hora de estimar el error. Teniendo en cuento esto, la ecuación completa que se pretnede optimizar es:
+
+ \begin{align}
+ \begin{split}
+E_{X}[log(P(X)) - D[Q(z|X) || P(z| X)]] = \\
+E_{X}[E_{z}[log(P(X|z))] - D[Q(z|X) || P(z)]]
+\end{split} 
+ \end{align}  \label{eq:OFU_4}
+
+\par Tomando el gradiente de la expresión anterior, reducimos la expresión a los valores internos de las esperanzas. Además, podemos tomar un único valor de $X$ y un único valor de $z$ de la distribución $Q(z|X)$, lo que no nos permite hacer computable el gradiente de la siguiente forma: 
+
+ \begin{center}
+\begin{equation} \label{eq:OFU_5}
+log(P(X|z)) - D[Q(z|X) || P(z)]. 
+\end{equation}
+\end{center}
+
+\par No obstante hay un problema significativo en la ecuación \ref{eq:OFU_4} ya que $E_{z}[log(P(X|z))]$
+depende de los parámetros de $P$ y también de los valores de $Q$. Esto es problemático a la hora de realizar el descenso en gradiente, quedando resuelto con lo que se conoce como "Truco de Reparametrización".
+
+\subsection{El truco de Reparametrización} \label{sec:repa_1}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.4]{images/trucoReparametrizacion.png}
+\caption{(Izquierda) Modelo de VAE sin Truco de Reparametrización. (Derecha) Modelo de VAE con Truco de Reparametrización}
+\label{fig:repara_trick}
+\end{figure}
+
+\par Para garantizar el correcto funcionamiento del VAE es necesario que la función codificadora ($f$) asociada a $Q(z|X)$ generare un conjunto $Z$ capaz de ser decodificado por la función generadora ($g$) asociada a $P(X|z)$.
+\par Analizando el problema desde otra perspectiva, tomando como referencia el diagrama de izquierda de la figura \ref{fig:repara_trick}. El paso hacia delante\footnote{En el ámbito de las redes neuronales se denomina paso hacia delante (del ingés \textit{forward pass}) al proceso incial de evaluar la salida generada a partir de una determinada entrada. En nuestro caso la entrada es $X$ y la salida $f(z)$, siendo la evaluación realizada $||X - f(z)||$} funciona de manera de correcta y es de esperar (si los parámetros están correctamente entrenados) que la salida produzca un salida acertada de manera general. 
+\par No obstante, es necesario realizar el paso hacia atrás\footnote{En el ámbito de las redes neuronales, el paso hacia atrás (del inglés \textit{backpropagation}) hace referencia al proceso de evaluar el gradiente en cada uno de los elementos del sistema, tomando como referencia que el error se?a el determinado del paso hacia delante} teniendo que determinar el gradiente sobre la función $Q(z|X)$ encargada de generar $z$, pero este modelo de generación esta basado en el mapeo sobre una distribución gausiana, lo cual es una función no continua.
+
+\par La solución a este problema se denomica truco de reparametrización (del inglés \textit{reparameterization trick}) el cual se basa en trasladar el mapeo sobre la distribución gausiana a una capa de entrada. 
+\par Dados $\mu_{X}$ y  $\Sigma_{X}$, media y convarianza respectivamente de $Q(z|X)$, podemos mapear $N(\mu_{X}, \sigma(X))$ tomando un valor de la función Normal ($\epsilon \sim N(0,I)$) y aplicando la siguiente expresión:
+\begin{center}
+\begin{equation} \label{eq:RT_1}
+z = \mu(X) + \Sigma(X)^{1/2} * \epsilon. 
+\end{equation}
+\end{center}
+
+\par Por lo tanto la función final, la cual queda representada en el diagrama de la derecha de la figura  \ref{fig:repara_trick}, sobre la que se aplica el gradiente es la siguiente:
+
+ \begin{align}
+ \begin{split}
+E_{X\sim Z}\left[E_{\epsilon\sim N(0,I)}[log(P(X|z = \mu(X) + \Sigma^{1/2} * \epsilon))] - D[Q(z|X) || P(z)]\right].
+\end{split} 
+ \end{align}  \label{eq:RT_2}
+
+\par Cabe notar que ninguna de las esperanzas son con respecto a las distribuciones características del sistema (ni $P(X|z)$ ni $Q(z|X)$) lo que nos permite realizar el gradiente sin ningún problema sobre los elementos contenidos dentro de los valores esperados, ya que el gradiente es la derivada sobre los parámetros funcionales de estas distribuciones.
+\par Por lo tanto dado un valor de $X$ y $\epsilon$ la función \ref{eq:RT_2} será continua y determinista sobre los parámetros de $P$ y $Q$, lo cual nos permite realzar el paso hacia atrás de manera eficaz. 
+ 
+ 
+\subsection{Interpretación de la función objetivo} 
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.25]{images/FO_interpretacion_2.png}
+\caption{Traducir }
+\end{figure}
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.25]{images/FO_interpretacion_1.png}
+\caption{Traducir }
+\end{figure}
+
+
+ 
+\subsection{Codificación y Decodificación}
+
+\par La eficacia y tratabildad del método reside en la asunción de que $Q(z|X)$, la función coficadora, puede ser modelada como una gaussiana con una media determinada $\mu(X)$  y varianza $\Sigma(X)$, por otro lado es necesario que $P(X)$ converja de manera eficaz a la distribución real de los datos del espacio $D$. Estas condiciones solo son superadas si y solo si $D[Q(z|X) || P(z|X)]$ es cercana a cero.
+\par Es por ello necesario una función $Q$ de alta capacidad, lo cual puede llevarnos a modelos complejos. Los modelos basados en funciones usados en los VAE son las redes neuronales
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.7]{images/decodificador,codificador.png}
+\caption{Esquematización simple de las funciones del Codificador y el Decodificador en el VAE}
+\label{fig:CD_1}
+\end{figure}
+
+\par El codificador es una red neuronal. Su entrada es el dato $X$ y su salida es la representación latente $z$. Representa la distribución de probabilidad $Q(z|X)$, y esta determinada por el conjunto de parámetros y pesos de la red neuronal asociada. Denominaremos a la función encargada de la codificación $q_{\theta}(z|x)$
+\par El codificador se identifica a menudo con el proceso de reducción de la dimensionalidad de $x$ a $z$. Cabe notar que el codificador tiene asociadas dos funciones, una encargada de obtener la media $q_{\mu}(X)$  y otro la varianza $q_{\Sigma}(X) $ del espacio latente. Para la obtención final de $z$ se ha de aplicar  el truco de reparametrización, ver seccion \ref{sec:repa_1}, con respecto a los valores $\Sigma$ y $\mu$ obtenidos anteriormente.
+
+\par El decodificador es otra red neuronal. Su entrada es la variable del espacio latente $z$ y su salida es la reconstrucción del dato inicial $X$. Denominaremos a la función encargada de la decodificación $p_{\phi}(x|z)$, donde $\phi$ son el conjunto de parámetros y pesos que definen la red neuronal.
+
+\par El hecho de que ambas funciones estén basadas en redes neuronales hace el aprendizaje profundo sea una parte primordial del VAE. Típicamente los formatos de redes neuronales aplicados en este sistema son dos; redes neuronales densas (DNN)  o redes neuronales convolucionales (CNN).
+
+\newpage
+\section{Redes Neuronales}
+\par Las Redes Neuronales permiten generar funciones complejas no lineales gracias a su capacidad inherente de aprendizaje con el proceso denomiado propagación hacia atrás, que permiten ajustar los pesos de las distintas unidades o neuronas del sistema. 
+\par Dada la complejidad del ámbito del aprendizaje profundo, en las siguiente seciones se pretenden exponer las ideas fundamentales para comprender el comportamiento de las funciones de codificacion y decodificación del VAE, sin entrar en explicaciones excesivamente teóricas sobre los fundamentos de las redes neuronales. 
+\par Es por ello que en primer lugar se expondrá el modelo de redes neuronales densas, aprovechando para exponer de manera somera algunos conceptos de redes neuronales, como son el concepto de funciones de activación o el proceso de propagación hacia atrás. 
+
+\par Seguidamente se expondrá el otro modelo de aprendizaje profundo utilizado en este trabajo que son las redes neuronales convolucionales, explcando por que son ideales para la captura de patrones sobre imágenes. 
+
+\subsection{Red Neuronal Densa}
+\par Este modelo constituye el paradigma básico de redes neuronales. Fundamentado en el estándar de neuronal artificial  según los principios descritos Rumelhart y McClelland en 1986 \cite{DNN_1}. Siguiendo dichos principios, la i-ésima neurona artificial  consiste en:
+
+\begin{figure}[!hb]
+\centering
+\includegraphics[scale=0.5]{images/DNN_1.png}
+\caption{Sistema global de proceso de una red neuronal}
+\label{fig:CD_1}
+\end{figure}
+
+
+\begin{itemize}
+
+\item Un conjunto de entradas $x_j$ con un conjunto de pesos sinápticos asociados $w_{ij}$, con $j=1,2...n$
+\item Una regla de propagación $h_i$ a definida partir del conjunto de entradas  y de los pesos sinápticos. Normalmente la regla de propagación utilizada el producto lineal entre los pesos sinápticas y las entradas. Esto es:
+\begin{center}
+\begin{equation}\label{eq:DNN_1}
+h_i(x_1,.....,x_m, w_{i1}....,w{in} = \sum_{i=1}^{n}w_{ij}*x_{j}
+\end{equation}
+\end{center}
+
+\item Una función de activación, la cual representa simultáneamente la salida de la neurona y su estado de activación. Denotando por $y_i$ dicha función de activación:
+
+\begin{center}
+\begin{equation} \label{eq:DNN:2}
+y_i = f_i(h_i) = f_i(\sum_{j=0}^{n}w_{ij}x_{j})
+\end{equation}
+\end{center}  
+
+\end{itemize} 
+
+\subsubsection{Función de Activación}
+\begin{figure}[!b]
+\centering
+\includegraphics[scale=0.45]{images/functions_activations.png}
+\caption{Principales funciones de activación.}
+\label{fig:CD_1}
+\end{figure}
+\par La eleccion de la función de activación constituye una parte determinante en el diseño de redes neuronales, dado que afectará en gran medida al a capacidad de decisiónd de la red y la rapidez con que la red sea capaz de converger durante el entrenamiento \cite{FA_1}. 
+\par En general el principal requerimiento sobre estas funciones es que sean capaces de respetar el proceso del propagación hacia atrás, no provocando que el gradiente se haga cero lo cual repercutiría negativamente en el proceso del descenso en gradiente. Este es uno de los problemas asociadas a la clasica función sigmoide, dado que para valores de $x$ ampliamente negativos o positivos, provoca que el gradiente sea cero\footnote{Este efecto es conmúnmnte denominado como saturación}, interrumpiendo el descenso en gradiente para la neurona en cuestión y, por tanto, la optimización de sus pesos sinápticos.
 
 
 
+\begin{figure}[!hb]
+\centering
+\includegraphics[scale=0.45]{images/lrelu_2.png}
+\caption{(izquierda) Función de activación \textit{Relu}. (Derecha) Función de activación \textit{leakyRelu.} }
+\label{fig:CD_2}
+\end{figure}
 
+\par Actualmente la función de activación más utilizada es la unidad lineal de rectificación \cite{FA_2} (ReLu del inglés \textit{Rectifier Linear Unit}), representada en la figura \ref{fig:CD_1}. No obstante, otro tipo de función de activación basada en la anteriomente expuesta  denominada unidad lineal de rectificacion con pérdidas (leakyRelu) ha ganado peso en el ámbito. La única diferencia entre ambas funciones es la capacidad de la \textit{leakyRelu} de no hacer nulo el gradiente para valores negativos, ver figura \ref{fig:CD_2} para apreciar esta diferencia. En este proyecto han sido utilizadas tanto la funcion Sigmoide como la función \textit{leakyRelu}
+
+
+\subsubsection{Topología de Conexionado}
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.45]{images/capas.png}
+\caption{Esquema de una red neuronal densa de una sola capa oculta }
+\label{fig:DNN_4}
+\end{figure}
+
+
+\par Otro concepto determinante en el comportamiento de las redes neuronales es la topología empleada, esto es, el patron de conexionado de una red neuronal. En una red neuronal artificial los nodos se conectan entre sí, siendo este conjunto de conexiones internas junto con los pesos sinápticos lo que determina el comportamiento de la red y, en última instancia, la función asociada  a la red. 
+\par Las unidades neuronales suelen agruparse en lo que se denominan capas. La unión de dos o más capas constituyen una red neuronal. Se distinguen tres tipos de capas: de entrada, de salida y ocultas. Una capa de entrada esta compuesta por las neuronas que reciben las señales. Una capa de salida está constituida por el conjunto de neurones que proporcionan la respuesta de la red. Las capas ocultas no tienen conexionado con el exterior. A más ocultas más capacidad de aprendizaje tend?a el sistema, aunque el tiempo necesario para su optimización aumentará considerablemente. 
+
+
+\subsubsection{Propagación Hacia Atrás}
 
 
 \newpage
+\subsection{Red Neuronal Convolucional}
+
+\newpage
 \section{Herramientas Complementarias}
+\subsection{Máquina de Vectores de Soporte}
+\subsection{Validación Cruzada (K-fold)}
+\subsection{Métricas de Validación}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapterend{}

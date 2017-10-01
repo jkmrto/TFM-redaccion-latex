@@ -35,9 +35,24 @@
 \contentsline {chapter}{\numberline {3}Fundamentos Te\'oricos}{29}{chapter.3}
 \contentsline {section}{\numberline {3.1}Autoencoder Variacional}{29}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Modelo de Variables Latentes}{29}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Herramientas Complementarias}{31}{section.3.2}
-\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{33}{chapter*.22}
-\contentsline {chapter}{\numberline {A}Ap\'endice}{35}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Primera secci\'on}{35}{section.Alph1.1}
-\contentsline {chapter}{\'Indice alfab\'etico}{41}{section*.24}
+\contentsline {subsection}{\numberline {3.1.2}Modelo Probabil\IeC {\'\i }stico}{30}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Funci\'on Objetivo}{31}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Optimizaci\'on de la funci\'on objetivo}{32}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}El truco de Reparametrizaci\'on}{34}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Interpretaci\'on de la funci\'on objetivo}{35}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Codificaci\'on y Decodificaci\'on}{35}{subsection.3.1.7}
+\contentsline {section}{\numberline {3.2}Redes Neuronales}{38}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Red Neuronal Densa}{38}{subsection.3.2.1}
+\contentsline {subsubsection}{Funci\'on de Activaci\'on}{39}{subsubsection*.22}
+\contentsline {subsubsection}{Topolog\IeC {\'\i }a de Conexionado}{40}{subsubsection*.23}
+\contentsline {subsubsection}{Propagaci\'on Hacia Atr\'as}{40}{subsubsection*.24}
+\contentsline {subsection}{\numberline {3.2.2}Red Neuronal Convolucional}{41}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Herramientas Complementarias}{42}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{42}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{42}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{42}{subsection.3.3.3}
+\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{43}{chapter*.25}
+\contentsline {chapter}{\numberline {A}Ap\'endice}{45}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Primera secci\'on}{45}{section.Alph1.1}
+\contentsline {chapter}{\'Indice alfab\'etico}{52}{section*.27}
 \contentsfinish 

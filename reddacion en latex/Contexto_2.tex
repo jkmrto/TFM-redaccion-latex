@@ -303,11 +303,30 @@ y_i = f_i(h_i) = f_i(\sum_{j=0}^{n}w_{ij}x_{j})
 
 
 \par Otro concepto determinante en el comportamiento de las redes neuronales es la topología empleada, esto es, el patron de conexionado de una red neuronal. En una red neuronal artificial los nodos se conectan entre sí, siendo este conjunto de conexiones internas junto con los pesos sinápticos lo que determina el comportamiento de la red y, en última instancia, la función asociada  a la red. 
-\par Las unidades neuronales suelen agruparse en lo que se denominan capas. La unión de dos o más capas constituyen una red neuronal. Se distinguen tres tipos de capas: de entrada, de salida y ocultas. Una capa de entrada esta compuesta por las neuronas que reciben las señales. Una capa de salida está constituida por el conjunto de neurones que proporcionan la respuesta de la red. Las capas ocultas no tienen conexionado con el exterior. A más ocultas más capacidad de aprendizaje tend?a el sistema, aunque el tiempo necesario para su optimización aumentará considerablemente. 
+\par Las unidades neuronales suelen agruparse en lo que se denominan capas. La unión de dos o más capas constituyen una red neuronal. Se distinguen tres tipos de capas: de entrada, de salida y ocultas. Una capa de entrada esta compuesta por las neuronas que reciben las señales. Una capa de salida está constituida por el conjunto de neurones que proporcionan la respuesta de la red. Las capas ocultas no tienen conexionado con el exterior. A más capas Socultas más capacidad de aprendizaje tendrá el sistema, aunque el tiempo necesario para su optimización aumentará considerablemente. 
 
 
 \subsubsection{Propagación Hacia Atrás}
 
+Se denomina propagación hacia atrás al proceso empleado para el entrenamiento de las redes neuronales. Este entrenamiento tiene como objetivo el ajuste de los pesos sinápticos de la red. Se considera un buen ajuste de pesos aquel que minimiza el error a la salida de una red. De manera breve los principales pasos de este proceso de entrenamiento son:
+
+\begin{itemize}
+\item Inicialización. Se asigna un valor por defecto a los distintos pesos. Se considera un paso determinante, puesto que una mala inicialización puede implicar la saturación de los gradientes en los nodos.
+\par Los siguientes pasos constituyen un proceso iterativo, durante el cual se irá minimizando progresivamente el error asociado a la salida de la red. 
+\item Paso hacia delante  (\textit{Fast Forward}). Se comprueba el comportamiento de la red, se calcula la salida de la red para un conjunto de muestras de entrada. 
+\item Estimación del error de salida. Dada una salida, se evalúa la diferencia con respecto a la salida esperada según las muestras de entrada. 
+\item Se realiza la propagación hacia atrás. Dado el error a la salida se realizan el conjunto de derivadas necesarias recorriendo desde la salida hacia la entrada la red, identificando el comportamiento del gradiente del error con respecto a los diferentes pesos de la red.
+\item Se modifican los pesos en función del gradiente previamente calculado. 
+
+\end{itemize}
+
+\subsubsection{Topología de Conexionado}
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.30]{images/entrenamiento.png}
+\caption{Esquema de una red neuronal densa de una sola capa oculta }
+\label{fig:DNN_5}
+\end{figure}
 
 \newpage
 \subsection{Red Neuronal Convolucional}

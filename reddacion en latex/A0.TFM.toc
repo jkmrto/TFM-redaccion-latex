@@ -45,14 +45,15 @@
 \contentsline {subsection}{\numberline {3.2.1}Red Neuronal Densa}{38}{subsection.3.2.1}
 \contentsline {subsubsection}{Funci\'on de Activaci\'on}{39}{subsubsection*.22}
 \contentsline {subsubsection}{Topolog\IeC {\'\i }a de Conexionado}{40}{subsubsection*.23}
-\contentsline {subsubsection}{Propagaci\'on Hacia Atr\'as}{40}{subsubsection*.24}
-\contentsline {subsection}{\numberline {3.2.2}Red Neuronal Convolucional}{41}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Herramientas Complementarias}{42}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{42}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{42}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{42}{subsection.3.3.3}
-\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{43}{chapter*.25}
-\contentsline {chapter}{\numberline {A}Ap\'endice}{45}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Primera secci\'on}{45}{section.Alph1.1}
-\contentsline {chapter}{\'Indice alfab\'etico}{52}{section*.27}
+\contentsline {subsubsection}{Propagaci\'on Hacia Atr\'as}{41}{subsubsection*.24}
+\contentsline {subsubsection}{Topolog\IeC {\'\i }a de Conexionado}{42}{subsubsection*.25}
+\contentsline {subsection}{\numberline {3.2.2}Red Neuronal Convolucional}{43}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Herramientas Complementarias}{44}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{44}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{44}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{44}{subsection.3.3.3}
+\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{45}{chapter*.26}
+\contentsline {chapter}{\numberline {A}Ap\'endice}{47}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Primera secci\'on}{47}{section.Alph1.1}
+\contentsline {chapter}{\'Indice alfab\'etico}{54}{section*.28}
 \contentsfinish 

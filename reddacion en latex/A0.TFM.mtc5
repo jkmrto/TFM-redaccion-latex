@@ -10,5 +10,10 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Red Neuronal Densa}{\reset@font\mtcSSfont 38}{subsection.3.2.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Funci\'on de Activaci\'on}{\reset@font\mtcSSSfont 39}{subsubsection*.22}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Topolog\IeC {\'\i }a de Conexionado}{\reset@font\mtcSSSfont 40}{subsubsection*.23}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Propagaci\'on Hacia Atr\'as}{\reset@font\mtcSSSfont 40}{subsubsection*.24}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Herramientas Complementarias}{\reset@font\mtcSfont 41}{section.3.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Propagaci\'on Hacia Atr\'as}{\reset@font\mtcSSSfont 41}{subsubsection*.24}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Topolog\IeC {\'\i }a de Conexionado}{\reset@font\mtcSSSfont 42}{subsubsection*.25}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Red Neuronal Convolucional}{\reset@font\mtcSSfont 43}{subsection.3.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Herramientas Complementarias}{\reset@font\mtcSfont 44}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}M\'aquina de Vectores de Soporte}{\reset@font\mtcSSfont 44}{subsection.3.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{\reset@font\mtcSSfont 44}{subsection.3.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}M\'etricas de Validaci\'on}{\reset@font\mtcSSfont 44}{subsection.3.3.3}}

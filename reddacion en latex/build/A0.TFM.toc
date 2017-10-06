@@ -20,16 +20,44 @@
 \contentsline {section}{\numberline {2.2}Base de datos ADNI}{13}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Im\'agenes m\'edicas}{13}{subsection.2.2.1}
 \contentsline {subsubsection}{Im\'agenes MRI}{14}{subsubsection*.14}
-\contentsline {subsubsection}{Im\'agenes PET}{14}{subsubsection*.15}
+\contentsline {subsubsection}{Im\'agenes PET}{15}{subsubsection*.15}
 \contentsline {section}{\numberline {2.3}Estado del Arte}{16}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Modelos Generadores}{16}{subsection.2.3.1}
 \contentsline {subsubsection}{Modelos cl\'asicos}{16}{subsubsection*.16}
 \contentsline {subsubsection}{La M\'aquina de Boltzmann}{17}{subsubsection*.17}
-\contentsline {subsection}{\numberline {2.3.2}Diagn\'osticos Asistido por Computador de AD}{17}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Entorno de desarrollo}{19}{section.2.4}
-\contentsline {chapter}{\numberline {3}El auto-encoder variacional}{21}{chapter.3}
-\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{23}{chapter*.18}
-\contentsline {chapter}{\numberline {A}Ap\'endice}{25}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Primera secci\'on}{25}{section.Alph1.1}
-\contentsline {chapter}{\'Indice alfab\'etico}{30}{section*.20}
+\contentsline {subsubsection}{Autoencoder}{19}{subsubsection*.18}
+\contentsline {subsubsection}{Red Generativa Adversaria}{21}{subsubsection*.19}
+\contentsline {subsubsection}{Trabajos Previos}{21}{subsubsection*.20}
+\contentsline {subsection}{\numberline {2.3.2}Diagn\'ostico Asistido por Computador de AD}{23}{subsection.2.3.2}
+\contentsline {subsubsection}{M\'etodos Clasicos}{23}{subsubsection*.21}
+\contentsline {subsection}{\numberline {2.3.3}M\'etodos de Aprendizaje Profundo}{24}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}Entorno de desarrollo}{27}{section.2.4}
+\contentsline {chapter}{\numberline {3}Fundamentos Te\'oricos}{29}{chapter.3}
+\contentsline {section}{\numberline {3.1}Autoencoder Variacional}{29}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Modelo de Variables Latentes}{29}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Modelo Probabil\IeC {\'\i }stico}{30}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Funci\'on Objetivo}{31}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Optimizaci\'on de la funci\'on objetivo}{32}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}El truco de Reparametrizaci\'on}{34}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Interpretaci\'on de la funci\'on objetivo}{35}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Codificaci\'on y Decodificaci\'on}{35}{subsection.3.1.7}
+\contentsline {section}{\numberline {3.2}Redes Neuronales}{38}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Red Neuronal Densa}{38}{subsection.3.2.1}
+\contentsline {subsubsection}{Funci\'on de Activaci\'on}{39}{subsubsection*.22}
+\contentsline {subsubsection}{Topolog\IeC {\'\i }a de Conexionado}{40}{subsubsection*.23}
+\contentsline {subsubsection}{Propagaci\'on Hacia Atr\'as}{41}{subsubsection*.24}
+\contentsline {subsection}{\numberline {3.2.2}Red Neuronal Convolucional}{43}{subsection.3.2.2}
+\contentsline {subsubsection}{Filtros Locales}{45}{subsubsection*.25}
+\contentsline {subsubsection}{Pesos Compartidos}{46}{subsubsection*.26}
+\contentsline {subsubsection}{Agrupamiento}{46}{subsubsection*.27}
+\contentsline {section}{\numberline {3.3}Herramientas Complementarias}{48}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{48}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{48}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{48}{subsection.3.3.3}
+\contentsline {chapter}{\numberline {4}Trabajo Realizado}{49}{chapter.4}
+\contentsline {chapter}{\numberline {5}Resultados}{51}{chapter.5}
+\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{53}{chapter*.28}
+\contentsline {chapter}{\numberline {A}Ap\'endice}{55}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Primera secci\'on}{55}{section.Alph1.1}
+\contentsline {chapter}{\'Indice alfab\'etico}{62}{section*.30}
 \contentsfinish 

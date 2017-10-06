@@ -46,14 +46,16 @@
 \contentsline {subsubsection}{Funci\'on de Activaci\'on}{39}{subsubsection*.22}
 \contentsline {subsubsection}{Topolog\IeC {\'\i }a de Conexionado}{40}{subsubsection*.23}
 \contentsline {subsubsection}{Propagaci\'on Hacia Atr\'as}{41}{subsubsection*.24}
-\contentsline {subsubsection}{Topolog\IeC {\'\i }a de Conexionado}{42}{subsubsection*.25}
 \contentsline {subsection}{\numberline {3.2.2}Red Neuronal Convolucional}{43}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Herramientas Complementarias}{44}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{44}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{44}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{44}{subsection.3.3.3}
-\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{45}{chapter*.26}
-\contentsline {chapter}{\numberline {A}Ap\'endice}{47}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Primera secci\'on}{47}{section.Alph1.1}
-\contentsline {chapter}{\'Indice alfab\'etico}{54}{section*.28}
+\contentsline {subsubsection}{Filtros Locales}{45}{subsubsection*.25}
+\contentsline {subsubsection}{Pesos Compartidos}{46}{subsubsection*.26}
+\contentsline {subsubsection}{Agrupamiento}{46}{subsubsection*.27}
+\contentsline {section}{\numberline {3.3}Herramientas Complementarias}{48}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{48}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{48}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{48}{subsection.3.3.3}
+\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{49}{chapter*.28}
+\contentsline {chapter}{\numberline {A}Ap\'endice}{51}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Primera secci\'on}{51}{section.Alph1.1}
+\contentsline {chapter}{\'Indice alfab\'etico}{58}{section*.30}
 \contentsfinish 

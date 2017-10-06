@@ -13,10 +13,15 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Base de datos ADNI}{\reset@font\mtcSfont 13}{section.2.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Im\'agenes m\'edicas}{\reset@font\mtcSSfont 13}{subsection.2.2.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Im\'agenes MRI}{\reset@font\mtcSSSfont 14}{subsubsection*.14}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Im\'agenes PET}{\reset@font\mtcSSSfont 14}{subsubsection*.15}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Im\'agenes PET}{\reset@font\mtcSSSfont 15}{subsubsection*.15}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Estado del Arte}{\reset@font\mtcSfont 16}{section.2.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.1}Modelos Generadores}{\reset@font\mtcSSfont 16}{subsection.2.3.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Modelos cl\'asicos}{\reset@font\mtcSSSfont 16}{subsubsection*.16}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode La M\'aquina de Boltzmann}{\reset@font\mtcSSSfont 17}{subsubsection*.17}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.2}Diagn\'osticos Asistido por Computador de AD}{\reset@font\mtcSSfont 17}{subsection.2.3.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Entorno de desarrollo}{\reset@font\mtcSfont 19}{section.2.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Autoencoder}{\reset@font\mtcSSSfont 19}{subsubsection*.18}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Red Generativa Adversaria}{\reset@font\mtcSSSfont 21}{subsubsection*.19}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Trabajos Previos}{\reset@font\mtcSSSfont 21}{subsubsection*.20}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.2}Diagn\'ostico Asistido por Computador de AD}{\reset@font\mtcSSfont 23}{subsection.2.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode M\'etodos Clasicos}{\reset@font\mtcSSSfont 23}{subsubsection*.21}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.3.3}M\'etodos de Aprendizaje Profundo}{\reset@font\mtcSSfont 24}{subsection.2.3.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Entorno de desarrollo}{\reset@font\mtcSfont 27}{section.2.4}}

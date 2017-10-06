@@ -54,10 +54,14 @@
 \contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{48}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{48}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{48}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Trabajo Realizado}{49}{chapter.4}
-\contentsline {chapter}{\numberline {5}Resultados}{51}{chapter.5}
-\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{53}{chapter*.28}
-\contentsline {chapter}{\numberline {A}Ap\'endice}{55}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Primera secci\'on}{55}{section.Alph1.1}
-\contentsline {chapter}{\'Indice alfab\'etico}{62}{section*.30}
+\contentsline {chapter}{\numberline {4}Fundamentos Te\'oricos}{49}{chapter.4}
+\contentsline {section}{\numberline {4.1}Estudio basado en r\'egiones}{49}{section.4.1}
+\contentsline {section}{\numberline {4.2}Procesado de Neuroim\'agenes}{50}{section.4.2}
+\contentsline {section}{\numberline {4.3}Modelos Generativos}{51}{section.4.3}
+\contentsline {section}{\numberline {4.4}Modelos de Clasificaci\'on}{52}{section.4.4}
+\contentsline {chapter}{\numberline {5}Resultados}{53}{chapter.5}
+\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{55}{chapter*.28}
+\contentsline {chapter}{\numberline {A}Ap\'endice}{57}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Primera secci\'on}{57}{section.Alph1.1}
+\contentsline {chapter}{\'Indice alfab\'etico}{64}{section*.30}
 \contentsfinish 

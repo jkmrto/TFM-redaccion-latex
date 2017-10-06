@@ -1,3 +1,0 @@
-referencias bibliograficas
-
-https://jaan.io/what-is-variational-autoencoder-vae-tutorial/

@@ -54,9 +54,10 @@
 \contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{48}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{48}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{48}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Fundamentos Te\'oricos}{49}{chapter.4}
+\contentsline {chapter}{\numberline {4}Trabajo Realizado}{49}{chapter.4}
 \contentsline {section}{\numberline {4.1}Estudio basado en r\'egiones}{49}{section.4.1}
-\contentsline {section}{\numberline {4.2}Procesado de Neuroim\'agenes}{50}{section.4.2}
+\contentsline {section}{\numberline {4.2}Tratamiento de Neuroim\'agenes}{50}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Fuente de Datos}{50}{subsection.4.2.1}
 \contentsline {section}{\numberline {4.3}Modelos Generativos}{51}{section.4.3}
 \contentsline {section}{\numberline {4.4}Modelos de Clasificaci\'on}{52}{section.4.4}
 \contentsline {chapter}{\numberline {5}Resultados}{53}{chapter.5}

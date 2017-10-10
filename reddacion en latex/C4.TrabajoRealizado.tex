@@ -6,13 +6,47 @@
 % Fecha:  	2014-02-01
 % Versión:	0.5.0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapterbegin{Fundamentos Teóricos}
+\chapterbegin{Trabajo Realizado} 
+
 \label{chp:Utiliz}
 %\minitoc
 \section{Estudio basado en régiones}
-fasdf
-\newpage
-\section{Procesado de Neuroimágenes}
+\par Uno de los principales problemas asociados al uso de redes de aprendizaje profundo son los altos costes de computación y los amplios tiempos necesarios para la caracterización del algoritmo de aprendizaje, si son aplicados a datos de alta dimensionalida.
+ 
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.6]{images/img_4.png}
+\caption{MRI image (a), MRI atlas (b), (c) PET image
+and (d) PET atlas (same slice is shown in MRI and PET
+images)}
+\label{fig:CD_1}
+\end{figure} 
+ 
+\par Dada la alta dimensionalidad de las imágenes empleadas, en este estudio se ha realizado una aproximación basada en régiones, dado que las diferentes áreas cerebrales evaluadas tienen un tamaño considerablemente menor que las neuroimágenes enteras. No obstante, esta aproximación tienes la ventaja de permitirnos caracterizar las régiones por separado. 
+
+
+\par Para la extracción de dichas régions de las neuroimágenes completas se ha empleado el atlas AAL (del inglés \textit{Automated Anatomical Labeling}). Este atlas permite obtener los vóxeles asociados a cada región de manera normalizada.  
+
+
+\par Dentro de estas régiones normalmente aquellas a las que se les atribuye que aportan información sobre la detección del AD se las denomina Régiones de Interés (ROI, del inglés \textit{Regions of Interest})
+
+\section{Tratamiento de Neuroimágenes}
+\subsection{Fuente de Datos}
+\par Las neuroimágenes empleadas en este trabajo pertenecen a la iniciativa ADNI. Se han empleado tanto imágenes MRI como imágenes PET. Se disponen de 229 imágenes MRI de sujetos NC y 188 de sujetos de AD. Por otro lado, en el caso de las imágenes PET se disponen de 70 imágenes de sujetos AD y 68 de sujetos NC. 
+
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{ l | c | r | l | l } 
+ Diagnosis & Number & Age &  Gender (M/F) & MMSE  \\ \hline
+ Control & 68  &  75.81 $\pm$ 4.93 & 43/25 & 29.06 $\pm$ 1.08 \\ \hline
+ AD & 70  & 73.06 $\pm$ & 46/24  & 22.84 $\pm$ 2.61  
+
+\end{tabular}
+ \caption{Datos Demográficos Imágenes MRI}
+
+\end{table}
+
 sadfasdf
 \newpage
 \section{Modelos Generativos}

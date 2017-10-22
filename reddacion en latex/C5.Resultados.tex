@@ -8,5 +8,36 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapterbegin{Resultados}
 \label{chp:Resultados}
+
+
+\section{Clasificicación}
+
+\subsubsection{Métricas de Evaluación}
+
+\par Hay diferentes medidas de precisión  diagnóstica que se relacinan con los diferentes aspectos del procedimiento del diagnóstico. Algunas se utilizan para evaluar la capacidad discriminativa de la prueba y otras para estimar su propiedad de predicción.
+
+
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{C{3cm}C{3cm}|C{3cm}|C{3cm}|}
+\cline{3-4}
+  &  & \multicolumn{2}{c|}{	\textbf{Condición Real}} \\ 
+\cline{3-4} 
+  &  & \textbf{Positivo} & \textbf{Negativo} \\ 
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Predicción}}} & \textbf{Positivo} &  Verdadero Positivo (VP)                 &               Falso    Positivo (FP) \\ \cline{2-4} 
+\multicolumn{1}{|c|}{}                            & \textbf{Negativo}     &  Falso Negativo (FN)               & Verdadero Negativo (VN)              \\ \hline
+\end{tabular}
+\caption{Tabla de Nomenclatura Estadística en Clasificación}
+\end{table}
+
+\subsubsection{f1\_score}
+\subsubsection{recall score}
+\subsubsection{accuracy}
+\subsubsection{area under the curve}
+\subsubsection{precision}
+\subsubsection{?}
+
 %\minitoc
 \chapterend{}

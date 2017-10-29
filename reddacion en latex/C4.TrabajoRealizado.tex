@@ -176,10 +176,120 @@ Región &  NºVóxeles \\ \hline
 \section{Modelos Generativos}
 asddfasdf
 \newpage
-\section{Modelos de Clasificación}
-asdfasdf
+\section{Modelo de Clasificación}
+\par El diseño y aplicación de un modelo de clasificación es de especial interés dado que la capacidad de clasificación esta intimamente relacionada con el método de extracción características empleado, que en nuestro caso será el autoencoder variacional.
 
 
+\par Tal y como ya se ha explicado préviamente, el autoencoder es capaz generar un conjunto de características representativas en lo que se denomina espacio latente, siendo estas variables obtenidas sobre las que posteriormente se les aplicará el proceso de clasificación. Estas variables latentes serán genereadas por región, por lo que al final tendremos tantos vectores de variables latentes como número de régiones se estén evaluando.
+
+\par Es importante notar que el procesamiento de las régiones por separado implica la aplicación de un procedimiento de clasificación en el cuál debemos de unir la información de evaluación de cada región. En la figura \ref{fig:main_clasificacion} se puede apreciar lo mencionado anteriormente.
+
+\par A lo largo de esta sección se detallará el método explicando el procedimiento realizado y mencionando algunas de las problemáticas encontradas como son la extracción de características por región o el mezclado de información para los dos tipo de imágenes MRI.
+
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/ClasificacionMainEsquema.png}
+\caption{Esquema básico de Autoencoder. Cabe notar como será el código generado en la capa latente lo que se empleará para la clasificación posterior}
+\label{fig:main_clasificacion}
+\end{figure} 
+
+\par 
+
+
+\subsection{Extracción de Características por Región}
+\par El proceso de extracción de características aplica el Autoencoder Variacional. Una esquematización de dicho proceso se puede observar en la imagen \ref{fig:Extracción_1}. Es de esperar que el aumento del tamaño de la capa latente, esto es, que haya más neuronas en dicha capa conlleve una mejora en los resultados de la clasificación dado que se ha comprimido menos la información de las imágenes.
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/RegionExtractFeatures.png}
+\caption{Diagrama básico del proceso de extracción de características aplicando el Autoencoder Variacional}
+\label{fig:Extracción_1}
+\end{figure} 
+
+
+
+\par Se pueden diferencia dos fases, la de entrenamiento y la de extracción de características, mientras que el tercer bloque de la figura \ref{fig:Extracción_1} hace referencia al vector de variables esperadas a la salida.
+\begin{itemize}
+\item \textbf{Entrenamiento del Autoencoder}. El entrenamiento tiene como objetivo caracterizar el Autoencoder en función del tipo de muestra, en nuestro caso en función de la tipología de neuroimagen de cada una de las régiones evaluadas. Es este entrenamiento el proceso mas costoso, tanto computacionalmente como en términos de coste en el desarrollo de este modelo de clasificación. 
+\par Este proceso permite la extracción efectiva de características ya que es el que ajusta el conjunto de parámetros encargados de generar el conjunto de variables latentes en función del tipo de imagen de entrada. 
+
+\item \textbf{Codificación}. Dado el conjunto de vóxeles de cada neuroimagensociado a un tipo de región, este proceso se encargará de generar el conjunto de varibles latentes.
+
+\end{itemize}
+
+\par En esta fase es posible aplicar tanto el VAE de capas densas como el CVAE dado que lo importante es garantizar que la salida será un vector de variables sin importar el procedimiento de extracción empleado. No obstante, el tipo de VAE empleado modificará el procesado previo de las imagenes dado que si se emplea el VAE de redes densa se deberán vectorizar las imágenes mientras que si es el CVAE se deberá delimitar en 3D las distintas regiones.
+
+\par Un aspecto diferencial en el tratamiento de las imágenes PET y MRI es que para las MRI tenemos dos modalidades de imágenes, las de materia blanca y las de materia gris, es por ello que para las imágenes MRI necesitaremos dos \textit{Autoencoders} lo cual duplica el coste computacional. En la figura \ref{fig:Extracion_MRI} queda representado este concepto
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/RegionExtractFeaturesMRI.png}
+\caption{Diagrama básico del proceso de extracción de características para las imágenes MRI}
+\label{fig:Extracción_MRI}
+\end{figure} 
+
+\par Por lo tanto, para el caso de las imágenes MRI se tendrá a la salida un vector de características que será la concatenación de las variables latentes obtenidas a partir de las imágenes de materia blanca y materia gris.
+
+
+
+
+
+\newpage
+\subsection{Evaluación por Región}
+
+\
+
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/ExtracccionCaracteristicasVAE.png}
+\caption{Esquema del proceso de extracción de características aplicando el autoencoder variacional. Es importante notar como el procesamiento y al extracción de las características para cada una de las régiones evaluadas se reliaza por separado y es posteriormente cuando la información de las distintas régiones es concatenada}
+\label{fig:Clasificacion_2}
+\end{figure} 
+
+
+
+\newpage
+\subsection{Evaluación Conjunta}
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/Autoencoder.png}
+\caption{Esquema básico del proceso de clasificación}
+\label{fig:Codifiación}
+\end{figure} 
+
+\par 
+
+
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/Clasificacion.png}
+\caption{}
+Falta el SVM 
+\label{fig:Clasificacion_1}
+\end{figure} 
+
+
+
+
+
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/MRIClasificacionVAE.png}
+\caption{Este esq}
+\label{fig:Clasificacion_3}
+\end{figure} 
+
+
+\par En el caso de las imágenes MRI el procedimiento empleado en el procesamiento de las régiones es parcialmente diferente. 
+
+
+
+Falta el SVM 
 
 
 

@@ -10,16 +10,17 @@
 \label{chp:Resultados}
 
 
-\section{Clasificicación}
+\section{Clasificación}
 
 \subsubsection{Métricas de Evaluación}
 
-\par Hay diferentes medidas de precisión  diagnóstica que se relacinan con los diferentes aspectos del procedimiento del diagnóstico. Algunas se utilizan para evaluar la capacidad discriminativa de la prueba y otras para estimar su propiedad de predicción.
+\par Hay diferentes métricas de evaluación referidas a las característiscas del diagnóstico. Algunas se utilizan para evaluar la capacidad discriminativa de la prueba y otras para estimar su propiedad de predicción, siendo esta última muy sensible a las características de las poblaciones evaluadas. 
+\par Con objeto de valorar la calidad del test de diagnóstico es necesario saber cuán buena y confiable es una prueba. Esta cuantificación es llevada por el conjutno de medidas que se explicarán a continuación, las cuáles están basadas en los índices expuestos en la tabla \ref{table:metrics}.
 
 
 \begin{table}[]
 \centering
-\label{my-label}
+\label{table:metrics}
 \begin{tabular}{C{3cm}C{3cm}|C{3cm}|C{3cm}|}
 \cline{3-4}
   &  & \multicolumn{2}{c|}{	\textbf{Condición Real}} \\ 
@@ -32,12 +33,77 @@
 \caption{Tabla de Nomenclatura Estadística en Clasificación}
 \end{table}
 
-\subsubsection{f1\_score}
-\subsubsection{recall score}
-\subsubsection{accuracy}
-\subsubsection{area under the curve}
-\subsubsection{precision}
-\subsubsection{?}
+\subsubsection{Medida F}
+
+\begin{center}
+\begin{equation} \label{eq:p_x_gausiana}
+Valor-F = \frac{*VP}{2*VP + FP + FN}
+\end{equation}
+\end{center}
+
+
+\subsubsection{Recall. Sensibilidad}
+\par La precisión mide la capacidad de una prueba diagnóstica de identificar los sujetos enfermos con respecto al total de sujetos enfermos de la población.
+
+\begin{center}
+\begin{equation} \label{eq:p_x_gausiana}
+Precision = \frac{VP}{VP + FN}
+\end{equation}
+\end{center}
+
+
+\subsubsection{Especificidad. Precisión}
+\par La especificidad hace referencia a la capaciad de la prueba a identificar a los sujetos enfermos y excluir a aquellos que  no lo están. 
+\begin{center}
+\begin{equation} \label{eq:p_x_gausiana}
+Precision = \frac{VP}{VP + FP}
+\end{equation}
+\end{center}
+
+\subsubsection{Precision. Accuracy}
+\par Indica la capacidad la del método de clasificación de identificar tanto pacientes sanos como pacientes enfermos con respecto al total de la población.
+\begin{center}
+\begin{equation} \label{eq:p_x_gausiana}
+F1 = \frac{VP + VN}{NºSamples}
+\end{equation}
+\end{center}
+
+\subsubsection{Curva ROC}
+La curva ROC (del inglés \textit{Receiver Operating Characteristic}) es una técnica gráfica que
+nos permite evaluar la precisión del modelo estadístico para clasificar dos clases, AD y
+NOR. La curva se obtiene calculando la sensibilidad (proporción de resultados positivos
+verdaderos) y la especificidad del modelo en cada punto de corte posible, y trazando la
+sensibilidad frente a 1-especificidad (proporción de resultados falsos positivos).
+
+\par Cada punto en el espacio ROC muestra el equilibrio entre la sensibilidad y la
+especificidad, es decir, que el aumento de sensibilidad va acompañado de una disminución en la especificidad. 
+
+\begin{figure}[!hb]
+\centering
+\includegraphics[scale=0.5]{images/curva_roc.png}
+\caption{Representaciónd de la curva ROC}
+\label{fig:curva_roc}
+\end{figure}
+
+
+\par Cada punto de corte de una prueba de diagnóstico define un único punto en el
+espacio ROC, los diferentes puntos posibles definen la curva ROC. Esto es análogo a lo dicho para un solo punto, por tanto cuanto más se acerquen los puntos de la curva ROC a la coordenada ideal, más exacta será la prueba y viceversa, cuanto más se aleje peores
+resultados obtendremos.
+\subsubsection{Área bajo la curva}
+
+\par El área bajo la curva ROC se denomina AUC (del inglés \textit{area under the curve}) y se interpreta como el promedio de precisiones positivas y negativas. Este índice es especialmente útil en los estudio
+comparativo de pruebas de diagnóstico. Siendo deseable comparar toda la curva ROC
+en lugar de en un punto particular. 
+
+\subsection{Resultados Clasificación}
+
+
+\begin{figure}[!hb]
+\centering
+\includegraphics[scale=0.45]{images/SweepLatentLayerPET.png}
+\caption{Representaciónd de la curva ROC}
+\label{fig:curva_roc}
+\end{figure}
 
 %\minitoc
 \chapterend{}

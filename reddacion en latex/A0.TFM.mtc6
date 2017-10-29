@@ -1,11 +1,14 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Estudio basado en r\'egiones cerebrales}{\reset@font\mtcSfont 49}{section.4.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Tratamiento de Neuroim\'agenes}{\reset@font\mtcSfont 50}{section.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Fuente de Datos}{\reset@font\mtcSSfont 50}{subsection.4.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}Procesado Previo}{\reset@font\mtcSSfont 51}{subsection.4.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Preselecci\'on de V\'oxeles}{\reset@font\mtcSSSfont 52}{subsubsection*.28}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{\reset@font\mtcSSfont 53}{subsection.4.2.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Segmentaci\'on en vectores 1D}{\reset@font\mtcSSSfont 54}{subsubsection*.29}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Segmentaci\'on en im\'agenes 3D}{\reset@font\mtcSSSfont 54}{subsubsection*.30}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.4}Reconstrucci\'on a partir de R\'egiones}{\reset@font\mtcSSfont 55}{subsection.4.2.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Modelos Generativos}{\reset@font\mtcSfont 56}{section.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Modelos de Clasificaci\'on}{\reset@font\mtcSfont 57}{section.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Estudio basado en r\'egiones cerebrales}{\reset@font\mtcSfont 51}{section.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Tratamiento de Neuroim\'agenes}{\reset@font\mtcSfont 52}{section.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Fuente de Datos}{\reset@font\mtcSSfont 52}{subsection.4.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}Procesado Previo}{\reset@font\mtcSSfont 53}{subsection.4.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Preselecci\'on de V\'oxeles}{\reset@font\mtcSSSfont 54}{subsubsection*.28}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{\reset@font\mtcSSfont 55}{subsection.4.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Segmentaci\'on en vectores 1D}{\reset@font\mtcSSSfont 56}{subsubsection*.29}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Segmentaci\'on en im\'agenes 3D}{\reset@font\mtcSSSfont 56}{subsubsection*.30}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.4}Reconstrucci\'on a partir de R\'egiones}{\reset@font\mtcSSfont 57}{subsection.4.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Modelos Generativos}{\reset@font\mtcSfont 58}{section.4.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Modelo de Clasificaci\'on}{\reset@font\mtcSfont 59}{section.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Extracci\'on de Caracter\IeC {\'\i }sticas por Regi\'on}{\reset@font\mtcSSfont 60}{subsection.4.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Evaluaci\'on por Regi\'on}{\reset@font\mtcSSfont 62}{subsection.4.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Evaluaci\'on Conjunta}{\reset@font\mtcSSfont 63}{subsection.4.4.3}}

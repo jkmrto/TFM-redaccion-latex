@@ -37,16 +37,26 @@
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Desplazamiento del campo de recepci\'on}}{45}{figure.3.15}
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Representaci\'on de la extracci\'on de varias caracter\IeC {\'\i }sticas con varios filtros}}{46}{figure.3.16}
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Representaci\'on del proceso de agrupamiento (\textit {pooling})}}{47}{figure.3.17}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Representaci\'on de la separaci\'on binaria realizada por SVM}}{48}{figure.3.18}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Trabajo Realizado}{49}{chapter.4}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces MRI image (a), MRI atlas (b), (c) PET image and (d) PET atlas (same slice is shown in MRI and PET images)}}{50}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Muestra de neuroimagen MRI segmentada. (zquierda) MRI WM image. (Derecha) MRI GM image}}{51}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Muestra de neuroimagen PET normalizada}}{52}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{54}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{55}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Ejemplo de R\'egiones de im\'agenes PET segmentadas.(Izquierda) Regi\'on N\IeC {\textordmasculine } 20. (Derecha) Regi\'on N\IeC {\textordmasculine } 30. Capturas de im\'agenes 3D tomadas con el programa \textit {MRIcrGL}}}{55}{figure.4.6}
+\contentsline {xchapter}{Trabajo Realizado}{51}{chapter.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces MRI image (a), MRI atlas (b), (c) PET image and (d) PET atlas (same slice is shown in MRI and PET images)}}{52}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Muestra de neuroimagen MRI segmentada. (zquierda) MRI WM image. (Derecha) MRI GM image}}{53}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Muestra de neuroimagen PET normalizada}}{54}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{56}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{57}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Ejemplo de R\'egiones de im\'agenes PET segmentadas.(Izquierda) Regi\'on N\IeC {\textordmasculine } 20. (Derecha) Regi\'on N\IeC {\textordmasculine } 30. Capturas de im\'agenes 3D tomadas con el programa \textit {MRIcrGL}}}{57}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Esquema b\'asico de Autoencoder. Cabe notar como ser\'a el c\'odigo generado en la capa latente lo que se emplear\'a para la clasificaci\'on posterior}}{59}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Diagrama b\'asico del proceso de extracci\'on de caracter\IeC {\'\i }sticas aplicando el Autoencoder Variacional}}{60}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagrama b\'asico del proceso de extracci\'on de caracter\IeC {\'\i }sticas para las im\'agenes MRI}}{61}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Esquema del proceso de extracci\'on de caracter\IeC {\'\i }sticas aplicando el autoencoder variacional. Es importante notar como el procesamiento y al extracci\'on de las caracter\IeC {\'\i }sticas para cada una de las r\'egiones evaluadas se reliaza por separado y es posteriormente cuando la informaci\'on de las distintas r\'egiones es concatenada}}{62}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Esquema b\'asico del proceso de clasificaci\'on}}{63}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces }}{64}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Este esq}}{64}{figure.4.13}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Resultados}{59}{chapter.5}
+\contentsline {xchapter}{Resultados}{65}{chapter.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Representaci\'ond de la curva ROC}}{67}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Representaci\'ond de la curva ROC}}{68}{figure.5.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Ap\'endice}{63}{appendix.Alph1}
+\contentsline {xchapter}{Ap\'endice}{71}{appendix.Alph1}
 \contentsfinish 

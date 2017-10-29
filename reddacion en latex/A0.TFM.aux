@@ -38,10 +38,13 @@
 \newacro{TFG}[\AC@hyperlink{TFG}{TFG}]{Trabajo Fin de grado}
 \newacro{TFM}[\AC@hyperlink{TFM}{TFM}]{Trabajo Fin de M\'aster}
 \newacro{MCI}[\AC@hyperlink{MCI}{MCI}]{\textit  {Mild Cognitive Impairment}}
+\newacro{SVM}[\AC@hyperlink{SVM}{SVM}]{M\'aquina de Vectores de Soporte}
 \newacro{MRI}[\AC@hyperlink{MRI}{MRI}]{Im\'agen Resonancia Magn\'etica}
 \newacro{NC}[\AC@hyperlink{NC}{NC}]{\textit  {Normal Control}}
 \newacro{ROI}[\AC@hyperlink{ROI}{ROI}]{\textit  {R\'egiones de Interes}}
 \newacro{UMA}[\AC@hyperlink{UMA}{UMA}]{Universidad de M\'alaga}
+\newacro{VAE}[\AC@hyperlink{VAE}{VAE}]{Autoencoder Variacional}
+\newacro{CVAE}[\AC@hyperlink{CVAE}{CVAE}]{Autoencoder Variacional Convolucional}
 \newacro{WM}[\AC@hyperlink{WM}{WM}]{Materia Blanca}
 \@writefile{@@@}{\chapterbegin }
 \citation{Nations}
@@ -290,73 +293,101 @@
 \newlabel{fig:CNN_}{{3.17}{47}{Representación del proceso de agrupamiento (\textit {pooling})}{figure.3.17}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Herramientas Complementarias}{48}{section.3.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{48}{subsection.3.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{48}{subsection.3.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{48}{subsection.3.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces Representaci\'on de la separaci\'on binaria realizada por SVM}}{48}{figure.3.18}}
+\newlabel{fig:SVM_1}{{3.18}{48}{Representación de la separación binaria realizada por SVM}{figure.3.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{49}{subsection.3.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{49}{subsection.3.3.3}}
 \citation{AAL}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Trabajo Realizado}{49}{chapter.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Trabajo Realizado}{51}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Trabajo Realizado}{49}{chapter.4}}
-\@writefile{lot}{\contentsline {xchapter}{Trabajo Realizado}{49}{chapter.4}}
-\newlabel{chp:Utiliz}{{4}{49}{Trabajo Realizado}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Estudio basado en r\'egiones cerebrales}{49}{section.4.1}}
+\@writefile{lof}{\contentsline {xchapter}{Trabajo Realizado}{51}{chapter.4}}
+\@writefile{lot}{\contentsline {xchapter}{Trabajo Realizado}{51}{chapter.4}}
+\newlabel{chp:Utiliz}{{4}{51}{Trabajo Realizado}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Estudio basado en r\'egiones cerebrales}{51}{section.4.1}}
 \citation{VBM}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces MRI image (a), MRI atlas (b), (c) PET image and (d) PET atlas (same slice is shown in MRI and PET images)}}{50}{figure.4.1}}
-\newlabel{fig:Atlas}{{4.1}{50}{MRI image (a), MRI atlas (b), (c) PET image and (d) PET atlas (same slice is shown in MRI and PET images)}{figure.4.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Tratamiento de Neuroim\'agenes}{50}{section.4.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Fuente de Datos}{50}{subsection.4.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces MRI image (a), MRI atlas (b), (c) PET image and (d) PET atlas (same slice is shown in MRI and PET images)}}{52}{figure.4.1}}
+\newlabel{fig:Atlas}{{4.1}{52}{MRI image (a), MRI atlas (b), (c) PET image and (d) PET atlas (same slice is shown in MRI and PET images)}{figure.4.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Tratamiento de Neuroim\'agenes}{52}{section.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Fuente de Datos}{52}{subsection.4.2.1}}
 \citation{VBM_2}
 \citation{VBM_3}
 \citation{PET_norm}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Procesado Previo}{51}{subsection.4.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Muestra de neuroimagen MRI segmentada. (zquierda) MRI WM image. (Derecha) MRI GM image}}{51}{figure.4.2}}
-\newlabel{fig:Atlas}{{4.2}{51}{Muestra de neuroimagen MRI segmentada. (zquierda) MRI WM image. (Derecha) MRI GM image}{figure.4.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Datos Demogr\'aficos Im\'agenes MRI}}{51}{table.4.1}}
-\newlabel{tb:Demografia_1}{{4.1}{51}{Datos Demográficos Imágenes MRI}{table.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Muestra de neuroimagen PET normalizada}}{52}{figure.4.3}}
-\newlabel{fig:Imagen PET normalizada}{{4.3}{52}{Muestra de neuroimagen PET normalizada}{figure.4.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Preselecci\'on de V\'oxeles}{52}{subsubsection*.28}}
-\newlabel{eq:t-test}{{4.1}{52}{Preselección de Vóxeles}{equation.4.2.1}{}}
-\newlabel{eq:t-test-means}{{4.2}{53}{Preselección de Vóxeles}{equation.4.2.2}{}}
-\newlabel{eq:t-test-vars}{{4.3}{53}{Preselección de Vóxeles}{equation.4.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{53}{subsection.4.2.3}}
-\@writefile{toc}{\contentsline {subsubsection}{Segmentaci\'on en vectores 1D}{54}{subsubsection*.29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{54}{figure.4.4}}
-\newlabel{fig:Segm1}{{4.4}{54}{Proceso de segmentación de vectores por región}{figure.4.4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Segmentaci\'on en im\'agenes 3D}{54}{subsubsection*.30}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces N\'umero de v\'oxeles en imagen MRI por cada regi\'on}}{54}{table.4.2}}
-\newlabel{tb:MRI_voxels_per_region}{{4.2}{54}{Número de vóxeles en imagen MRI por cada región}{table.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{55}{figure.4.5}}
-\newlabel{fig:Segm3}{{4.5}{55}{Proceso de segmentación de vectores por región}{figure.4.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Ejemplo de R\'egiones de im\'agenes PET segmentadas.(Izquierda) Regi\'on N\IeC {\textordmasculine } 20. (Derecha) Regi\'on N\IeC {\textordmasculine } 30. Capturas de im\'agenes 3D tomadas con el programa \textit  {MRIcrGL}}}{55}{figure.4.6}}
-\newlabel{fig:Segm3_example}{{4.6}{55}{Ejemplo de Régiones de imágenes PET segmentadas.(Izquierda) Región Nº 20. (Derecha) Región Nº 30. Capturas de imágenes 3D tomadas con el programa \textit {MRIcrGL}}{figure.4.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Reconstrucci\'on a partir de R\'egiones}{55}{subsection.4.2.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Modelos Generativos}{56}{section.4.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Modelos de Clasificaci\'on}{57}{section.4.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Resultados}{59}{chapter.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Procesado Previo}{53}{subsection.4.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Muestra de neuroimagen MRI segmentada. (zquierda) MRI WM image. (Derecha) MRI GM image}}{53}{figure.4.2}}
+\newlabel{fig:Atlas}{{4.2}{53}{Muestra de neuroimagen MRI segmentada. (zquierda) MRI WM image. (Derecha) MRI GM image}{figure.4.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Datos Demogr\'aficos Im\'agenes MRI}}{53}{table.4.1}}
+\newlabel{tb:Demografia_1}{{4.1}{53}{Datos Demográficos Imágenes MRI}{table.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Muestra de neuroimagen PET normalizada}}{54}{figure.4.3}}
+\newlabel{fig:Imagen PET normalizada}{{4.3}{54}{Muestra de neuroimagen PET normalizada}{figure.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Preselecci\'on de V\'oxeles}{54}{subsubsection*.28}}
+\newlabel{eq:t-test}{{4.1}{54}{Preselección de Vóxeles}{equation.4.2.1}{}}
+\newlabel{eq:t-test-means}{{4.2}{55}{Preselección de Vóxeles}{equation.4.2.2}{}}
+\newlabel{eq:t-test-vars}{{4.3}{55}{Preselección de Vóxeles}{equation.4.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{55}{subsection.4.2.3}}
+\@writefile{toc}{\contentsline {subsubsection}{Segmentaci\'on en vectores 1D}{56}{subsubsection*.29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{56}{figure.4.4}}
+\newlabel{fig:Segm1}{{4.4}{56}{Proceso de segmentación de vectores por región}{figure.4.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Segmentaci\'on en im\'agenes 3D}{56}{subsubsection*.30}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces N\'umero de v\'oxeles en imagen MRI por cada regi\'on}}{56}{table.4.2}}
+\newlabel{tb:MRI_voxels_per_region}{{4.2}{56}{Número de vóxeles en imagen MRI por cada región}{table.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{57}{figure.4.5}}
+\newlabel{fig:Segm3}{{4.5}{57}{Proceso de segmentación de vectores por región}{figure.4.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Ejemplo de R\'egiones de im\'agenes PET segmentadas.(Izquierda) Regi\'on N\IeC {\textordmasculine } 20. (Derecha) Regi\'on N\IeC {\textordmasculine } 30. Capturas de im\'agenes 3D tomadas con el programa \textit  {MRIcrGL}}}{57}{figure.4.6}}
+\newlabel{fig:Segm3_example}{{4.6}{57}{Ejemplo de Régiones de imágenes PET segmentadas.(Izquierda) Región Nº 20. (Derecha) Región Nº 30. Capturas de imágenes 3D tomadas con el programa \textit {MRIcrGL}}{figure.4.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Reconstrucci\'on a partir de R\'egiones}{57}{subsection.4.2.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Modelos Generativos}{58}{section.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Modelo de Clasificaci\'on}{59}{section.4.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Esquema b\'asico de Autoencoder. Cabe notar como ser\'a el c\'odigo generado en la capa latente lo que se emplear\'a para la clasificaci\'on posterior}}{59}{figure.4.7}}
+\newlabel{fig:main_clasificacion}{{4.7}{59}{Esquema básico de Autoencoder. Cabe notar como será el código generado en la capa latente lo que se empleará para la clasificación posterior}{figure.4.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Extracci\'on de Caracter\IeC {\'\i }sticas por Regi\'on}{60}{subsection.4.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Diagrama b\'asico del proceso de extracci\'on de caracter\IeC {\'\i }sticas aplicando el Autoencoder Variacional}}{60}{figure.4.8}}
+\newlabel{fig:Extracci\'on_1}{{4.8}{60}{Diagrama básico del proceso de extracción de características aplicando el Autoencoder Variacional}{figure.4.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagrama b\'asico del proceso de extracci\'on de caracter\IeC {\'\i }sticas para las im\'agenes MRI}}{61}{figure.4.9}}
+\newlabel{fig:Extracci\'on_MRI}{{4.9}{61}{Diagrama básico del proceso de extracción de características para las imágenes MRI}{figure.4.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Evaluaci\'on por Regi\'on}{62}{subsection.4.4.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Esquema del proceso de extracci\'on de caracter\IeC {\'\i }sticas aplicando el autoencoder variacional. Es importante notar como el procesamiento y al extracci\'on de las caracter\IeC {\'\i }sticas para cada una de las r\'egiones evaluadas se reliaza por separado y es posteriormente cuando la informaci\'on de las distintas r\'egiones es concatenada}}{62}{figure.4.10}}
+\newlabel{fig:Clasificacion_2}{{4.10}{62}{Esquema del proceso de extracción de características aplicando el autoencoder variacional. Es importante notar como el procesamiento y al extracción de las características para cada una de las régiones evaluadas se reliaza por separado y es posteriormente cuando la información de las distintas régiones es concatenada}{figure.4.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Evaluaci\'on Conjunta}{63}{subsection.4.4.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Esquema b\'asico del proceso de clasificaci\'on}}{63}{figure.4.11}}
+\newlabel{fig:Codifiaci\'on}{{4.11}{63}{Esquema básico del proceso de clasificación}{figure.4.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces }}{64}{figure.4.12}}
+\newlabel{fig:Clasificacion_1}{{4.12}{64}{}{figure.4.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces Este esq}}{64}{figure.4.13}}
+\newlabel{fig:Clasificacion_3}{{4.13}{64}{Este esq}{figure.4.13}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Resultados}{65}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Resultados}{59}{chapter.5}}
-\@writefile{lot}{\contentsline {xchapter}{Resultados}{59}{chapter.5}}
-\newlabel{chp:Resultados}{{5}{59}{Resultados}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Clasificicaci\'on}{59}{section.5.1}}
-\@writefile{toc}{\contentsline {subsubsection}{M\'etricas de Evaluaci\'on}{59}{subsubsection*.31}}
-\@writefile{toc}{\contentsline {subsubsection}{f1\_score}{59}{subsubsection*.32}}
-\@writefile{toc}{\contentsline {subsubsection}{recall score}{59}{subsubsection*.33}}
-\@writefile{toc}{\contentsline {subsubsection}{accuracy}{59}{subsubsection*.34}}
-\@writefile{toc}{\contentsline {subsubsection}{area under the curve}{59}{subsubsection*.35}}
-\@writefile{toc}{\contentsline {subsubsection}{precision}{59}{subsubsection*.36}}
-\@writefile{toc}{\contentsline {subsubsection}{?}{59}{subsubsection*.37}}
-\newlabel{my-label}{{5.1}{59}{Métricas de Evaluación}{subsubsection*.31}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Tabla de Nomenclatura Estad\IeC {\'\i }stica en Clasificaci\'on}}{59}{table.5.1}}
+\@writefile{lof}{\contentsline {xchapter}{Resultados}{65}{chapter.5}}
+\@writefile{lot}{\contentsline {xchapter}{Resultados}{65}{chapter.5}}
+\newlabel{chp:Resultados}{{5}{65}{Resultados}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Clasificaci\'on}{65}{section.5.1}}
+\@writefile{toc}{\contentsline {subsubsection}{M\'etricas de Evaluaci\'on}{65}{subsubsection*.31}}
+\@writefile{toc}{\contentsline {subsubsection}{Medida F}{65}{subsubsection*.32}}
+\newlabel{eq:p_x_gausiana}{{5.1}{65}{Medida F}{equation.5.1.1}{}}
+\newlabel{table:metrics}{{5.1}{65}{Métricas de Evaluación}{subsubsection*.31}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Tabla de Nomenclatura Estad\IeC {\'\i }stica en Clasificaci\'on}}{65}{table.5.1}}
+\@writefile{toc}{\contentsline {subsubsection}{Recall. Sensibilidad}{66}{subsubsection*.33}}
+\newlabel{eq:p_x_gausiana}{{5.2}{66}{Recall. Sensibilidad}{equation.5.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Especificidad. Precisi\'on}{66}{subsubsection*.34}}
+\newlabel{eq:p_x_gausiana}{{5.3}{66}{Especificidad. Precisión}{equation.5.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Precision. Accuracy}{66}{subsubsection*.35}}
+\newlabel{eq:p_x_gausiana}{{5.4}{66}{Precision. Accuracy}{equation.5.1.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Curva ROC}{66}{subsubsection*.36}}
+\@writefile{toc}{\contentsline {subsubsection}{\'Area bajo la curva}{67}{subsubsection*.37}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Resultados Clasificaci\'on}{67}{subsection.5.1.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Representaci\'ond de la curva ROC}}{67}{figure.5.1}}
+\newlabel{fig:curva_roc}{{5.1}{67}{Representaciónd de la curva ROC}{figure.5.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Representaci\'ond de la curva ROC}}{68}{figure.5.2}}
+\newlabel{fig:curva_roc}{{5.2}{68}{Representaciónd de la curva ROC}{figure.5.2}{}}
 \@writefile{@@@}{\chapterbegin }
-\@writefile{toc}{\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{61}{chapter*.38}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Ap\'endice}{63}{appendix.Alph1}}
+\@writefile{toc}{\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{69}{chapter*.38}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Ap\'endice}{71}{appendix.Alph1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Ap\'endice}{63}{appendix.Alph1}}
-\@writefile{lot}{\contentsline {xchapter}{Ap\'endice}{63}{appendix.Alph1}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Primera secci\'on}{63}{section.Alph1.1}}
+\@writefile{lof}{\contentsline {xchapter}{Ap\'endice}{71}{appendix.Alph1}}
+\@writefile{lot}{\contentsline {xchapter}{Ap\'endice}{71}{appendix.Alph1}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Primera secci\'on}{71}{section.Alph1.1}}
 \bibcite{Alzheimer1}{1}
 \bibcite{ReservaCognitiva}{2}
 \bibcite{DiagnosticoNormal}{3}
@@ -427,6 +458,8 @@
 \bibcite{VBM_2}{67}
 \bibcite{VBM_3}{68}
 \bibcite{PET_norm}{69}
-\@writefile{toc}{\contentsline {chapter}{\'Indice alfab\'etico}{70}{section*.40}}
+\bibcite{Measures_1}{70}
+\bibcite{Measures_2}{71}
+\@writefile{toc}{\contentsline {chapter}{\'Indice alfab\'etico}{79}{section*.40}}
 \global\mtcsecondpartfalse
 \ttl@finishall

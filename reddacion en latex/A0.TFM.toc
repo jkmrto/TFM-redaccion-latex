@@ -52,31 +52,35 @@
 \contentsline {subsubsection}{Agrupamiento}{46}{subsubsection*.27}
 \contentsline {section}{\numberline {3.3}Herramientas Complementarias}{48}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{48}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{48}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{48}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Trabajo Realizado}{49}{chapter.4}
-\contentsline {section}{\numberline {4.1}Estudio basado en r\'egiones cerebrales}{49}{section.4.1}
-\contentsline {section}{\numberline {4.2}Tratamiento de Neuroim\'agenes}{50}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Fuente de Datos}{50}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Procesado Previo}{51}{subsection.4.2.2}
-\contentsline {subsubsection}{Preselecci\'on de V\'oxeles}{52}{subsubsection*.28}
-\contentsline {subsection}{\numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{53}{subsection.4.2.3}
-\contentsline {subsubsection}{Segmentaci\'on en vectores 1D}{54}{subsubsection*.29}
-\contentsline {subsubsection}{Segmentaci\'on en im\'agenes 3D}{54}{subsubsection*.30}
-\contentsline {subsection}{\numberline {4.2.4}Reconstrucci\'on a partir de R\'egiones}{55}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Modelos Generativos}{56}{section.4.3}
-\contentsline {section}{\numberline {4.4}Modelos de Clasificaci\'on}{57}{section.4.4}
-\contentsline {chapter}{\numberline {5}Resultados}{59}{chapter.5}
-\contentsline {section}{\numberline {5.1}Clasificicaci\'on}{59}{section.5.1}
-\contentsline {subsubsection}{M\'etricas de Evaluaci\'on}{59}{subsubsection*.31}
-\contentsline {subsubsection}{f1\_score}{59}{subsubsection*.32}
-\contentsline {subsubsection}{recall score}{59}{subsubsection*.33}
-\contentsline {subsubsection}{accuracy}{59}{subsubsection*.34}
-\contentsline {subsubsection}{area under the curve}{59}{subsubsection*.35}
-\contentsline {subsubsection}{precision}{59}{subsubsection*.36}
-\contentsline {subsubsection}{?}{59}{subsubsection*.37}
-\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{61}{chapter*.38}
-\contentsline {chapter}{\numberline {A}Ap\'endice}{63}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Primera secci\'on}{63}{section.Alph1.1}
-\contentsline {chapter}{\'Indice alfab\'etico}{70}{section*.40}
+\contentsline {subsection}{\numberline {3.3.2}Validaci\'on Cruzada (K-fold)}{49}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}M\'etricas de Validaci\'on}{49}{subsection.3.3.3}
+\contentsline {chapter}{\numberline {4}Trabajo Realizado}{51}{chapter.4}
+\contentsline {section}{\numberline {4.1}Estudio basado en r\'egiones cerebrales}{51}{section.4.1}
+\contentsline {section}{\numberline {4.2}Tratamiento de Neuroim\'agenes}{52}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Fuente de Datos}{52}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Procesado Previo}{53}{subsection.4.2.2}
+\contentsline {subsubsection}{Preselecci\'on de V\'oxeles}{54}{subsubsection*.28}
+\contentsline {subsection}{\numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{55}{subsection.4.2.3}
+\contentsline {subsubsection}{Segmentaci\'on en vectores 1D}{56}{subsubsection*.29}
+\contentsline {subsubsection}{Segmentaci\'on en im\'agenes 3D}{56}{subsubsection*.30}
+\contentsline {subsection}{\numberline {4.2.4}Reconstrucci\'on a partir de R\'egiones}{57}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Modelos Generativos}{58}{section.4.3}
+\contentsline {section}{\numberline {4.4}Modelo de Clasificaci\'on}{59}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Extracci\'on de Caracter\IeC {\'\i }sticas por Regi\'on}{60}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Evaluaci\'on por Regi\'on}{62}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Evaluaci\'on Conjunta}{63}{subsection.4.4.3}
+\contentsline {chapter}{\numberline {5}Resultados}{65}{chapter.5}
+\contentsline {section}{\numberline {5.1}Clasificaci\'on}{65}{section.5.1}
+\contentsline {subsubsection}{M\'etricas de Evaluaci\'on}{65}{subsubsection*.31}
+\contentsline {subsubsection}{Medida F}{65}{subsubsection*.32}
+\contentsline {subsubsection}{Recall. Sensibilidad}{66}{subsubsection*.33}
+\contentsline {subsubsection}{Especificidad. Precisi\'on}{66}{subsubsection*.34}
+\contentsline {subsubsection}{Precision. Accuracy}{66}{subsubsection*.35}
+\contentsline {subsubsection}{Curva ROC}{66}{subsubsection*.36}
+\contentsline {subsubsection}{\'Area bajo la curva}{67}{subsubsection*.37}
+\contentsline {subsection}{\numberline {5.1.1}Resultados Clasificaci\'on}{67}{subsection.5.1.1}
+\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{69}{chapter*.38}
+\contentsline {chapter}{\numberline {A}Ap\'endice}{71}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Primera secci\'on}{71}{section.Alph1.1}
+\contentsline {chapter}{\'Indice alfab\'etico}{79}{section*.40}
 \contentsfinish 

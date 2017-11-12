@@ -1,0 +1,590 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Documento LaTeX 																						%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título:		Capítulo 2
+% Autor:  	Ignacio Moreno Doblas
+% Fecha:  	2014-02-01
+% Versión:	0.5.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapterbegin{Trabajo Realizado} 
+
+\label{chp:Utiliz}
+%\minitoc
+\section{Estudio basado en régiones cerebrales}
+\par Uno aspecto clave de este trabajo consiste en la división del cerebro en diferentes áreas con objeto de ser caracterizadas de manera aislada, y en última instancia, poder generar cada una de las áreas o régiones por separado. Para llevar a cabo esta separación se ha usado en atlas AAL (del inglés \textit{Automated Anatomical Labeling}) \cite{AAL} que define un total de 116 régiones las cuales se corresponden con las diferentes áreas anatómicas. Este atlas permite obtener los vóxeles asociados a cada región de manera normalizada.  
+
+ \par Aunque  esta aproximación tiene la ventaja de permitirnos caracterizar las régiones por separado,
+el principal motivo por el que hemos el alto coste computacional que lleva asociado el  uso de redes de aprendizaje profundo cuando son aplicadas en datos de alta dimensionalidad, como es nuestro caso. Otro problema derivado el amplio tiempo necesario para la caracterización de los parámetros de lared. 
+\par El uso de una aproximación basada en régiones nos permite reducir de forma considerable el número de voxeles a caracterizar por cada red neuronal y por lo tanto reducir los tiempos de caracterización y los costes computacionales
+
+\par Dentro de las 116 régiones en las que se han dividido las neuroimágenes,  normalmente aquellas a las que se les atribuye que aportan información sobre la detección del AD se las denomina Régiones de Interés (ROI, del inglés \textit{Regions of Interest}).
+\par Se ha almacenado el atlas AAL junto a cada uno de las distintas modalidades de imágenes empleadas que son las MRI y las PET. Esto nos permite extraer las régiones indicades mediante el Atlas de las distintas imágenes, lo cual nos posibilita hacer el procesado de régiones de manera independiente. En la imagen se \ref{fig:Atlas} muestra un ejemplo de imagen PET y MRI con su atlas correspondiente al lado. 
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.55]{images/img_4.png}
+\caption{MRI image (a), MRI atlas (b), (c) PET image
+and (d) PET atlas (same slice is shown in MRI and PET
+images)}
+\label{fig:Atlas}
+\end{figure} 
+ 
+
+
+\section{Tratamiento de Neuroimágenes}
+\par En todo proceso de caracterización de muestras o de aprendizaje estadístico un aspecto esencial es aplicar un tratamiento y procesado efectivo de las muestras previo al algoritmo principal, ya que si las muestras no son correctas o se producen irregularidades en su tratamiento previo se estará avocado a unos resultados incorrectos (por muy bien elaborado que esté el algoritmo principal).
+
+\par En primer lugar se explicarán las características demográficas de las neuroimagenes empleadas. Posteriormente se expondrá de manera resumida el procesado de las imágenes realizado por el grupo de investigación de And?es Ortiz.
+
+\subsection{Fuente de Datos}
+\par Las neuroimágenes empleadas en este trabajo pertenecen a la iniciativa ADNI. Se han empleado tanto imágenes MRI como imágenes PET. Se disponen de 229 imágenes MRI de sujetos NC y 188 de sujetos de AD. Por otro lado, en el caso de las imágenes PET se disponen de 70 imágenes de sujetos AD y 68 de sujetos NC. La distribución demográfica de los sujetos se puede observar en las tablas \ref{tb:Demografia_1} y \ref{tb:Demografia_2}
+
+\begin{table}[b]
+\centering
+\begin{tabular}{ c | c | c | c | c } 
+ Diagnosis & Number & Age &  Gender (M/F) & MMSE  \\ \hline
+ Control & 68  &  75.81 $\pm$ 4.93 & 43/25 & 29.06 $\pm$ 1.08 \\ \hline
+ AD & 70  & 73.06 $\pm$ & 46/24  & 22.84 $\pm$ 2.61  
+
+\end{tabular}
+ \caption{Datos Demográficos Imágenes MRI}
+\label{tb:Demografia_1}
+
+\end{table}
+
+\subsection{Procesado Previo}
+
+\par Las imágenes PET y MRI de la base de datos ADNI han sido espacialmente normalizadas de acuerdo con el modelo de morfometría basada en vóxeles T1 \cite{VBM} (\textit{VBM-T1} del inglés \textit{Voxel-Based Morphology}), con objeto de garantizar que cada vóxel corresponde con la misma posición anatómica en cada una de las neuroimágenes. Posteriormente las imágenes MRI fueron redimensionadas a $121\times145\times121$ vóxeles con un tamaño de vóxel de 1.5 mm ,(Sagital) $\times$ 1.5 mm (Coronal) $\times$ 1.5 mm (axial). Por otro lado, las imágenes PET fuerón redimensionadas a $79\times95\times68$  con un tamaño de vóxel de 3 mm (Sagital) $\times$ 3 mm (Coronal) $\times$ 2 mm (axial).
+\par Las imágenes MRI son tratadas de manera diferente que las PET ya que son segmentadas en tejido de materia gris (GM del inglé \textit{Grey Matter}) y tejido de materia blanca (WM del inglés \textit{White Matter}) aplicando la herramienta SPM \cite{VBM_2}\cite{VBM_3} de normalización espacial. Este proceso es  capaz de generar información sobre al distribución del tejido de GM, de WM o de fluido Cerebro-Espinal (CSF del inglés \textit{Cerebrospinal Fluid}) en las neuroimágenes, quedando caracterizado por una probabilidad de pertenencia  para cada uno de los tejidos de rango [0, 1]. 
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.55]{images/ejemplo_MRI.png}
+\caption{Muestra de neuroimagen MRI segmentada. (zquierda) MRI WM image. (Derecha) MRI GM image}
+\label{fig:Atlas}
+\end{figure} 
+
+
+\par Por otro lado, las imágenes PET son normalizadas con respecto al nivel de intensidad. Este nivel máximo de intensidad se toma a partir del nivel medio del 1\%  de los vóxeles con mayor activación del cerebelo \cite{PET_norm}, dado que esta región cerebral es considerada con activación constante. Este proceso de normalización  permite la homogeanización de los niveles entre los vóxeles permitiéndonse las posterior comparación entre vóxeles. 
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.4]{images/ejemplo_PET.png}
+\caption{Muestra de neuroimagen PET normalizada}
+\label{fig:Imagen PET normalizada}
+\end{figure} 
+
+
+\subsubsection{Preselección de Vóxeles}
+\par La preseleción de vóxeles se ha aplicado a cada modalidad de imagen con objeto de eliminar los vóxeles poco significativos. Esto nos permite reducir el alto coste computacional asociado a la alta dimensionalidad de las imágenes. Esta preselección de características ha sido realizada mediante el \textit{t-test de Welch} sepradamente sobre cada tipo de imagen. 
+
+\par El \textit{t-test Welch} permite evaluar la diferencia entre la media de dos espacios muestrales, en nuestro caso NC y AD, cuando las varianzas no son iguales y puede ser calculado usando la siguiente expresión:
+
+
+\begin{center}
+\begin{equation} \label{eq:t-test}
+I^{t}  = \frac{I_{NC}^{\mu} - I_{AD}^{\mu}}{ \sqrt{\frac{I_{NC}^{\sigma}}{N_{NC}} + \frac{I_{AD}^{\sigma}}{N_{AD}}  }}
+\end{equation}
+\end{center}
+
+\par donde $I_{NC}^{\mu}$ y $I_{AD}^{\mu}$ son las medias de las imagenes de los sujetos NC y AD respectivamente, mientras que  $I_{NC}^{\sigma}$ y $I_{AD}^{\sigma}$ son las varianzas de las imagenes y $N_{NC}, N_{AD}$ son el número de muestras NC y AD. Las imagenes de medias  $I_{NC}^{\mu}$ y $I_{AD}^{\mu}$ se calculan como:
+
+\begin{center}
+\begin{equation} \label{eq:t-test-means}
+I_{NC}^{\mu} = \frac{1}{N_{NC}}\sum_{j=1}^{N_{NC}}I_{j}, \quad I_{AD}^{\mu} = \frac{1}{N_{AD}}\sum_{j=1}^{N_{AD}}I_{j},
+\end{equation}
+\end{center}
+
+mientras que las varianzas de las imágenes $I_{NC}^{\sigma}$ y $I_{AD}^{\sigma}$ son calculadas mediante:
+
+\begin{center}
+\begin{equation} \label{eq:t-test-vars}
+I_{NC}^{\sigma} = \frac{1}{N_{NC}}\sum_{j=1}^{N_{NC}}(I_{j} - I_{j}^{\mu})^2, \quad I_{AD}^{\sigma} = \frac{1}{N_{AD}}\sum_{j=1}^{N_{AD}}(I_{j} - I_{j}^{\mu})^2
+\end{equation}
+\end{center}
+
+\par En la ecuación \ref{eq:t-test} el término $I^{t}$ corresponde al valor del test \textit{Welch} para cada uno de los vóxeles de la imagen, lo cual es una medida significativa de la diferencia de medias. De manera intuitiva un alto valor de este elemento indica que hay una diferencia significativa entre las muestras de un espacio y otro, y, por lo tanto, el vóxel en cuestión es significativo. 
+\par De manera teórica, altos valores del test (\textit{t-valor}) se corresponden con valores bajos de probabilidad (\textit{p-valor}), donde se referencia por \textit{p-valor} la probabilidad de observar un valor \textit{t-valor}. Queda definida la hipótesis nula en la igualdad entre las medias de imágenes. Por lo tanto, valores pequeños de $p$ indicarán el rechazo de la hipótesis nula en cuestión.
+\par En nuestro caso, se ha fijado el umbral de decisión sobre la hipótesis nula en $p-valor < 0.05$, esto es, un valor de significancia del 5\%.
+
+\subsection{Segmentación basada en régiones}
+\par Tal y como se ha comentado al principio de este capítulo, un aspecto básico de el trabajo realizado es la división o segmentación de las neuroimágenes en régiones para su estudio posterior, lo cual conlleva un procesado asociado.
+\par Dado que se han empleado dos modelos de aprendizaje bien diferenciados será necesario llevar a cabo una segmentación de régiones diferente para cada tipo. Uno de los modelos de aprendizaje está basada en el estudio de las imagenes 3D de las régiones mientras que el otro está basado en caracterizar un vector de vóxeles pertenecientes a la región estudiada.
+
+\par Cabe mencionar los componentes iniciales de este proceso:
+\begin{itemize}
+\item \textbf{ Vector de vóxeles de  imagen}. Por cada neuroimagen de cada paciente, ya sea una imagen PET o MRI  se tendrá un vector de vóxeles asociado. Este vector contiene los valores de intensidad de los vóxeles dispuesto en forma vectorial en lugar de en una imagen 3D.
+\item \textbf{Atlas AAL}.  El Atlas contiene un total de 116 listas distintas, cada una de ellas asociadas a una de las regiones. Cada lista contiene un conjunto de índices referidos a la posición de los vóxeles que pertenecen a la región en cuestión a la que hace referencia la lista. 
+\end{itemize}
+
+\subsubsection{Segmentación en vectores 1D}
+
+\par Este tratamiento tiene como objetivo generar un vector de vóxeles para cada una de las 116 régiones del atlas \textit{AAL}. El procedimiento queda representado en la imagen \ref{fig:Segm1}. El principal aspecto a comentar es que cada región tendrá un número de vóxeles asociado diferente, encargándose el atlas AAL de seleccionar cuales son los vóxeles pertenecientes a cada región tras la previa selección de los voxeles significativos. 
+\par Cabe notar como para cada región tendremos un número de voxeles distinto. En la tabla \ref{tb:MRI_voxels_per_region} se observa la amplia diferencia entre régiones en las imágenes MRI.
+
+\begin{figure}[htp] 
+
+\centering
+\includegraphics[scale=0.4]{images/Segmentacion_1D.png}
+\caption{Proceso de segmentación de vectores por región}
+\label{fig:Segm1}
+\end{figure} 
+
+\begin{table}[b]
+\centering
+\begin{tabular}{ c | c } 
+Región &  NºVóxeles \\ \hline
+1 & 8272 \\ \hline
+20 & 5535 \\ \hline
+40 & 2708 \\ \hline
+60 & 5191 \\ \hline
+80 & 567 \\ \hline
+100 & 4260 \\ \hline
+116 & 560 
+\end{tabular}
+\caption{Número de vóxeles en imagen MRI por cada región}
+\label{tb:MRI_voxels_per_region}
+\end{table}
+
+
+
+
+\subsubsection{Segmentación en imágenes 3D}
+
+\par En el caso de la obtención de las régiones cerebrales en imagenes 3D se ha realizado un procesado basado en la obtención de una máscara 3D sobre los índices de vóxeles del atlas AAL. Para ello, se ha reconstruido el atlas, extrayendo de aquí los límites en cada una de las dimensiones de la posición de la región evaluada. 
+\par Posteriormente, se ha usado este conocimiento de la posición exacta de los vóxeles en 3D para llevar a cabao la extracción de la región en cuestión. Este proceso ha sido esquematizado en la imagen \ref{fig:Segm3}. En la imagen \ref{fig:Segm3_example} se pueden observar dos régiones extraídas y representadas en 3D. 
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.35]{images/Segmentacion_3D.png}
+\caption{Proceso de segmentación de vectores por región}
+\label{fig:Segm3}
+\end{figure} 
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{images/pet_3d.png}
+\caption{Ejemplo de Régiones de imágenes PET segmentadas.(Izquierda) Región Nº 20. (Derecha) Región Nº 30. Capturas de imágenes 3D tomadas con el programa \textit{MRIcrGL}}
+\label{fig:Segm3_example}
+\end{figure} 
+
+\subsection{Reconstrucción a partir de Régiones}
+
+
+\newpage
+\section{Autoencoder Variacional}
+
+
+\par El principal método de caracterización y aprendizaje en el que se ha basado este trabajo ha sido en el VAE, es por ello que se pretenden exponer los detalles principales de la implementación realizada.
+\par A lo largo de esta sección se explicarán conceptos del VAE que hace refencia al Autoencoder Variacional que emplea redes neuronales de interconexiones densas únicamente, el cual no se debe confundir  con el CVAE que emplea redes neuronales convolucionales.
+
+\subsection{Elaboración del Grafo}
+
+\begin{figure}[!b] 
+\centering
+\includegraphics[scale=0.35]{images/EsquemaCodificacion.png}
+\caption{Esquema de Fase de Codificación}
+\label{fig:Codificacion}
+\end{figure} 
+
+\par Uno de los aspectos primordiales para la implementación de una red neuronal sobre \textit{Tensorflow} es el concepto de grafo. El modelo computacional  para  \textit{Tensorflow} es un grafo dirigido, donde los nodos (típicamente representados por círculos o cajas) son funciones de cálulo mientras que las uniones entre nodos (típicamente flechas) son números o mátrices.  Este modelo es especialemte útil para la implementación de redes neuronales. 
+\par Cuando en este trabajo nos referimos a grafo hacemos referencia al diseño de red realizado, concepto que incluye el conjunto de bloques computacionales empleados y a las conexiones entre ellos. El análisis del grafo elaborado se dividirá en tres secciones, en la primera se explicará la fase de codificación, en la segunda la fase de reconstrucción y en la tercera se expondrán los bloques computaciones que evaluán el error. 
+
+\subsubsection{Fase de Codificación}
+
+\par La fase de codificación del VAE se identifica conjunto de bloques encargados de servir de entrada para las imágenes hasta que se genera el código en la capa latente. A grandes rasgos el modelo implementado Fig. \ref{fig:Codificacion}.
+
+
+
+\par En primer lugar nos encontramos con la capa de entrada. Esta capa tendrá tantas neuronas como vóxeles se vayan a estudiar de la región a evaluar. Cabe recordar que en este trabajo se estudia cada region cerebral por separado por lo cual cada región tendrá asociado un Autoencoder diferente. Esta capa simplemente sirve de entrada, a priori no ha de aplicarse ningún tratamiento adicional sobre los datos porque estos ya han debido der ser normalizados en el preprocesamiento previo. 
+
+
+
+\par Posteriormente nos encontramos con lo que hemos denominado capas intermedias, las cuales se pueden observar en la  Fig. \ref{fig:Codificacion}. Estas capas de neuronas son las encargadas de ir reduciendo progresivamente el número de neuronas y por lo tanto el número de características de las regiones evaluadas. 
+
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.65]{images/EjemploConexionado.png}
+\caption{Ejemplo de Conexionado Básico con la función de activación empleada}
+\label{fig:ConexionadoBasico}
+\end{figure} 
+
+
+\par Cada una de las neuronas de la primera capa intermedia estarán conectadas a todas las neuronas de la primera capa, esto es el modelo básico de perceptron que se aplica a todas las conexiones en las redes neuronales densas. 
+\par A modo de ejemplo se ha añadido una figura clásica, ver Fig. \ref{fig:ConexionadoBasico}, se corresponde con el modelo de perceptrón que simboliza la conexión de una neurona de una capa con todas la neuronas de la capa inmediatamente anterior. 
+\par Tras la combinación lineal de las neuronas de entrada, se ha de aplicar una función de activación, en nuestro caso se ha empleado la función denominada ELU (del inglés \textit{Exponential Linear Unit}) que se caracteriza por emplear una función lineal para valores de entrada mayores que 0 y una función exponencial para valores menores que 0. Emplear esta puerta nos garantiza que el gradiente asociado a los distintos parámetros no se haga nulo durante el proceso de propagación atrás, problema que si
+ tendríamos si emplearamos otras puertas como la sigmoide o  la función de tangente hiperbólica.
+
+\par El sistema implementados está preparado para generar tantas capas conectadas entre sí como elementos tenga el vector que define el número de vóxeles por capas. En dicho vector se ha de incluir  la capa de entrada, que tendrá tantas neuronas con vóxeles se evaluan, las capas intermedias y la capa latente. 
+\par Por normal general, durante las simulaciones de este trabajao se han empleado entre dos o tres capas intermedias dado que al añadir más capas se aumentan los tiempos de entrenamiento necesarios y además estamos limitados por la capacidad del servidor. Por otro lado, no se ha observado en las simulaciones realizadas que el aumento en el número de capas intermedias aumente de forma considerable los resultados, se entiende que con una o dos capas el Autoencoder es capaz de extraer la información primordial de las regiones segmentadas. 
+
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.4]{images/TrucoReaparametrizacion.png}
+\caption{Diagrama del Truco de Reparamaetrización}
+\label{fig:Reparamatrizacion}
+\end{figure} 
+
+
+\par La última de las capas intermedias estará conectada a un total de dos capas distintas de forma simúltanea, esto es, si la última capa intermedia tiene $N_i$ neuronas cada una de estas neuronas estarán conectadas tanto a una capa que denominarelos $L_{m}$  como a otra $L_{d}$. Estas dos últimas capas conforman lo que se denomina capa latente. 
+
+\par El VAE al ser un modelo variacional no genera un valor determinado en la capa latente, en su lugar genera una función distribución que vendrá definida por las capas $L_{m}$ y $L_{d}$. Por ejemplo, la característica con posición $i$ tendrá una distribución gaussiana de media $L_{mi}$ y de desviación típica $L_{di}$. 
+\par A partir de esa distribución y aplicando el truco de reparamaterización, el cual se ha representado en la Fig. \ref{fig:Reparamatrizacion}, se generará el código latente final $L_{C}$. Básicamente, este método consiste en generar un ruido gaussiano ($N(0,I)$), generando un vector de tantos elementos ($N_{L}$) como sea el tamaño de la capa latente. Cada elemento de dicho vector $i$ se múltiplicara por su valor asociado de desviación típica $L_{d}$ y, seguidamente, se le sumará su valor medio $L_{m}$.
+
+\par Cabe notar que el tamaño de la capa latente $N_{L}$ indica el nivel de codificación que se alcanza, cuanto menor sea mayor será nivel de codificación o compresión se consigue.
+
+
+
+\subsubsection{Fase de Reconstrucción} 
+
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.7]{images/ReconstruccionVAE.png}
+\caption{Diagrama de la fase de reconstrucción o decodificación del VAE}
+\label{fig:Reparamatrizacion}
+\end{figure} 
+
+\par La fase de reconstrucción  contempla el conjunto de bloques funcionales desde que se ha generado el código latente hasta que se consigue regenerar de manera aproximada el conjunto de datos orginales.
+\par Uno de los aspectos esenciales es la simetría en el tamaño de las capas del Autoencoder. Por lo tanto, si en la fase de codifición se tiene, por ejemplo, una capa de entrada de 1500 elementos, dos capas intermedias consecutivas de 1000  y 500 elementos y una latente de 100 elementos, en la capa de reconstrucción se tendrán unas capas intermedias de 500 y 1000 elementos consecutivos, y una capa de salida de 1500 elementos. 
+
+\par En las capas intermedias se seguirá aplicando el mismo tipo de función de activación que en la fase de codificación. Sin embargo, en la capa de salida se espera que cada uno de los elementos de salida tenga un rango delimitado entre [0, 1] (debido a la normalización previa de los datos de entrada), por lo que es necesario aplicar una función de activación que restrinja la salida a este rango. En nuestro caso se ha usado la función Sigmoide, aunque es posible aplicar cualquier otro tipo de función que sea capaz de restringir la salida a ese rango. En la imagen fig. \ref{fig:F.A.} se puede observar la direncia en el rango de salida de las dos funciones comentadas anteriormente
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.8]{images/FucnionesActivacion.png}
+\caption{Funciones de Activación Empleadas}
+\label{fig:F.A.}
+\end{figure} 
+
+
+\subsubsection{Evaluación del error} \label{evaluacionError}
+
+\par Uno de los elementos principales en todo modelo de aprendizaje profundo es la definición del error. Estableciendo como se cálcula el error es posible establecer una función objetivo que nos permita ajustar los parámetros de la red neuronal mediante el procedimiento de propagación hacia atrás. 
+\par En el caso del VAE, tal y como se expuso en la sección \ref{sec_funcionObjetivo}, el error está compuesto por la diferencia entre los valores de entrada y los valores de salida, y por la divergencia de \textit{Kullback Leibler} entre la función de distribución de los datos de la capa latente y la función de distribución desesada que es la  distribución Normal $N(0,I)$.
+\par Otro factor de error que se ha tenido en cuenta es el de regularización de pesos. Uno de los problemas asociados a redes neuronales de varias capas y muchas neuronas por capa \footnote{Es una definición bastante pobre del concepto, dado que el problema se dará cuando el sistema esta sobredimensionado con respecto al espacio muestral a tratar, por lo que el concepto es realtivo a la dimensionalidad de las muestras tratadas. No obstante lo importante es constantar que el factor de regularización persigue que el sistema sea capaz de generalizar mas allá de las muestras de entrenamiento} es la posibilidad de sobre-entrenar el sistema, esto es, provocar que los pesos paramétricos de las conexiones neuronales se ajusten demasiado a las muestras de entrenamiento y, en última instancia, provoque que el sistema no sea capaz de generalizar los resultados a las muestras  de test y finalmente a las muestras reales del sistema.
+
+\par \textbf{Error de Reconstrucción $J_{D}$}. Este error se calcula a partir de las valores de entrada y los valores de salida del VAE. Dado que el objetivo del VAE es reconstruir los valores de entrada originales, a mayor divergencia entre entrada y salida, mayor será el error. Para su cálculo se ha empleado la función entropía cruzada, que maximiza el error de manera exponencial. 
+
+\begin{center}
+\begin{equation} \label{eq_errorReconstruccion}
+J_{D} = -\sum_{j} \Big(x_{j}*ln(y_{j}) + (1 -x) *ln(1 - y_{j})\Big)
+\end{equation}
+\end{center}
+
+\par \textbf{Error de Similud a la Normal en la Capa Latente $J_{KL}$}. Este error viene definido por la divergencia de \textit{Kullback Leiber}. La siguiente expresión representa dicho error de manera general para dos distribuciones $p$  y $q$.
+
+\begin{center}
+\begin{equation} \label{eq_Normal}
+KL(p,q) = ln(\frac{\sigma_{q}}{\sigma_{p}}) + \frac{\sigma_{p}^{2} + (\mu_{p} -\mu_{q})^2}{2\sigma_{q}^{2}} - \frac{1}{2}
+\end{equation}
+\end{center}
+
+\par En nuestro caso la función de distribución $p$ es la función deseada que será la normal  $N(0,1)$, por lo que $\sigma=1$ y $\mu=0$. Por lo que la ecuación \ref{eq_Normal} se reduce 
+
+\begin{center}
+\begin{equation} \label{eq_Normal}
+KL(N,q) = ln(\sigma_{q}) + \frac{\mu_{q}^2}{2\sigma_{q}^{2}} - \frac{1}{2}
+\end{equation}
+\end{center}
+\noindent
+Esa será la expresion para cada uno de los elementos de la capa latente, por lo que la expresión final será el sumatorio sobre el factor de divergencia de cada elemento.
+
+
+
+\begin{center}
+\begin{equation} \label{eq_Normal}
+J_{KL} = \sum_{j} \Big( KL(N,L_{j}) \Big)
+\end{equation}
+\end{center}
+
+
+\par \textbf{Error de Regularización}. Este error vendrá determinado por un factor de configuración que indicará cuanto se penalizará a los pesos paramétricos. 
+
+\begin{center}
+\begin{equation} \label{eq_errorRegularizacion}
+J_{Reg} = \sum_{\theta} \Big(  \lambda * W_{\theta} \Big)
+\end{equation}
+\end{center}
+
+\noindent
+donde $\theta$ representa el índice de cada uno de los pesos $W$ que conectan las distintas neuronas de la red, mientras que $\lambda$ es el parámetro que regula la penalización. A un mayor valor de $\lambda$, mayor sera la penalización y mayor será la dificultad de que los pesos $W$ alcancen valores muy altos y que por lo tanto este sobre-ajustados.
+
+
+\subsection{Entrenamiento}
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.82]{images/EntrenamientoVAE.png}
+\caption{Diagrama de boques funcionales del proceso de actualización de los parámtetros del VAE}
+\label{fig_diagramaEntrenamiento}
+\end{figure} 
+
+
+\par A la hora de abordar como entrenar los parámetros del VAE debemos distinguir entre dos proceos o bloques de operación totalmente diferentes, uno es el diseño del propio grafo mediante \textit{Tensorflow} que se encargue de relizar la actualización de los parámetros (ver  Fig. \ref{fig_diagramaEntrenamiento}), mientras que el otro proceso es externo a \textit{Tensorflow} y tiene como objetivo realizar un proceso iterativo que vaya reduciendo progresivamente el error asociado al VAE.
+
+\subsubsection{Diseño del Grafo de Entrenamiento}
+\par La estructura del grafo de entrenamiento es la que se puede observar en la figura \ref{fig_diagramaEntrenamiento}. La librería \textit{Tensoflow} basa el proceso de actualización  de cada uno de los pesos a entrenar ($W_\theta$) en emplear un bloque denominado optimizador.
+\par Este bloque ha de recibir los siguiente elementos:
+\begin{itemize}
+\item \textbf{Error evaluado previamente}. Se trata del error general que quedó definido en la seccion \ref{evaluacionError}. Gracias a este error cuantificable se realizará la estimación del gradiente asociado a cada parámetro entrenable mediante el proceso de propagación hacia atrás. Todo ese proceso es interno a \textit{Tensorflow}.
+\item \textbf{Parámetros entrenables $W_\theta$}.
+\item \textbf{Tasa de aprendizaje}: Este elemento es un parámetro de configuración que determinará la rapidez con la que se realizará el prodeso de descenso en gradiente. A mayor tasa de aprendize mayor variación habrá en cada iteracción, por lo que el descenso será más rápido pero se correrá el riesgo de que el proceso empieze a diverger \cite{learningRate}.
+\end{itemize} 
+
+\par En este trabajo se ha empleado el método de actualización denominado \textit{Adam} \cite{adam} el cual es un método ampliamente conocido, caracterizado por garantizar un proceso de actualización de parámetros más eficaz en comparación con el proceso de descenso en gradiente escocástico (SGD, del inglés \textit{Stochastic Gradiente Descend}). 
+
+\par En este artículo \cite{SGcomparativa} se hace una comparativa entre los distintos métodos de descenso en gradientes. Tras la exposición y la comparación de todos los métodos el autor, finalemente, recomienda el uso del método \textit{Adam}. 
+
+\subsection{Proceso iterativo}
+
+
+\subsection{Almacenamiento del Grafo}
+\par Los procedimientos de entrenamiento en este tipo de sistemas de aprendizaje son altamente costosos tatno en términos de tiempo como de computación, por lo que el almacenamiento de los sistemas ya entrenados se antoja deseable. 
+\par Es por ello que la librería empleada (\textit{Tensorflow}) cuenta con funcionalidades que nos permiten almacenar tanto la arquitectura de grafos como los valores de cada uno de los pesos de la red en cuestión. 
+\par En la implementación realizada se permite manejar esta funcinalidad de forma cómoda permitiendo almacenar de forma periódica cada cierto número de iteracciones el grafo generado con sus pesos asociados. En fase de ejecución es posible indicar el directorio donde es están almacenados los grafos con lo que es posible volver a utilizar un modelo previamente caracterizado. 
+\par El manejo interno de las distintas variables que conforman el grafo y que permiten la carga de las variables almacenadas es ciertamente complejo, ya que todos aquellos nodos de \textit{Tensorflow} que están conectados al "exterior" han de ser almacenados en un tipo de manejador de variables que se guarda asociado al grafo y que permite a la librería, durante la carga del modelo, referenciar cada uno de los nodos. 
+
+\subsection{Otros Aspectos}
+
+
+
+Diseño y Optimización de la Arquitectura de Red
+\begin{itemize}
+\item kernel size variable per layer
+\end{itemize}
+
+
+Evaluacion y Seguimiento del entrenamienot
+\begin{itemize}
+\item Volcado de los datos de entrenamiento. [iter to show error]. Tales como la similitud entre muestras o el los valores del descenso en gradiente.
+\item Volcado de una reconstrucción ejemplo 3D. [iter to show error]
+\item Delimitación el número de iteracciones
+\item Almacenamiento de la Red Neuronal entrenada con objeto de poder usar el sistema posteriormente. 
+\end{itemize}
+
+
+\newpage
+\section{Autoencoder Variacional Convolucional} 
+
+
+
+
+\newpage
+\section{Modelo de Clasificación} \label{sec:clasificacion}
+\par El diseño y aplicación de un modelo de clasificación es de especial interés dado que la capacidad de clasificación esta intimamente relacionada con el método de extracción características empleado, que en nuestro caso será el autoencoder variacional.
+
+
+\par Tal y como ya se ha explicado préviamente, el autoencoder es capaz generar un conjunto de características representativas en lo que se denomina espacio latente, siendo estas variables obtenidas sobre las que posteriormente se les aplicará el proceso de clasificación. Estas variables latentes serán genereadas por región, por lo que al final tendremos tantos vectores de variables latentes como número de régiones se estén evaluando.
+
+\par Es importante notar que el procesamiento de las régiones por separado implica la aplicación de un procedimiento de clasificación en el cuál debemos de unir la información de evaluación de cada región. En la figura \ref{fig:main_clasificacion} se puede apreciar lo mencionado anteriormente.
+
+\par A lo largo de esta sección se detallará el método explicando el procedimiento realizado y mencionando algunas de las problemáticas encontradas como son la extracción de características por región o el mezclado de información para los dos tipo de imágenes MRI.
+
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/ClasificacionMainEsquema.png}
+\caption{Esquema básico de Autoencoder. Cabe notar como será el código generado en la capa latente lo que se empleará para la clasificación posterior}
+\label{fig:main_clasificacion}
+\end{figure} 
+
+\par 
+
+
+\subsection{Extracción de Características por Región}
+\par El proceso de extracción de características aplica el Autoencoder Variacional. Una esquematización de dicho proceso se puede observar en la imagen \ref{fig:Extracción_1}. Es de esperar que el aumento del tamaño de la capa latente, esto es, que haya más neuronas en dicha capa conlleve una mejora en los resultados de la clasificación dado que se ha comprimido menos la información de las imágenes.
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/RegionExtractFeatures.png}
+\caption{Diagrama básico del proceso de extracción de características aplicando el Autoencoder Variacional}
+\label{fig:Extracción_1}
+\end{figure} 
+
+
+
+\par Se pueden diferencia dos fases, la de entrenamiento y la de extracción de características, mientras que el tercer bloque de la figura \ref{fig:Extracción_1} hace referencia al vector de variables esperadas a la salida.
+\begin{itemize}
+\item \textbf{Entrenamiento del Autoencoder}. El entrenamiento tiene como objetivo caracterizar el Autoencoder en función del tipo de muestra, en nuestro caso en función de la tipología de neuroimagen de cada una de las régiones evaluadas. Es este entrenamiento el proceso mas costoso, tanto computacionalmente como en términos de coste en el desarrollo de este modelo de clasificación. 
+\par Este proceso permite la extracción efectiva de características ya que es el que ajusta el conjunto de parámetros encargados de generar el conjunto de variables latentes en función del tipo de imagen de entrada. 
+
+\item \textbf{Codificación}. Dado el conjunto de vóxeles de cada neuroimagensociado a un tipo de región, este proceso se encargará de generar el conjunto de varibles latentes.
+
+\end{itemize}
+
+\par En esta fase es posible aplicar tanto el VAE de capas densas como el CVAE dado que lo importante es garantizar que la salida será un vector de variables sin importar el procedimiento de extracción empleado. No obstante, el tipo de VAE empleado modificará el procesado previo de las imagenes dado que si se emplea el VAE de redes densa se deberán vectorizar las imágenes mientras que si es el CVAE se deberá delimitar en 3D las distintas regiones.
+
+\par Un aspecto diferencial en el tratamiento de las imágenes PET y MRI es que para las MRI tenemos dos modalidades de imágenes, las de materia blanca y las de materia gris, es por ello que para las imágenes MRI necesitaremos dos \textit{Autoencoders} lo cual duplica el coste computacional. En la figura \ref{fig:Extraccion_MRI} queda representado este concepto
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.5]{diagrams/RegionExtractFeaturesMRI.png}
+\caption{Diagrama básico del proceso de extracción de características para las imágenes MRI}
+\label{fig:Extraccion_MRI}
+\end{figure} 
+
+\par Por lo tanto, para el caso de las imágenes MRI se tendrá a la salida un vector de características que será la concatenación de las variables latentes obtenidas a partir de las imágenes de materia blanca y materia gris.
+
+\subsection{Evaluación por Región}
+
+\par Una vez que                                                                                                                                                                                                                                                                                           se ha generado de cada región un vector de características se procederá a la construcción de un clasificador basado en dicho vector. Dichas características se corresponden con la versión codificada de una región siendo de un espacio $n-dimensional$ en función del tamaño de la capa latente del VAE empleado. 
+\par Es importante notar que para cada región se tendrá un vector de características distinto, dado que el VAE aplicado sobre cada región es diferente, y por lo tanto los clasificadores serán totalmente independientes.
+\par En este fase se han de diferenciar dos procesos, los cuáles han sido esquematizados en la figura \ref{fig:SVM_porRegion}
+\begin{itemize}
+\item \textbf{Entrenamiento}: Dados los vectores de codificación de las muestras de entrenamiento $X_E$ y de sus etiquetas asociadas $Y_E$ se aplicará el proceso de optimación de parámetros en el SVM con objeto de entrenar el clasificador. 
+\par \textbf{Test}: Dado un clasificador SVM con los parámetros previamente entrenados, se aplicarán tanto los vectores de regiones codificadas de entrenamiento $X_E$ como las de test $X_T$. 
+\par A la salida del SVM se obtendrá la distancia ($d_{i}$ $\epsilon$ $R$) del vector de caraterísticas ($x_i$ $\epsilon$  $R^n$) al hiperplano de separación SVM. El umbral de decisión en la clasificación SVM es 0, por lo tanto las muestras con una distancia asociada mayor que 0 serán de un tipo y del otro tipo en el caso de que sean menor que 0. En nuesro caso se corresponderán con sujetos AD y NOR respectivamente.
+
+\end{itemize}
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.4]{diagrams/SVM_EvaluacionPorRegion.png}
+\caption{Proceso de evaluación por región basado en máquinas de vectores de soporte}
+\label{fig:SVM_porRegion}
+\end{figure} 
+
+
+
+\newpage
+\subsection{Evaluación Conjunta}
+\par La fase final del proceso de clasificación tiene como objetivo determinar el tipo de pacente (NOR o AD) en función de la información generada previamente por cada una de las regiones evaluadas. En el esquema de la figura \ref{fig:ClasificacionConjunta} se puede observar  como encaja este proceso final dentro del proceso general de clasificación.
+\par Para cada Sujeto evaluado ($D_j$ $\epsilon$  $R^R$) se dispondrá de un vector de parámetros, donde cada unon de los parámetros será relativo a cada una de las régiones y por lo tanto el tamaño del vecto $D_j$ se corresponderá con el número de rérgiones evaluadas $R$. 
+Estos parámetros se corresponden a la distancia de cada región al hiperplano de separacion del SVM empleado previamente, se puede expresar tal que:
+
+
+
+\begin{figure}[htp] 
+\centering
+\includegraphics[scale=0.4]{images/EsquemaClasificacion_2.png}
+\caption{Diagrama del proceso de clasificación basado en Régiones. El proceso señalado en rojo se corresponde con el proceso final encargado de la evaluación conjunta}
+\label{fig:ClasificacionConjunta}
+\end{figure} 
+
+
+\begin{center}
+\begin{equation} \label{eq:t-test-vars}
+D_{j} = (d_{j0}, d_{j1} ... d_{ji}... d_{jR})
+\end{equation}
+\end{center}
+
+\par Para llevar a cabo esta evaluación se han utilizado tres métodos diferentes e independientes entre sí, esto es, como entrada toman el vector de Distancias $D_j$ para cada una de las muestras y generan una puntuación de clasificación, pero en ningún momento hay iteracción entre los métodos propuestos, simplemente son diferentes maneras de evaluar el resultado final.
+
+\subsubsection{Voto por Mayoría Simple}
+
+\par En este método en función de las distancias $d_{ji}$ del vector $D_j$ se asigna la pertenencia a un grupo u a otro si solo tuvieramos en cuenta la región $i$ referenciada por la distancia $d_{ji}$ en cuestión.
+
+\begin{center}
+\begin{equation} \label{eq:SMV_clasificacion}
+   s_{ij} = 
+   \begin{cases} 
+      1  & \mbox{si } D_{ij} > 0 \\
+      0  & \mbox{si } D_{ij} < 0 \\ 
+   \end{cases}
+\end{equation}
+\end{center} 
+
+\noindent
+Por lo tanto a la salida de este proceso se tendrá un vector de unos y ceros de tamaño $R$ al que denominaremos $S_i$, y a cada elemento de dicho vector $s_{ji}$. Sobre este vector se aplicará un sumatorio y se dividirá por el número de régiones evaluadas $R$, tomándose el umbral (\textit{th}) para determinar en función del resultado de la operación anterior la pertenencia del sujeto evaluado a una clase u a otra. 
+
+\begin{center}
+\begin{equation} \label{eq:SMV_clasificacion_2}
+ \bar{S_i} = \frac{\sum_{j}^{0<j<R} s_{ji}}{R}  \rightarrow
+ \begin{cases}
+\bar{S_i} > th  \rightarrow AD \\
+\bar{S_i} < th  \rightarrow NOR \\
+\end{cases}
+\end{equation}
+\end{center} 
+
+\noindent
+El valor del umbral \textit{th} por defecto será 0.5, aunque se ha posibilitado determinarlo a partir de las muestras de entrenamiento, extrayendose a partir del punto óptimo de corte en la curva ROC para dichas muestras de entrenamiento. No obstante, los resultados han sido mejores sin utilizar esta funcionalidad dado que en cierto modo se está sobre-ajustando el sistema al usar las muestras de entrenamiento para ajustar dicho parámetro.
+
+\par El principal problema asociado a este método es la problemática de aproximar distancias a valores de voto (realizado en la expresión \ref{eq:SMV_clasificacion}) que de por sí implica la perdida de información, dado que se toma que una distancia de -10 sea igual a una de -1 lo cual no es lo más recomendable.
+
+\subsubsection{Voto por Mayoría Complejo}
+
+\par En este otro método se ha tomado directamente el vector de distancias $D_j$ y se ha aplicado un sumatorio sobre cada uno de los elementos de dicho vector. Gracias a esto se evita la aproximación para cada una de las distancias por región.
+
+\begin{center}
+\begin{equation} \label{eq:SMV_clasificacion}
+ \bar{D_i} = \sum_{j}^{0<j<R} d_{ji}
+\end{equation}
+\end{center} 
+
+\par Para determinar a que clase pertenece cada sujeto se aplicará un umbral que por defecto será 0, aunque tal y como se ha hecho en el otro modelo se ha habilitado la posibilidad de determinarlo a partir del punto óptimo de clasificación para las muestras de entrenamiento.
+
+\begin{center}
+\begin{equation} \label{eq:SMV_clasificacion}
+ \begin{cases}
+\bar{D_i} > th  \rightarrow AD \\
+\bar{D_i} < th  \rightarrow NOR \\
+\end{cases}
+\end{equation}
+\end{center} 
+
+\par No obstante, el hecho de sumar todas las distancias tampoco garantiza que la aproximación sea la más óptima, debido a que cada una de estas distancias está referida a un hiperplano diferente, esto es, cada distancia ha sido obtenida a partir de la proyección de un conjutno de valores de entrada (que es el vector de características de cada region) sobre la función de decisión del SVM en cuestión, donde cada SVM es distinto por región.
+
+\par Por lo tanto no es lo más preciso, de hecho, el proceso de sumar las distancias implica la suma de elementos calculados a partir de espacios vectoriales no iguales y por lo tanto no es correcto.
+\par Sin embargo, más que obtener un valor de suma preciso, lo que este método pretende es dar un valor cuantitativo a la pertenencia a un grupo u a otro por región, en lugar de realizar la bruta aproximación de unos o ceros del voto por mayoría simple. 
+
+\subsubsection{Máquina de Vectores de Soporte}
+
+\par Por último se ha querido realizar un método que evaluará cada elemento del vector de muestras $D_j$ de forma ponderada, determinando posteriormente el grupo al que pertenece en función de dicha suma ponderada. 
+\par En nuestro caso se ha empleado un SVM, dado que lo que este método realiza es similar aplicando las ventajas los vectores de soportes y además es el método que garantiza mejores resultados para tales propósitos. Otro factor que ha provocado que nos decantemos por el SVM es la facilidad de uso gracias a la librería \textit{scikit-learn} de \textit{Python}.
+
+
+
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.4]{images/SVM_EvaluacionConjunta.png}
+\caption{Proceso de Evaluación Conjunta Alicando SVM}
+\label{fig:EvaluacionConjuntaSVM}
+\end{figure} 
+
+\par Para este proceso contaremos con dos fases bien diferenciadas. Una de \textbf{entrenamiento} empleada para ajustar los parámeros del SVM donde únicamente se utilizaran las muestrsa de entrenamiento. 
+\par La otra fase será de la \textbf{clasificación} donde para cada vector de distancias $D_j$ se generará un valor indicativo de la distancia al hiperplano generado por el SVM que separa las dos clases evaluadas. A dicho valor se le denominará $S_j$.
+
+\par Dados los valores $S_j$ se  considerará que la muestra $j$ pertenece a una clase u a otra en función de la siguiente lógica:
+
+
+
+\begin{center}
+\begin{equation} \label{eq:SVM_clasificacion_1}
+ \begin{cases}
+S_j > th  \rightarrow AD \\
+S_j < th  \rightarrow NOR \\
+\end{cases}
+\end{equation}
+\end{center} 
+
+\par De nuevo tal y como se ha mencionado en los método, el valor por defecto del umbral \textit{th} será 0, aunque será posible fijarlo a partir de las muestras de entrenamiento. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapterend{}

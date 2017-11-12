@@ -1,0 +1,625 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Documento LaTeX 																						%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título:	Plantilla de PFC/TFG/TFM
+% Autor:  Ignacio Moreno Doblas
+% Fecha:  2014-02-01
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compilador: 	MiKTeX 2.9.
+%	Modo:					PDFLaTeX.
+% Entorno:			TeXnicCenter 2.0 Stable Beta 2.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Preámbulo del documento.
+%-----------------------------------------------------------------%
+% Clase de documento: libro
+\documentclass[12pt,a4paper]{book} % article, report, book.
+
+% Preámbulo: paquetes, comandos, entornos, estilos y título de página.
+\input{A1.Preambulo.paquetes.tex}
+\input{A2.Preambulo.commandos.tex}
+\input{A3.Preambulo.entornos.tex}
+\input{A4.Preambulo.estilodepagina.tex}
+
+%Comando para crear glosario (index en inglés)
+\makeindex
+
+
+% Document body.
+%-------------------------------------------------------------------%
+\begin{document}
+
+% Formato de documento hasta el capítulo 1 (sin incluirlo)
+\frontmatter
+
+%% Título y autor del proyecto
+%%Rellenar con el nombre real del autor, título, tutor y año.
+%%El departamento del tutor se escribe una vez en el Resumen del PFC
+%\renewcommand{\pfcauthorname}{Nombre del autor}
+%\renewcommand{\pfctitlename}{Título del proyecto}
+%\renewcommand{\pfctutorname}{Nombre del tutor}
+%\renewcommand{\pfcanno}{2014}
+
+% Los tres ficheros siguientes solamente deben descomentarse
+%  en el caso de ser un PFC del plan a extinguir.
+% En los nuevos títulos de grado, no exiten la portada, la calificación 
+%  ni el Resumen del PFC.
+% Estos tres documentos deben tomarse de la web de la ETSIT.
+%
+% Portada.
+%\input{B1.Portada.tex}
+
+% Hoja de calificación
+%\input{B2.Calificacion.tex}
+
+% Resumen del proyecto (formulario)
+%\input{B3.ResumenPFC.tex}
+
+% Dedicatoria.
+\input{B4.Dedicatoria.tex}
+
+% Acrónimos
+\input{B5.Acronimos.tex}
+
+% Tabla de contenidos, figuras y tablas.
+\input{B5.TableOfContents.tex}
+\input{B5.TableOfFigures.tex}
+\input{B5.TableOfTables.tex}
+
+% Formato de documento durante los capítulos.
+\mainmatter
+
+% Prólogo.
+\input{B6.Prologo.tex}
+
+% Capitulos
+\input{C1.Introduccion.tex}
+\input{C2.Contexto.tex}
+\input{C3.FudamentosTeoricos.tex}
+\input{C4.TrabajoRealizado.tex}
+\input{C5.Resultados.tex}
+\input{C6.Conclusiones.tex}
+
+% Capítulo 04.
+%\input{Capitulo04.tex}
+
+\appendix
+
+\input{D1.AppendixA.tex}
+
+%\input{D2.AppendixB.tex}
+
+%\input{D3.AppendixC.tex}
+
+% Formato de documento en la parte final.
+\backmatter
+%Hace que los capítulos y títulos nivel inferior no aparezcan numerados (lo que es ideal para conclusiones o notas finales).
+
+% Bibliografía
+%\input{E1.Bibliografia.tex}
+%\input{Bibliografia_tres.tex}
+
+\begin{thebibliography}{9}
+
+\bibitem{Alzheimer1} 
+	Henley, David B.,
+	Sundell, Karen L.,
+	Sethuraman, Gopalan,
+ 	Siemers, Eric R.,
+	2011,	
+	\textit{Safety profile of Alzheimer's disease populations in Alzheimer's Disease Neuroimaging 			Initiative and other 18-month studies},
+ 	407-416
+
+\bibitem{ReservaCognitiva}
+	Rodríguez Álvarez M., Sánchez J. L.,
+	2004,
+	\textit{Reserva cognitiva y demencia},
+	2004, vol. 20, nº 2 (diciembre), 175-186 
+	
+\bibitem{DiagnosticoNormal}
+ Petrella J.R, Coleman R.E., Doraiswamy P.M., Neuroimaging and Early Diagnosis
+of Alzheimer Disease: A Look to the Future. Radiology 2003; 226:315?336.
+
+\bibitem{MRIsurvey}
+	Rémi Cuingnet et al, 
+	\textit{Automatic classification of patients with Alzheimer's disease from
+	structural MRI: A comparison of ten methods using the ADNI database},
+	 Neuroimage,
+	vol. 56, no. 2, pp. 766-781, 2011.
+
+\bibitem{introPET}
+	W. Cai, 
+	D. Feng, 
+	R. Fulton, 
+	\textit{Content-based retrieval of dynamic PET functional images} 
+	IEEE Trans. Inf. Technol. Biomed., vol. 4, no. 2, pp. 152-158, 2000.
+
+\bibitem{PETMRIMultimodal}
+	Ortiz, A.; 
+	Fajardo, D.; 
+	Górriz, J.M.; 
+	Ramírez, J.; 
+	Martínez-Murcia, F.J.,
+	\textit{Multimodal
+image data fusion for Alzheimer's Disease diagnosis by sparse representation}, 
+International Conference on Innnovation in Medicine and Healthcare (InMed), 2014
+
+
+\bibitem{PETMRIMultimodal2}
+	Daoqiang Zhanga, 
+	Yaping Wanga, 
+	Luping Zhoua, 
+	Hong Yuana, 
+	Dinggang Shena,
+	\textit{Multimodal Classification of Alzheimer's Disease and Mild Cognitive Impairment}
+	Neuroimage. 2011 April 1; 55(3): 856-867
+
+
+\bibitem{SVMtrees}
+	D. Salas-Gonzalez, 
+	J. M. Gorriz, 
+	J. Ramírez, 
+	M. Lopez, 
+	I Alvarez,
+	\textit{Compute-aided diagnosis of Alzheimer's disease using support vector machines and classification trees}
+	Phys. Med. Biol. 55 (2010) 2807-2817
+
+
+\bibitem{Survey}
+	Ruaa Adeeb Abdulmunem Al-falluji
+	\textit{MRI based Techniques for Detection of Alzheimer: A Survey}
+	International Journal of Computer Applications (0975 - 8887)
+	Volume 159 - No 5, February 2017
+
+\bibitem{Survey2}
+	S.Mareeswari1, 
+	Dr.G.Wiselin,
+	\textit{A survey Early Detection of Alzheimer's Disease using different techniques}
+	International Journal on Computational Science and Applications (IJCSA) Vol.5, No.1,February 2015
+
+\bibitem{CoD}
+Bellman RE, 
+1961,
+\textit{Adaptive control processes: a guided tour}, Princeton
+ University Press.
+
+
+\bibitem{CoD2}
+	David L. Donoho
+	Department of Statistics
+	\textit{High-Dimensional Data Analysis: The Curses and Blessings of Dimensionality}
+	August 8, 2000
+
+\bibitem{ReduceDimensionality}
+	Benson Mwangi, 
+	Tian Siva Tian,  
+	Jair C. Soares
+	\textit{A review of feature reduction techniques in neuroimaging}
+	Neuroinformatics. 2014 April ; 12(2): 229-244. doi:10.1007/s12021-013-9204-3.
+
+\bibitem{DeepLearning1}
+	Siqi Liu, 
+	Sidong Liu,
+	\textit{EARLY DIAGNOSIS OF ALZHEIMER'S DISEASE WITH DEEP LEARNING}
+
+\bibitem{DeepLearning2}
+	Saman S., 
+	Ghassem T.,
+	\textit{Classification of Alzheimer's Disease Structural MRI Data by Deep Learning Convolutional Neural Networks}
+	22 Jul 2016
+
+\bibitem{AutoEncoderVariational}
+	Diederik P. Kingma,
+	Max Welling,
+	\textit{Auto-Encoding Variational Bayes}
+	1 May 2014
+
+\bibitem{AutoEncoderOrigin1}
+	 D. E. Rumelhart, G. E. Hinto, and R. J. Williams. 
+	 Learning Internal Representations by Error Propagation
+	 9 October 1986
+
+\bibitem{AutoEncoderSurvey}
+	: I. Guyon, 
+	G. Dror, 
+	V. Lemaire, 
+	G. Taylor and 
+	D. Silver
+	Autoencoders, Unsupervised Learning, and Deep Architectures
+	2012
+
+\bibitem{AutoEncoderDenoising}
+	P. Vincent
+	H. Larochelle
+	I. Lajoie
+	Stacked Denoising Autoencoders: Learning Useful Representations in a Deep Network with a Local Denoising Criterion
+	2010
+
+\bibitem{VAE_gen}
+ADVERSARIAL EXAMPLES FOR GENERATIVE MODELS
+
+\bibitem{DeepGenerativeModels}
+	Danilo J. Rezende, 
+	Shakir Mohamed, 
+	Daan Wierstra
+	Stochastic Backpropagation and Approximate Inference in Deep Generative Models
+
+\bibitem{AD_historic}
+	Bennett, D. A.,
+	Evans, D. A., 
+	1922.
+	Alzheimer's Disease.
+	Disease-a-Month 38(1), 7-64.
+
+\bibitem{ADhistoric2}
+	Nakako, S.,
+	Kato, T.,
+	Nakamura.,
+	1996.
+	Acetylcholinesterase activity in cerebrospinal fluid of patients with alzhimer's disease and senile dementia.
+	Journal of the Neurological Sciences
+	75(2).
+\bibitem{mitocondria2}
+	Rodriguez-Violante M.,
+	Cervantes A.,
+	Vargas S.,
+	2010.
+	Papel de la función mitocondrial en las enfermedades neurodegenerativas.
+	Arch Neurocien (Mex)  Vol. 15, Nº1: 39-46
+
+\bibitem{mitocondriaGeneral}
+	Swerdlow, R.,
+	2011
+	Brain agin, alzheimer's diseas, and mitochondira.
+	Biochim Biophys Acta 1812(12), 1630-1639
+
+
+\bibitem{Nations}
+	Nations U.,
+	2008
+	Department of economic and social affairs, world population prospects. 
+
+\bibitem{Predemencia1}
+	 Arnáiz E,., 
+	 Almkvist O., 
+	 2003,. 
+	 Neuropsychological features of mild cognitive impairment and preclinical Alzheimer's disease. 
+
+
+
+\bibitem{Predemencia2}
+ 	Palmer K., 
+ 	Berger A. K., 
+ 	Monastero R., 
+ 	Winblad B., 
+ 	Bäckman L., 
+ 	Fratiglioni L. 
+ 	2007. 
+ 	Predictors of progression from mild cognitive impairment to Alzheimer disease. 
+ 	Neurology 68 (19): 1596-1602. 
+ 	PMID 17485646. doi:10.1212/01.wnl.0000260968.92345.3f.
+
+\bibitem{DemenciaMemoria}
+	 Carlesimo GA, Oscar-Berman M (junio de 1992). «Memory deficits in Alzheimer's patients: a comprehensive review». Neuropsychol Rev 3 (2): 119-69. PMID 1300219.
+
+ \bibitem{DemenciaComunicacion}
+ 	 Frank EM (septiembre de 1994). «Effect of Alzheimer's disease on communication function». J S C Med Assoc 90 (9): 417-23. PMID 7967534.
+\bibitem{ADconducta}
+	Volicer L, 
+	Harper DG, 
+	Manning BC, 
+	Goldstein R, 
+	Satlin A., 
+	Mayo de 2001. 
+	Sundowning and circadian rhythms in Alzheimer's disease». Am J Psychiatry 158 (5): 704-711. PMID 11329390. 
+
+
+\bibitem{hipocampo}
+	Mu Y., 
+	Gage FH,
+	2011 Dec,
+Mol Neurodegener. 2011 Dec 22;6:85. doi: 10.1186/1750-1326-6-8
+Adult hippocampal neurogenesis and its role in Alzheimer's disease.
+
+
+\bibitem{atlasAlzheimer}
+	FeldMan H. H.,
+	Atlas of Alzheimer's Disease.
+	Informa Healthcare
+
+\bibitem{MainADNI}
+	Susanne G. Mueller, 
+	Michael W. Weiner, 
+	Neuroimaging Clin N Am. 2005 November ; 15(4): 869?xii.
+	The Alzheimer?s Disease Neuroimaging Initiative
+	
+\bibitem{}
+ Gorji, H. T.; Haddadnia, J. (2015-10-01). "A novel method for early diagnosis of Alzheimer's disease based on pseudo Zernike moment from structural MRI". Neuroscience. 305: 361?371. ISSN 1873-7544. PMID 26265552. doi:10.1016/j.neuroscience.2015.08.013.
+
+\bibitem{}
+ Zhu, Xiaofeng; Suk, Heung-Il; Shen, Dinggang (2014-10-15). "A novel matrix-similarity based loss function for joint regression and classification in AD diagnosis". NeuroImage. 100: 91?105. ISSN 1095-9572. PMC 4138265?Freely 
+ accessible. PMID 24911377. doi:10.1016/j.neuroimage.2014.05.078.
+
+\bibitem{MRIOrigin3}
+Wright G., 
+Magnetic Resonance Imaging
+EEE Signal Process. Mag. 14 (1997)56?66.
+
+
+\bibitem{MRIOrigin}
+Lauterbur P. C., 1973. 
+"Image Formation by Induced Local Interactions: Examples of Employing Nuclear Magnetic Resonance". 
+Nature. 242 (5394): 
+
+\bibitem{MRIOrigin2}
+ "Britain's brains produce first NMR scans". 
+ New Scientist: 588. 1978.
+
+\bibitem{MRINoise}
+Snehal More, 
+V.V.Hanchate,
+"A Survey on Magnetic Resonance Image Denoising Methods"
+International Research Journal of Engineering and Technology (IRJET),
+Volume: 03 Issue: 05 | May-2016 
+
+\bibitem{rbm}
+Asja Fischer,
+Christian Igel,
+\textit{An Introduction to Restricted Boltzmann Machines}
+
+
+\bibitem{denoising_autoencoder}
+Vincent H.,
+Larochelle H.,
+Lajoie. I.,
+\textit{Stacked Denoising Autoencoders: Learning Useful Representations in
+a Deep Network with a Local Denoising Criterion}
+
+\bibitem{denoising_autoencoder2}
+Vincent, Pascal
+Larochelle, Hugo
+Bengio, Yoshua
+\textit{Extracting and Composing Robust Features with Denoising Autoencoders},
+  (ICML'08), pages 1096 - 1103, 2008
+
+\bibitem{gan}
+ Goodfellow, Ian J.; 
+ Pouget-Abadie, Jean; 
+ Mirza, Mehdi; 
+ Xu, Bing; 
+ Warde-Farley, 
+ David; Ozair, 
+ Sherjil; Courville, 
+ Aaron; Bengio, Yoshua 
+ (2014), 
+ "Generative Adversarial Networks". arXiv:1406.2661?
+
+\bibitem{gan_example}
+Salimans T., 
+Goodfellow I., 
+Zaremba., 
+Cheung, Vicki; Radford, Alec; Chen, Xi (2016).
+"Improved Techniques for Training GANs". arXiv:1606.03498?
+
+
+
+\bibitem{vae_2d}
+Eunbyung Park 
+University of North Carolina at Chapel Hill
+
+
+\bibitem{mri_survey}
+\textit{MRI based Techniques for Detection of Alzheimer: A
+Survey} 
+Ruaa Adeeb Abdulmunem Al-falluji
+University of Babylon,
+International Journal of Computer Applications (0975 ? 8887),
+Volume 159 ? No 5, February 2017
+\bibitem{ica}
+
+Yang, Wenlu, et al. "Independent component analysis-
+based classification of Alzheimer's disease MRI
+data." Journal of Alzheimer's disease 24.4 (2011): 775-
+783.
+
+\bibitem{pca}
+18F-FDG PET imaging analysis for computer aided
+Alzheimer?s diagnosis? I.A. Illán, J.M. Górriz,J.
+Ramírez, D. Salas-Gonzalez, M.M. López, F. Segovia,
+R. Chaves, M. Gómez-Rio c, C.G. Puntonet,
+Information Sciences 181 903?916, 2011.
+
+\bibitem{wavelet}
+
+Herrera, Luis Javier, et al. "Classification of MRI
+Images for Alzheimer's Disease Detection." Social
+Computing
+(SocialCom),
+2013
+International
+Conference on. IEEE, 2013.
+
+
+\bibitem{knn}
+
+Zhang, H., Berg, A.C., Maire, M., Svm-knn, J.M.:
+Discriminative nearest neighbor classification for visual
+category recognition. In: CVPR ?06, pp. 2126?2136.
+IEEE Computer Society, Los Alamitos, CA, USA
+(2006)
+
+\bibitem{deep_learning}
+Weiner, Michael (2017). "Recent publications from the Alzheimer's disease neuroimaging initiative: reviewing progress toward improved AD clinical trials.". Alzheimer's and dementia.
+
+
+\bibitem{deep_learning_2}
+ Suk, Heung-Il; Lee, Seong-Whan; Shen, Dinggang; Alzheimer?s Disease Neuroimaging Initiative (2016-06-01). 
+ "Deep sparse multi-task learning for feature selection in Alzheimer's disease diagnosis". 
+
+\bibitem{deep_learning_3}
+
+ Zu, Chen; Jie, Biao; Liu, Mingxia; Chen, Songcan; Shen, Dinggang; Zhang, Daoqiang; Alzheimer?s Disease Neuroimaging Initiative (2016-12-01). "Label-aligned multi-task feature learning for multimodal classification of Alzheimer's disease and mild cognitive impairment". Brain Imaging and Behavior.
+
+\bibitem{cnn_ad_1}
+Hosseini-Asl E., 
+Keynton R., 
+El-Baz A.,
+\textit{Alzheimer?s disease diagnostics by adaptation of 3d convolutional network}
+(Julio 2016), 
+arXiv:1607
+
+
+\bibitem{cnn_ad_2}
+Suk H-I., 
+Shen D., 
+\textit{Deep Learning-Based Feature Representation for AD/MCI Classification}, 
+Medical image computing and computer-assisted intervention?(MICCAI), International Conference on Medical Image Computing and Computer-Assisted Intervention. 2013;16(0 2):583-590.
+
+\bibitem{tensorflow}
+Abadi M, 
+Agarwal A., 
+Barham P., 
+B. Eugene,. 
+\textit{TensorFlow:
+Large-Scale Machine Learning on Heterogeneous Distributed Systems}, 
+November 9, 2015
+
+\bibitem{DNN_1}
+D.E. Rumelhart, J.L. MacClelland (eds.) (1986). Parallel Distributed Processing.
+Vol 1. Foundations, MIT Press
+
+\bibitem{FA_1}
+Glorot, X.,
+Bengio, Y.,
+(2010).
+\textit{Understanding the difficulty of training deep feedforward neural networks}
+Journal of Machine Learning Research - Proceedings Track. 9. 249-256.  
+
+\bibitem{FA_2}
+LeCun, Yann; Bengio, Yoshua; Hinton, Geoffrey (2015). "Deep learning". Nature. 521 (7553): 436?444. Bibcode:2015Natur.521..436L. PMID 26017442. doi:10.1038/nature14539.
+
+\bibitem{DNN_training}
+Xavier Glorot and Yoshua Bengio,
+\textit{Understanding the difficulty of training deep feedforward neural networks},
+(2010)
+In Proceedings of the International Conference on Artificial Intelligence and Statistics (AISTATS?10). Society for Artificial Intelligence and Statistics
+
+\bibitem{CNN}
+LeCun,  Y.,  Boser,  B.,  Denker,  J.  S.,
+Backpropagation  applied  to  handwritten  zip  code
+recognition.
+Neural Comput.
+, 1(4):541?551, 1989
+
+\bibitem{CNN_1}
+Visualizing and Understanding Convolutional Networks
+Ciresan, D. C., Meier, J., and Schmidhuber, J.  Multi-
+column  deep  neural  networks  for  image  classifica-
+tion.  In
+CVPR
+, 2012.
+
+\bibitem{CNN_2}
+Krizhevsky,  A.,  Sutskever,  I.,  and  Hinton,  G.E.   Im-
+agenet classification with deep convolutional neural
+networks.  In
+NIPS
+, 2012.
+
+\bibitem{SVM_1}
+Y. Zhang and W. Zhou, Multifractal analysis and
+relevance vector machine-based automatic seizure
+detection in intracranial, Int. J. Neural Syst. 25(6)
+(2015) 1?14.
+
+\bibitem{SVM_2}
+E. Castillo, D. Peteiro-Barral, B. Guijarro Berdinas and O. Fontenla-Romero, Distributed one-class support vector machine, Int. J. Neural Syst. 25(7)
+(2015) 1?17
+
+\bibitem{SVM_3}
+A. Hidalgo-Mun? noz, J. Górriz, J. Ramírez and
+P. Padilla, Regions of interest computed by svm
+wrapped method for Alzheimers disease examination
+from segmented mri, Front. Aging Neurosci. 6(20)
+(2014)
+
+\bibitem{ValidacionCruzada}
+Hatie T., Tibshirani R., Friedman J., The elements of statistical learning, data mining, inferencen, and prediction. Springer, 2008
+
+\bibitem{AAL}
+G. Flandin, F. Kherif, X. Pennec, D. Riviere,
+N. Ayache and J.-B. Poline, fMRI data analysis, Proceedings of the IEEE Int. Symposium on Biomedical
+Imaging (7?11 July 2002, Prague, Czech Republic),
+pp. 907?910.
+
+\bibitem{VBM}
+Ashburner J., 
+Friston KJ.
+\textit{Voxel-based morphometry. The methods}
+Neuroimage. 2000 Jun;11(6 Pt 1):805-21.
+
+\bibitem{VBM_2}
+J. Ashburner and T. Group, SPM8 Manuel, Vol. 12
+(Functional Imaging Laboratory, Institute of Neurology, UK, 2011).
+
+
+\bibitem{VBM_3}
+Structural Brain Mapping Group, Department
+of Psychiatry, Available at http://dbm.neuro.unijena.de/vbm8/VBM8-Manual.pdf [Accessed on 10
+March 2014]
+
+\bibitem{PET_norm}
+N. S. V. Villemagne, 
+S. Berlangieri, 
+S. Lee, M. Cherk,
+S. Gong, 
+U. Ackermann, 
+T. Saunder, 
+H. TochonDanguy, G. Jones, C. Smith, G. OKeefe, C. Masters and C. Rowe, 
+\textit{Visual assessment versus quantitative assessment of 11c-pib pet and 18f-fdg pet for
+detection of Alzheimer?s disease}, J. Nucl. Med. 48(4)
+(2004) 34?41.
+
+\bibitem{Measures_1}
+Wen Zhu, Nancy Zeng, Ning Wang. 
+\textit{Sensitivity, Specificity, Accuracy, Associated
+Confidence Interval and ROC Analysis with Practical SAS Implementations} 
+1K\&L consulting services, Inc, Fort Washington, PA Octagon Research Solutions, Wayne, PA,
+2010.
+
+\bibitem{Measures_2}
+Hwee Bee Wong, Gek Hsiang Lim. 
+\textit{Measures of Diagnostic Accuracy: Sensitivity, Specificity, PPV and NPV} 
+Health Services Research and Evaluation Division,
+Ministry of Health, Singapore
+
+
+\bibitem{learningRate}
+Mandic, Danilo P. and Chambers, Jonathon A.
+\textit{Towards the Optimal Learning Rate for Backpropagation}
+2000,
+01 Feb,
+Neural Processing Letters
+
+\bibitem{adam}
+Diederik P. Kingma,
+Jimmy Lei Ba. 
+\textit{Adam: A method for stochastic Optimization} 
+arXiv:1412.6980v9 [cs.LG] 30 Jan 2017
+
+
+\bibitem{SGcomparativa}
+Sebastian Ruder
+\textit{An overview of gradient descent optimization
+algorithms}
+arXiv:1609.04747v2 [cs.LG] 15 Jun 2017
+
+
+\end{thebibliography}
+
+
+
+% Índice alfabético%
+\input{F1.Index.tex}
+
+\end{document}

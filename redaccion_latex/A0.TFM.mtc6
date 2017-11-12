@@ -1,0 +1,27 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Estudio basado en r\'egiones cerebrales}{\reset@font\mtcSfont 53}{section.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Tratamiento de Neuroim\'agenes}{\reset@font\mtcSfont 54}{section.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Fuente de Datos}{\reset@font\mtcSSfont 54}{subsection.4.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}Procesado Previo}{\reset@font\mtcSSfont 55}{subsection.4.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Preselecci\'on de V\'oxeles}{\reset@font\mtcSSSfont 56}{subsubsection*.34}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{\reset@font\mtcSSfont 57}{subsection.4.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Segmentaci\'on en vectores 1D}{\reset@font\mtcSSSfont 58}{subsubsection*.35}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Segmentaci\'on en im\'agenes 3D}{\reset@font\mtcSSSfont 58}{subsubsection*.36}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.4}Reconstrucci\'on a partir de R\'egiones}{\reset@font\mtcSSfont 59}{subsection.4.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Autoencoder Variacional}{\reset@font\mtcSfont 60}{section.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Elaboraci\'on del Grafo}{\reset@font\mtcSSfont 60}{subsection.4.3.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Fase de Codificaci\'on}{\reset@font\mtcSSSfont 61}{subsubsection*.37}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Fase de Reconstrucci\'on}{\reset@font\mtcSSSfont 63}{subsubsection*.38}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Evaluaci\'on del error}{\reset@font\mtcSSSfont 64}{subsubsection*.39}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Entrenamiento}{\reset@font\mtcSSfont 66}{subsection.4.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Dise\~no del Grafo de Entrenamiento}{\reset@font\mtcSSSfont 67}{subsubsection*.40}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Proceso iterativo}{\reset@font\mtcSSfont 67}{subsection.4.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Almacenamiento del Grafo}{\reset@font\mtcSSfont 67}{subsection.4.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.5}Otros Aspectos}{\reset@font\mtcSSfont 68}{subsection.4.3.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Autoencoder Variacional Convolucional}{\reset@font\mtcSfont 69}{section.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Modelo de Clasificaci\'on}{\reset@font\mtcSfont 70}{section.4.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.1}Extracci\'on de Caracter\IeC {\'\i }sticas por Regi\'on}{\reset@font\mtcSSfont 71}{subsection.4.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.2}Evaluaci\'on por Regi\'on}{\reset@font\mtcSSfont 72}{subsection.4.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.3}Evaluaci\'on Conjunta}{\reset@font\mtcSSfont 73}{subsection.4.5.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Voto por Mayor\IeC {\'\i }a Simple}{\reset@font\mtcSSSfont 74}{subsubsection*.41}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Voto por Mayor\IeC {\'\i }a Complejo}{\reset@font\mtcSSSfont 75}{subsubsection*.42}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode M\'aquina de Vectores de Soporte}{\reset@font\mtcSSSfont 76}{subsubsection*.43}}

@@ -1,0 +1,27 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Autoencoder Variacional}{\reset@font\mtcSfont 29}{section.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.1}Modelo de Variables Latentes}{\reset@font\mtcSSfont 29}{subsection.3.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.2}Modelo Probabil\IeC {\'\i }stico}{\reset@font\mtcSSfont 30}{subsection.3.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.3}Funci\'on Objetivo}{\reset@font\mtcSSfont 31}{subsection.3.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.4}Optimizaci\'on de la funci\'on objetivo}{\reset@font\mtcSSfont 32}{subsection.3.1.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.5}El truco de Reparametrizaci\'on}{\reset@font\mtcSSfont 34}{subsection.3.1.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.6}Interpretaci\'on de la funci\'on objetivo}{\reset@font\mtcSSfont 35}{subsection.3.1.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.7}Codificaci\'on y Decodificaci\'on}{\reset@font\mtcSSfont 36}{subsection.3.1.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Redes Neuronales}{\reset@font\mtcSfont 38}{section.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Red Neuronal Densa}{\reset@font\mtcSSfont 38}{subsection.3.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Funci\'on de Activaci\'on}{\reset@font\mtcSSSfont 39}{subsubsection*.22}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Topolog\IeC {\'\i }a de Conexionado}{\reset@font\mtcSSSfont 40}{subsubsection*.23}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Propagaci\'on Hacia Atr\'as}{\reset@font\mtcSSSfont 41}{subsubsection*.24}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Red Neuronal Convolucional}{\reset@font\mtcSSfont 43}{subsection.3.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Filtros Locales}{\reset@font\mtcSSSfont 45}{subsubsection*.25}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Pesos Compartidos}{\reset@font\mtcSSSfont 46}{subsubsection*.26}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Agrupamiento}{\reset@font\mtcSSSfont 46}{subsubsection*.27}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Herramientas Complementarias}{\reset@font\mtcSfont 48}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}M\'aquina de Vectores de Soporte}{\reset@font\mtcSSfont 48}{subsection.3.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}M\'etricas de Evaluaci\'on Estad\IeC {\'\i }stica}{\reset@font\mtcSSfont 49}{subsection.3.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Medida F}{\reset@font\mtcSSSfont 50}{subsubsection*.28}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Recall. Sensibilidad}{\reset@font\mtcSSSfont 50}{subsubsection*.29}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Especificidad. Precisi\'on}{\reset@font\mtcSSSfont 50}{subsubsection*.30}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Precision. Accuracy}{\reset@font\mtcSSSfont 50}{subsubsection*.31}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Curva ROC}{\reset@font\mtcSSSfont 51}{subsubsection*.32}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \'Area bajo la curva}{\reset@font\mtcSSSfont 52}{subsubsection*.33}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Validaci\'on Cruzada}{\reset@font\mtcSSfont 52}{subsection.3.3.3}}

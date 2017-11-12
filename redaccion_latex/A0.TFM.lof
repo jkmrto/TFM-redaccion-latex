@@ -1,0 +1,67 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Introduccion}{3}{chapter.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Esquema cl\'aisco de auto-encoder}}{5}{figure.1.1}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Contexto}{7}{chapter.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Evoluci\'on del n\'umero de paciente en millones desde 2010 hasta 2050 \cite {Nations}}}{7}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ovillos neurofirilares y placas seniles delos pacientes con AD respecto a los normales. Figura obtenda de \cite {atlasAlzheimer}}}{11}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ovillos neurofirilares y placas seniles delos pacientes con AD respecto a los normales. Figura obtenda de \cite {atlasAlzheimer}}}{11}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces (a) Cerebro con funciones cognitivas normales. (b) Cerebro con funciones cognitivas d}}{14}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces (Izquierda) Modelo de una \'unica Gausiana, (Derecha) Modelo de mezcla de Gausianas}}{16}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces (Izquierda) Modelo de una \'unica Gausiana, (Derecha) Modelo de mezcla de Gausianas}}{17}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces M\'odelo b\'asido de RBM}}{18}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces \textit {Stacked} RBMs}}{18}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Autoencoder Lineal}}{19}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Esquema de una Red Generativa Adversaria}}{21}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Visualizaci\'on del espacio de dimensionalidad reducida conseguido en el trabajo \cite {vae_2d}. Las im\'agenes superpuestas corresponden a las imagenes reales, no a las generadas}}{22}{figure.2.11}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Esquema cl\'asico b\'asico de un sistema de diagn\'ostico de AD asistido por computador}}{23}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Diagrama del Autoencoder Convolucional 3D empleado en el trabajo \cite {cnn_ad_1} para la extracci\'on de caracter\IeC {\'\i }sticas}}{25}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Diagrama general del m\'etodo desarrollado en el trabajo \cite {cnn_ad_2}}}{26}{figure.2.14}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Fundamentos Te\'oricos}{29}{chapter.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Modelo gr\'afico de variables latentes para el modelo generativo del VAE. $Z$ es el espacio de variables lo m\'as similar posible a un distribuci\'on normal $(N(0,I))$. El elemento $\theta $ es el conjunto de par\'ametros que aplicados de manera funcional sobre las variables latentes son capaces de generar el conjunto muestral $X$ }}{30}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces (Izquierda) Modelo de VAE sin Truco de Reparametrizaci\'on. (Derecha) Modelo de VAE con Truco de Reparametrizaci\'on}}{34}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Esquematizaci\'on simple de las funciones del Codificador y el Decodificador en el VAE}}{36}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Sistema global de proceso de una red neuronal}}{38}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Principales funciones de activaci\'on.}}{39}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces (izquierda) Funci\'on de activaci\'on \textit {Relu}. (Derecha) Funci\'on de activaci\'on \textit {leakyRelu.} }}{40}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Esquema de una red neuronal densa de una sola capa oculta }}{41}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Representaci\'on esquem\'atica del proceso de entrenamiento de una red neuronal }}{41}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Red convolucional \textit {LeNet5} }}{43}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Ejemplo de aplicaci\'on del operador convoluci\'on sobre una imagen. Seleccionada una regi\'on de la imagen cuyas dimensiones son las mismas que las del kernel seleccionado, se aplica el producto pixel a pixel entre dicha regi\'on y los pesos propios del kernel. La suma de estos productos se almacena en la imagen de salida, respetando la ubicaci\'on espacial de la regi\'on evaluada. }}{43}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces (Izquierda) Modelo clasico de redes neuronales. (Derecha) Modelo de Red Convolucional. Los datos son reagrupados en 3 dimensionados como se puede observar en una de las capas. Cada una de las capas tiene como entrada una imagen 3D y tiene como salida otra imagen 3D. La capa roja representa la capa de entrada por lo que la altura y la anchura son las dimensiones de la imagen y la profundidad son el n\'umero de canales}}{44}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Representaci\'on de la conectividad local en una red neuronal}}{45}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Desplazamiento del campo de recepci\'on}}{45}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Representaci\'on de la extracci\'on de varias caracter\IeC {\'\i }sticas con varios filtros}}{46}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Representaci\'on del proceso de agrupamiento (\textit {pooling})}}{47}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Representaci\'on de la separaci\'on binaria realizada por SVM}}{48}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Representaci\'ond de la curva ROC}}{51}{figure.3.17}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Proceso de Validaci\'on Cruzada}}{52}{figure.3.18}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Trabajo Realizado}{53}{chapter.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces MRI image (a), MRI atlas (b), (c) PET image and (d) PET atlas (same slice is shown in MRI and PET images)}}{54}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Muestra de neuroimagen MRI segmentada. (zquierda) MRI WM image. (Derecha) MRI GM image}}{55}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Muestra de neuroimagen PET normalizada}}{56}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{58}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Proceso de segmentaci\'on de vectores por regi\'on}}{59}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Ejemplo de R\'egiones de im\'agenes PET segmentadas.(Izquierda) Regi\'on N\IeC {\textordmasculine } 20. (Derecha) Regi\'on N\IeC {\textordmasculine } 30. Capturas de im\'agenes 3D tomadas con el programa \textit {MRIcrGL}}}{59}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Esquema de Fase de Codificaci\'on}}{60}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Ejemplo de Conexionado B\'asico con la funci\'on de activaci\'on empleada}}{61}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Diagrama del Truco de Reparamaetrizaci\'on}}{62}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Diagrama de la fase de reconstrucci\'on o decodificaci\'on del VAE}}{63}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Funciones de Activaci\'on Empleadas}}{64}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Diagrama de boques funcionales del proceso de actualizaci\'on de los par\'amtetros del VAE}}{66}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Esquema b\'asico de Autoencoder. Cabe notar como ser\'a el c\'odigo generado en la capa latente lo que se emplear\'a para la clasificaci\'on posterior}}{70}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Diagrama b\'asico del proceso de extracci\'on de caracter\IeC {\'\i }sticas aplicando el Autoencoder Variacional}}{71}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Diagrama b\'asico del proceso de extracci\'on de caracter\IeC {\'\i }sticas para las im\'agenes MRI}}{72}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Proceso de evaluaci\'on por regi\'on basado en m\'aquinas de vectores de soporte}}{73}{figure.4.16}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Diagrama del proceso de clasificaci\'on basado en R\'egiones. El proceso se\~nalado en rojo se corresponde con el proceso final encargado de la evaluaci\'on conjunta}}{74}{figure.4.17}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Proceso de Evaluaci\'on Conjunta Alicando SVM}}{76}{figure.4.18}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Resultados}{79}{chapter.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Resultados de clasificaci\'on sobre las im\'agenes PET aplicando las tres t\'ecnicas de evaluacion conjunta de resultados. (Izquierda) Voto por Mayor\IeC {\'\i }a Simple. (Centro) M\'aquina de Vectores de Soporte. (Derecha) Voto por Mayor\IeC {\'\i }a Complejo.}}{80}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Resultados de clasificaci\'on sobre las im\'agenes MRI aplicando las tres t\'ecnicas de evaluacion conjunta de resultados. (Izquierda) Voto por Mayor\IeC {\'\i }a Simple. (Centro) M\'aquina de Vectores de Soporte. (Derecha) Voto por Mayor\IeC {\'\i }a Complejo.}}{81}{figure.5.2}
+\addvspace {10\p@ }
+\contentsline {xchapter}{Ap\'endice}{85}{appendix.Alph1}
+\contentsfinish 

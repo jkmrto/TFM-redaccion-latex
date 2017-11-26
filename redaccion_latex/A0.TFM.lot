@@ -1,17 +1,17 @@
 \select@language {spanish}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduccion}{3}{chapter.1}
+\contentsline {xchapter}{Introduccion}{5}{chapter.1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Contexto}{7}{chapter.2}
+\contentsline {xchapter}{Contexto}{9}{chapter.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Fundamentos Te\'oricos}{29}{chapter.3}
-\contentsline {table}{\numberline {3.1}{\ignorespaces Tabla de Nomenclatura Estad\IeC {\'\i }stica en Clasificaci\'on}}{50}{table.3.1}
+\contentsline {xchapter}{Fundamentos Te\'oricos}{31}{chapter.3}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tabla de Nomenclatura Estad\IeC {\'\i }stica en Clasificaci\'on}}{52}{table.3.1}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Trabajo Realizado}{53}{chapter.4}
-\contentsline {table}{\numberline {4.1}{\ignorespaces Datos Demogr\'aficos Im\'agenes MRI}}{55}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces N\'umero de v\'oxeles en imagen MRI por cada regi\'on}}{58}{table.4.2}
+\contentsline {xchapter}{Trabajo Realizado}{55}{chapter.4}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Datos Demogr\'aficos Im\'agenes PET}}{57}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces N\'umero de v\'oxeles en imagen MRI por cada regi\'on}}{62}{table.4.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Resultados}{79}{chapter.5}
-\addvspace {10\p@ }
-\contentsline {xchapter}{Ap\'endice}{85}{appendix.Alph1}
+\contentsline {xchapter}{Pruebas y Resultados}{95}{chapter.5}
+\contentsline {table}{\numberline {5.1}{Tabla con la configuraci\'on de los distintos par\'ametros para la simulaci\'on de la figura \ref {fig_evolucionRecontrucci\'on}}}{96}{table.5.1}
+\contentsline {table}{\numberline {5.2}{Tabla con la configuraci\'on de los distintos par\'ametros para la simulai\'on de la figura \ref {fig_evolucionRecontrucci\'onCVAE}}}{97}{table.5.2}
 \contentsfinish 

@@ -1,2 +1,32 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Reconstruccion}{\reset@font\mtcSfont 79}{section.5.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}Clasificaci\'on}{\reset@font\mtcSfont 80}{section.5.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Estudio basado en r\'egiones cerebrales}{\reset@font\mtcSfont 55}{section.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Tratamiento de Neuroim\'agenes}{\reset@font\mtcSfont 56}{section.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Fuente de Datos}{\reset@font\mtcSSfont 56}{subsection.4.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}Procesado Previo}{\reset@font\mtcSSfont 57}{subsection.4.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Preselecci\'on de V\'oxeles}{\reset@font\mtcSSSfont 58}{subsubsection*.35}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{\reset@font\mtcSSfont 59}{subsection.4.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Componentes iniciales}{\reset@font\mtcSSSfont 59}{subsubsection*.36}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Segmentaci\'on en vectores 1D}{\reset@font\mtcSSSfont 63}{subsubsection*.37}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Segmentaci\'on en im\'agenes 3D}{\reset@font\mtcSSSfont 64}{subsubsection*.38}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Autoencoder Variacional}{\reset@font\mtcSfont 65}{section.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Modelo de grafos}{\reset@font\mtcSSfont 65}{subsection.4.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Fase de Codificaci\'on}{\reset@font\mtcSSfont 66}{subsection.4.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Fase de Reconstrucci\'on}{\reset@font\mtcSSfont 69}{subsection.4.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Evaluaci\'on del error}{\reset@font\mtcSSfont 70}{subsection.4.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.5}Entrenamiento}{\reset@font\mtcSSfont 72}{subsection.4.3.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Dise\~no del Grafo de Entrenamiento}{\reset@font\mtcSSSfont 73}{subsubsection*.39}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Proceso iterativo}{\reset@font\mtcSSSfont 74}{subsubsection*.40}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.6}Almacenamiento del Grafo}{\reset@font\mtcSSfont 75}{subsection.4.3.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.7}Visualizaci\'on del Grafo con \textit {Tensorboard}}{\reset@font\mtcSSfont 76}{subsection.4.3.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Autoencoder Variacional Convolucional}{\reset@font\mtcSfont 78}{section.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Dise\~no del Modelo}{\reset@font\mtcSSfont 79}{subsection.4.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Fase de Codificaci\'on}{\reset@font\mtcSSfont 80}{subsection.4.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Truco de Reparametrizaci\'on}{\reset@font\mtcSSfont 82}{subsection.4.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.4}Fase de Decodificaci\'on}{\reset@font\mtcSSfont 83}{subsection.4.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.5}Fase de Estimaci\'on del error}{\reset@font\mtcSSfont 85}{subsection.4.4.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Modelo de Clasificaci\'on}{\reset@font\mtcSfont 86}{section.4.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.1}Extracci\'on de Caracter\IeC {\'\i }sticas por Regi\'on}{\reset@font\mtcSSfont 87}{subsection.4.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.2}Evaluaci\'on por Regi\'on}{\reset@font\mtcSSfont 89}{subsection.4.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.3}Evaluaci\'on Conjunta}{\reset@font\mtcSSfont 90}{subsection.4.5.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Voto por Mayor\IeC {\'\i }a Simple}{\reset@font\mtcSSSfont 91}{subsubsection*.41}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Voto por Mayor\IeC {\'\i }a Complejo}{\reset@font\mtcSSSfont 92}{subsubsection*.42}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode M\'aquina de Vectores de Soporte}{\reset@font\mtcSSSfont 93}{subsubsection*.43}}

@@ -1,98 +1,114 @@
 \select@language {spanish}
 \contentsline {starchapter}{Acr\'onimos}{\es@scroman {iii}}{chapter*.1}
 \contentsline {starchapter}{Resumen}{1}{chapter*.5}
-\contentsline {chapter}{\numberline {1}Introduccion}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivacion}{4}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objetivos}{6}{section.1.2}
-\contentsline {chapter}{\numberline {2}Contexto}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}La enfermedad del Alzheimer}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Fases de la AD}{8}{subsection.2.1.1}
-\contentsline {subsubsection}{Sintomas imperceptibles}{8}{subsubsection*.6}
-\contentsline {subsubsection}{Predemencia}{8}{subsubsection*.7}
-\contentsline {subsubsection}{Demencia Inicial}{9}{subsubsection*.8}
-\contentsline {subsubsection}{Demencia morerada}{9}{subsubsection*.9}
-\contentsline {subsubsection}{Demencia avanzada}{9}{subsubsection*.10}
-\contentsline {subsection}{\numberline {2.1.2}S\IeC {\'\i }ntomas}{10}{subsection.2.1.2}
-\contentsline {subsubsection}{S\IeC {\'\i }ntomas Cognitivos}{10}{subsubsection*.11}
-\contentsline {subsubsection}{S\IeC {\'\i }ntomas Psicopatol\'ogicos}{10}{subsubsection*.12}
-\contentsline {subsubsection}{S\IeC {\'\i }ntomas funcionales}{10}{subsubsection*.13}
-\contentsline {subsection}{\numberline {2.1.3}Histopatolog\IeC {\'\i }a}{11}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Base de datos ADNI}{13}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Im\'agenes m\'edicas}{13}{subsection.2.2.1}
-\contentsline {subsubsection}{Im\'agenes MRI}{14}{subsubsection*.14}
-\contentsline {subsubsection}{Im\'agenes PET}{15}{subsubsection*.15}
-\contentsline {section}{\numberline {2.3}Estado del Arte}{16}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Modelos Generadores}{16}{subsection.2.3.1}
-\contentsline {subsubsection}{Modelos cl\'asicos}{16}{subsubsection*.16}
-\contentsline {subsubsection}{La M\'aquina de Boltzmann}{17}{subsubsection*.17}
-\contentsline {subsubsection}{Autoencoder}{19}{subsubsection*.18}
-\contentsline {subsubsection}{Red Generativa Adversaria}{21}{subsubsection*.19}
-\contentsline {subsubsection}{Trabajos Previos}{21}{subsubsection*.20}
-\contentsline {subsection}{\numberline {2.3.2}Diagn\'ostico Asistido por Computador de AD}{23}{subsection.2.3.2}
-\contentsline {subsubsection}{M\'etodos Clasicos}{23}{subsubsection*.21}
-\contentsline {subsection}{\numberline {2.3.3}M\'etodos de Aprendizaje Profundo}{24}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}Entorno de desarrollo}{27}{section.2.4}
-\contentsline {chapter}{\numberline {3}Fundamentos Te\'oricos}{29}{chapter.3}
-\contentsline {section}{\numberline {3.1}Autoencoder Variacional}{29}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Modelo de Variables Latentes}{29}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Modelo Probabil\IeC {\'\i }stico}{30}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Funci\'on Objetivo}{31}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Optimizaci\'on de la funci\'on objetivo}{32}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}El truco de Reparametrizaci\'on}{34}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Interpretaci\'on de la funci\'on objetivo}{35}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}Codificaci\'on y Decodificaci\'on}{36}{subsection.3.1.7}
-\contentsline {section}{\numberline {3.2}Redes Neuronales}{38}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Red Neuronal Densa}{38}{subsection.3.2.1}
-\contentsline {subsubsection}{Funci\'on de Activaci\'on}{39}{subsubsection*.22}
-\contentsline {subsubsection}{Topolog\IeC {\'\i }a de Conexionado}{40}{subsubsection*.23}
-\contentsline {subsubsection}{Propagaci\'on Hacia Atr\'as}{41}{subsubsection*.24}
-\contentsline {subsection}{\numberline {3.2.2}Red Neuronal Convolucional}{43}{subsection.3.2.2}
-\contentsline {subsubsection}{Filtros Locales}{45}{subsubsection*.25}
-\contentsline {subsubsection}{Pesos Compartidos}{46}{subsubsection*.26}
-\contentsline {subsubsection}{Agrupamiento}{46}{subsubsection*.27}
-\contentsline {section}{\numberline {3.3}Herramientas Complementarias}{48}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{48}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}M\'etricas de Evaluaci\'on Estad\IeC {\'\i }stica}{49}{subsection.3.3.2}
-\contentsline {subsubsection}{Medida F}{50}{subsubsection*.28}
-\contentsline {subsubsection}{Recall. Sensibilidad}{50}{subsubsection*.29}
-\contentsline {subsubsection}{Especificidad. Precisi\'on}{50}{subsubsection*.30}
-\contentsline {subsubsection}{Precision. Accuracy}{50}{subsubsection*.31}
-\contentsline {subsubsection}{Curva ROC}{51}{subsubsection*.32}
-\contentsline {subsubsection}{\'Area bajo la curva}{52}{subsubsection*.33}
-\contentsline {subsection}{\numberline {3.3.3}Validaci\'on Cruzada}{52}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Trabajo Realizado}{53}{chapter.4}
-\contentsline {section}{\numberline {4.1}Estudio basado en r\'egiones cerebrales}{53}{section.4.1}
-\contentsline {section}{\numberline {4.2}Tratamiento de Neuroim\'agenes}{54}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Fuente de Datos}{54}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Procesado Previo}{55}{subsection.4.2.2}
-\contentsline {subsubsection}{Preselecci\'on de V\'oxeles}{56}{subsubsection*.34}
-\contentsline {subsection}{\numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{57}{subsection.4.2.3}
-\contentsline {subsubsection}{Segmentaci\'on en vectores 1D}{58}{subsubsection*.35}
-\contentsline {subsubsection}{Segmentaci\'on en im\'agenes 3D}{58}{subsubsection*.36}
-\contentsline {subsection}{\numberline {4.2.4}Reconstrucci\'on a partir de R\'egiones}{59}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Autoencoder Variacional}{60}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Elaboraci\'on del Grafo}{60}{subsection.4.3.1}
-\contentsline {subsubsection}{Fase de Codificaci\'on}{61}{subsubsection*.37}
-\contentsline {subsubsection}{Fase de Reconstrucci\'on}{63}{subsubsection*.38}
-\contentsline {subsubsection}{Evaluaci\'on del error}{64}{subsubsection*.39}
-\contentsline {subsection}{\numberline {4.3.2}Entrenamiento}{66}{subsection.4.3.2}
-\contentsline {subsubsection}{Dise\~no del Grafo de Entrenamiento}{67}{subsubsection*.40}
-\contentsline {subsection}{\numberline {4.3.3}Proceso iterativo}{67}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Almacenamiento del Grafo}{67}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Otros Aspectos}{68}{subsection.4.3.5}
-\contentsline {section}{\numberline {4.4}Autoencoder Variacional Convolucional}{69}{section.4.4}
-\contentsline {section}{\numberline {4.5}Modelo de Clasificaci\'on}{70}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Extracci\'on de Caracter\IeC {\'\i }sticas por Regi\'on}{71}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Evaluaci\'on por Regi\'on}{72}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Evaluaci\'on Conjunta}{73}{subsection.4.5.3}
-\contentsline {subsubsection}{Voto por Mayor\IeC {\'\i }a Simple}{74}{subsubsection*.41}
-\contentsline {subsubsection}{Voto por Mayor\IeC {\'\i }a Complejo}{75}{subsubsection*.42}
-\contentsline {subsubsection}{M\'aquina de Vectores de Soporte}{76}{subsubsection*.43}
-\contentsline {chapter}{\numberline {5}Resultados}{79}{chapter.5}
-\contentsline {section}{\numberline {5.1}Reconstruccion}{79}{section.5.1}
-\contentsline {section}{\numberline {5.2}Clasificaci\'on}{80}{section.5.2}
-\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{83}{chapter*.44}
-\contentsline {chapter}{\numberline {A}Ap\'endice}{85}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Primera secci\'on}{85}{section.Alph1.1}
-\contentsline {chapter}{\'Indice alfab\'etico}{93}{section*.46}
+\contentsline {starchapter}{Summary}{3}{chapter*.6}
+\contentsline {chapter}{\numberline {1}Introduccion}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivacion}{6}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objetivos}{8}{section.1.2}
+\contentsline {chapter}{\numberline {2}Contexto}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}La enfermedad del Alzheimer}{9}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Fases de la AD}{10}{subsection.2.1.1}
+\contentsline {subsubsection}{Sintomas imperceptibles}{10}{subsubsection*.7}
+\contentsline {subsubsection}{Predemencia}{10}{subsubsection*.8}
+\contentsline {subsubsection}{Demencia Inicial}{11}{subsubsection*.9}
+\contentsline {subsubsection}{Demencia morerada}{11}{subsubsection*.10}
+\contentsline {subsubsection}{Demencia avanzada}{11}{subsubsection*.11}
+\contentsline {subsection}{\numberline {2.1.2}S\IeC {\'\i }ntomas}{12}{subsection.2.1.2}
+\contentsline {subsubsection}{S\IeC {\'\i }ntomas Cognitivos}{12}{subsubsection*.12}
+\contentsline {subsubsection}{S\IeC {\'\i }ntomas Psicopatol\'ogicos}{12}{subsubsection*.13}
+\contentsline {subsubsection}{S\IeC {\'\i }ntomas funcionales}{12}{subsubsection*.14}
+\contentsline {subsection}{\numberline {2.1.3}Histopatolog\IeC {\'\i }a}{13}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Base de datos ADNI}{15}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Im\'agenes m\'edicas}{15}{subsection.2.2.1}
+\contentsline {subsubsection}{Im\'agenes MRI}{16}{subsubsection*.15}
+\contentsline {subsubsection}{Im\'agenes PET}{17}{subsubsection*.16}
+\contentsline {section}{\numberline {2.3}Estado del Arte}{18}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Modelos Generadores}{18}{subsection.2.3.1}
+\contentsline {subsubsection}{Modelos cl\'asicos}{18}{subsubsection*.17}
+\contentsline {subsubsection}{La M\'aquina de Boltzmann}{19}{subsubsection*.18}
+\contentsline {subsubsection}{Autoencoder}{21}{subsubsection*.19}
+\contentsline {subsubsection}{Red Generativa Adversaria}{23}{subsubsection*.20}
+\contentsline {subsubsection}{Trabajos Previos}{23}{subsubsection*.21}
+\contentsline {subsection}{\numberline {2.3.2}Diagn\'ostico Asistido por Computador de AD}{25}{subsection.2.3.2}
+\contentsline {subsubsection}{M\'etodos Clasicos}{25}{subsubsection*.22}
+\contentsline {subsection}{\numberline {2.3.3}M\'etodos de Aprendizaje Profundo}{26}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}Entorno de desarrollo}{29}{section.2.4}
+\contentsline {chapter}{\numberline {3}Fundamentos Te\'oricos}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}Autoencoder Variacional}{31}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Modelo de Variables Latentes}{31}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Modelo Probabil\IeC {\'\i }stico}{32}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Funci\'on Objetivo}{33}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Optimizaci\'on de la funci\'on objetivo}{34}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}El truco de Reparametrizaci\'on}{36}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Interpretaci\'on de la funci\'on objetivo}{37}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Codificaci\'on y Decodificaci\'on}{38}{subsection.3.1.7}
+\contentsline {section}{\numberline {3.2}Redes Neuronales}{40}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Red Neuronal Densa}{40}{subsection.3.2.1}
+\contentsline {subsubsection}{Funci\'on de Activaci\'on}{41}{subsubsection*.23}
+\contentsline {subsubsection}{Topolog\IeC {\'\i }a de Conexionado}{42}{subsubsection*.24}
+\contentsline {subsubsection}{Propagaci\'on Hacia Atr\'as}{43}{subsubsection*.25}
+\contentsline {subsection}{\numberline {3.2.2}Red Neuronal Convolucional}{45}{subsection.3.2.2}
+\contentsline {subsubsection}{Filtros Locales}{47}{subsubsection*.26}
+\contentsline {subsubsection}{Pesos Compartidos}{48}{subsubsection*.27}
+\contentsline {subsubsection}{Agrupamiento}{49}{subsubsection*.28}
+\contentsline {section}{\numberline {3.3}Herramientas Complementarias}{50}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}M\'aquina de Vectores de Soporte}{50}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}M\'etricas de Evaluaci\'on Estad\IeC {\'\i }stica}{51}{subsection.3.3.2}
+\contentsline {subsubsection}{Medida F}{52}{subsubsection*.29}
+\contentsline {subsubsection}{Recall. Sensibilidad}{52}{subsubsection*.30}
+\contentsline {subsubsection}{Especificidad. Precisi\'on}{52}{subsubsection*.31}
+\contentsline {subsubsection}{Precision. Accuracy}{52}{subsubsection*.32}
+\contentsline {subsubsection}{Curva ROC}{53}{subsubsection*.33}
+\contentsline {subsubsection}{\'Area bajo la curva}{54}{subsubsection*.34}
+\contentsline {subsection}{\numberline {3.3.3}Validaci\'on Cruzada}{54}{subsection.3.3.3}
+\contentsline {chapter}{\numberline {4}Trabajo Realizado}{55}{chapter.4}
+\contentsline {section}{\numberline {4.1}Estudio basado en r\'egiones cerebrales}{55}{section.4.1}
+\contentsline {section}{\numberline {4.2}Tratamiento de Neuroim\'agenes}{56}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Fuente de Datos}{56}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Procesado Previo}{57}{subsection.4.2.2}
+\contentsline {subsubsection}{Preselecci\'on de V\'oxeles}{58}{subsubsection*.35}
+\contentsline {subsection}{\numberline {4.2.3}Segmentaci\'on basada en r\'egiones}{59}{subsection.4.2.3}
+\contentsline {subsubsection}{Componentes iniciales}{59}{subsubsection*.36}
+\contentsline {subsubsection}{Segmentaci\'on en vectores 1D}{62}{subsubsection*.37}
+\contentsline {subsubsection}{Segmentaci\'on en im\'agenes 3D}{63}{subsubsection*.38}
+\contentsline {section}{\numberline {4.3}Autoencoder Variacional}{64}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Modelo de grafos}{64}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Fase de Codificaci\'on}{65}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Fase de Reconstrucci\'on}{68}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Evaluaci\'on del error}{69}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Entrenamiento}{71}{subsection.4.3.5}
+\contentsline {subsubsection}{Dise\~no del Grafo de Entrenamiento}{72}{subsubsection*.39}
+\contentsline {subsubsection}{Proceso iterativo}{73}{subsubsection*.40}
+\contentsline {subsection}{\numberline {4.3.6}Almacenamiento del Grafo}{74}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.7}Visualizaci\'on del Grafo con \textit {Tensorboard}}{75}{subsection.4.3.7}
+\contentsline {section}{\numberline {4.4}Autoencoder Variacional Convolucional}{77}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Dise\~no del Modelo}{78}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Fase de Codificaci\'on}{79}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Truco de Reparametrizaci\'on}{81}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Fase de Decodificaci\'on}{82}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Fase de Estimaci\'on del error}{84}{subsection.4.4.5}
+\contentsline {section}{\numberline {4.5}Modelo de Clasificaci\'on}{85}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Extracci\'on de Caracter\IeC {\'\i }sticas por Regi\'on}{86}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Evaluaci\'on por Regi\'on}{88}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Evaluaci\'on Conjunta}{89}{subsection.4.5.3}
+\contentsline {subsubsection}{Voto por Mayor\IeC {\'\i }a Simple}{90}{subsubsection*.41}
+\contentsline {subsubsection}{Voto por Mayor\IeC {\'\i }a Complejo}{91}{subsubsection*.42}
+\contentsline {subsubsection}{M\'aquina de Vectores de Soporte}{92}{subsubsection*.43}
+\contentsline {chapter}{\numberline {5}Pruebas y Resultados}{95}{chapter.5}
+\contentsline {section}{\numberline {5.1}Evoluci\'on de la reconstrucci\'on de una region}{95}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Ejemplo con VAE}{95}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Ejemplo con CVAE}{97}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Reconstrucci\'on completa del cerebro}{99}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Ejemplo con CVAE}{100}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Ejemplo con VAE}{102}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Visualizaci\'on del c\'odigo de la capa latente}{104}{section.5.3}
+\contentsline {section}{\numberline {5.4}Exploraci\'on del c\'odigo de la capa latente}{106}{section.5.4}
+\contentsline {section}{\numberline {5.5}Clasificaci\'on}{109}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}VAE con MRI}{110}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}VAE con PET}{111}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}CVAE con MRI}{112}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}CVAE con PET}{113}{subsection.5.5.4}
+\contentsline {starchapter}{Conclusiones y l\IeC {\'\i }neas futuras}{115}{chapter*.44}
+\contentsline {subsection}{\numberline {5.5.5}L\IeC {\'\i }neas futuras}{116}{subsection.5.5.5}
+\contentsline {chapter}{\'Indice alfab\'etico}{125}{section*.46}
 \contentsfinish 

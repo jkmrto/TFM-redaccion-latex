@@ -178,7 +178,7 @@ depende de los parámetros de $P$ y también de los valores de $Q$. Esto es proble
 \par Dados $\mu_{X}$ y  $\Sigma_{X}$, media y convarianza respectivamente de $Q(z|X)$, podemos mapear $N(\mu_{X}, \sigma(X))$ tomando un valor de la función Normal ($\epsilon \sim N(0,I)$) y aplicando la siguiente expresión:
 
 \begin{center}
-\begin{equation} \label{eq:RT_1}
+\begin{equation} \label{eq_trucoParametrizacion}
 z = \mu(X) + \Sigma(X)^{1/2} * \epsilon. 
 \end{equation}
 \end{center}
@@ -334,7 +334,7 @@ Se denomina propagación hacia atrás al proceso empleado para el entrenamiento de
 
 
 \newpage
-\subsection{Red Neuronal Convolucional}
+\subsection{Red Neuronal Convolucional}\label{teoriaConvolucional}
 
 \par Las redes convolucionales (CNN, del inglés \textit{Convolutional Neural Networks}) son una categoría de redes neuronales que se consideran un método altamente eficaz en áreas como el reconocimiento de imágenes \cite{CNN_1}\cite{CNN_2}.
 \begin{figure}[]
@@ -350,7 +350,7 @@ Se denomina propagación hacia atrás al proceso empleado para el entrenamiento de
 \par Se asume que los conjuntos de pixeles vecions formarán unas características más significativas que sí tomaramos grupos sin tener en cuenta su disposición espacial
 
 a capa anterior lo que se emplea es el operador de convolución.
-\begin{figure}[b]
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.60]{images/conNet_2.png}
 \caption{Ejemplo de aplicación del operador convolución sobre una imagen. Seleccionada una región de la imagen cuyas dimensiones son las mismas que las del kernel seleccionado, se aplica el producto pixel a pixel entre dicha región y los pesos propios del kernel. La suma de estos productos se almacena en la imagen de salida, respetando la ubicación espacial de la región evaluada. }
@@ -372,7 +372,7 @@ a capa anterior lo que se emplea es el operador de convolución.
 \par A diferencia de las redes neuronales convencionales en las redes convolucionales los datos a la entrada y entre el conexionado de capas se agrupan en 3 dimensiones: ancho, alto y profundidad. En este caso nos referimos a "profundidad" por capa no a la profundidad de la red, lo cual se refiere al número de capas  de la red en cuestión. Por ejemplo, dada una imagen de entrada de tres canales (los tres canales de color) de 32x32 pixeles, la agrupación de los datos en la capa de entrada será 32x32x3. Ver figura \ref{fig:CNN_3}
 \par Otra diferencia con respecto a la redes neuronales clásicas es que las unidades de una capa solo están conectadas a un espacio reducido de unidades de la capa inmediatamente anterior. 
 
-\begin{figure}[t]
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.60]{images/convNet_3.png}
 \caption{(Izquierda) Modelo clasico de redes neuronales. (Derecha) Modelo de Red Convolucional. Los datos son reagrupados en 3 dimensionados como se puede observar en una de las capas. Cada una de las capas tiene como entrada una imagen 3D y tiene como salida otra imagen 3D. La capa roja representa la capa de entrada por lo que la altura y la anchura son las dimensiones de la imagen y la profundidad son el número de canales}
@@ -384,7 +384,7 @@ a capa anterior lo que se emplea es el operador de convolución.
 \subsubsection{Filtros Locales}
 
 \par En una red neuronal densa, esto es, una red totalmente conectada como la de imagen \ref{fig:CNN_3} las entradas se interpretan como un conjunto "vertical" de unidades. Sin embargo, en un red convolucional es preferible organizar las unidades de entrada en forma bidimensional.
-\begin{figure}[t]
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.60]{images/conNet_4.png}
 \caption{Representación de la conectividad local en una red neuronal}
@@ -409,7 +409,7 @@ a capa anterior lo que se emplea es el operador de convolución.
 \par El punto anterior se fundamente en que generalmente un patrón  de una parte de la imagen es probable que se repita en otra parte de la imagen dada la propia naturaleza de las imágenes. 
 \par Con objeto de no limitar cada capa a la extracción de un tipo de característicia se aplican numeros filtros en cada una de las capas de convolución. Gracias a esto se consiguen extraer distintos tipos de patrones. 
 
-\begin{figure}[t]
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.40]{images/conv_net7.png}
 \caption{Representación de la extracción de varias características con varios filtros}
@@ -418,14 +418,14 @@ a capa anterior lo que se emplea es el operador de convolución.
 \par Una de la ventajas del uso de pesos compartidos es que permite reducir el número de parámetros de la red. 
 
 
-\begin{figure}[t]
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.50]{images/convNet_7.png}
 \caption{Representación del proceso de agrupamiento (\textit{pooling})}
 \label{fig:CNN_}
 \end{figure}
 
-\subsubsection{Agrupamiento}
+\subsubsection{Agrupamiento}\label{agrupamiento}
 
 \par Otro tipo de capa característica de las redes convolucionales son las capas de agrupamiento o \textit{pooling}.  Esta capa tiene como objetivo reducir el número de datos generado, realizando una estimación del valor más importante de una determinada region. Esto permite reducir progresivamente el tamaño de la imagen. Este proceso de agrupamiento se aplica individualmente a cada una de las imagnenes generadas por cada filtro.  
 \par No obstante, esta funcionalidad no ha sido utilizada en el modelo generado en este trabajo dado que actualmente la librería empleada (\textit{TensorFlow})  no tiene implementada esta operación para imágenes 3D. 
@@ -442,7 +442,7 @@ a capa anterior lo que se emplea es el operador de convolución.
 
 \par El método denominado Máquina de Vectores de Soporte (SVM, del inglés \textit{Support Vector Machine}) ha sido ampliamento usado para la clasificación y regresión \cite{SVM_1} \cite{SVM_2}, diseñado para la separación de un conjunto binario de datos, préviamente etiquetados, mediante un hiperplano, ver figura \ref{fig:SVM_1}. 
 
-\begin{figure}[htb]
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.50]{images/svm_margin.png}
 \caption{Representación de la separación binaria realizada por SVM}
@@ -494,7 +494,7 @@ donde el vector de pesos $w$ ha de ser ortogonal al hiperplano de decisión. El p
 \noindent
 donde $y_j$ son las etiquetas de cada una de las muestras, $\lambda_{j}$ son los parámetros Lagrangianos correspondientes, los cuales también son optimizados durante la fase de entrenamiento y $f_j$  son las muestras de entremamiento. La coordenada $i$ del vector $W$, ($W_{i}$ con $1 \leq i \leq n$) hace referencia a la relevancia de la dimensión $i$ del vector de características $f_j$ \cite{SVM_3}. Más precisamente cuanto mayor sea el valor absoluto de $W_{i}$ mayor será la relevancia de la característica $i$. Por contraste $|W_i|=0$ indica que la característica $i$ no aporta ningún tipo de información en la clasificación.
 
-\subsection{Métricas de Evaluación Estadística}
+\subsection{Métricas de Evaluación Estadística} \label{ch_metricasEvaluacion}
 
 
 \par Hay diferentes métricas de evaluación referidas a las característiscas del diagnóstico. Algunas se utilizan para evaluar la capacidad discriminativa de la prueba y otras para estimar su propiedad de predicción, siendo esta última muy sensible a las características de las poblaciones evaluadas. 
@@ -561,7 +561,7 @@ sensibilidad frente a 1-especificidad (proporción de resultados falsos positivos
 \par Cada punto en el espacio ROC muestra el equilibrio entre la sensibilidad y la
 especificidad, es decir, que el aumento de sensibilidad va acompañado de una disminución en la especificidad. 
 
-\begin{figure}[!hb]
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.5]{images/curva_roc.png}
 \caption{Representaciónd de la curva ROC}
@@ -581,7 +581,7 @@ en lugar de en un punto particular.
 
 
 
-\subsection{Validación Cruzada}
+\subsection{Validación Cruzada} \label{sec_validacionCruzada}
 \par La validación es una técnica utilizada para evaluar los resultados de un análisis estadístico y garantizar que son independientes de la particición entre datos de entrenamiento y de prueba. En cualquier análisis estadístico es necesario aplicar un conjunto de datos diferentes durante el entrenamiento y durante la fase de prueba, con objeto de evitar que los resultados y por tanto el sistema diseñado estén sesgados al conjunto de datos con los que se ha entrenado \cite{ValidacionCruzada}. 
 
 \par En este trabajo, para la construcción de los conjuntos de prueba y entrenamiento se usará el método conocido como \textit{k-folds}. En este método los datos se dividen en k subconjuntos iguales, realizando k iteraciones. En cada iteración se toma uno
@@ -591,7 +591,7 @@ subconjuntos como datos de prueba, ver Fig. \ref{fig:ValidaciónCruzada}
 
 \par Las métricas de evaluación finales se calculan como la media aritmética de las métricas cada iteración para obtener un único resultado, evitando que los resultados estén sesgados al espacio muestral. 
 
-\begin{figure}[htb]
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.60]{images/ValidacionCruzada.png}
 \caption{Proceso de Validación Cruzada}

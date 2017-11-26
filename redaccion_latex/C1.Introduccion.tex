@@ -48,14 +48,14 @@ La demencia engloba un amplio grupo de enfermedades mentales que provocan el det
 
 \section{Objetivos}
 
+Los principales propósitos del presente trabajo son los siguientes:
+
 \begin{itemize}
-\item Elaborar un auto-encoder variacional basado en redes neuronales densas.
-\item Elaborar un auto-encoder variacional convolucional en 3d basado en redes neuronales convolucionales.
-\item Obtener características discriminantes por region capaces de clasificar imágenes médicas a partir de los auto-encoder elaborados. 
-\item
-\item
-\item
-\item
+\item Análisis e implementación en \textit{Python} de un modelo de autoencoder variacional basado en redes neuronaels densas.
+\item Análisis e implementación de un autoencoder variacional basado en redes neuronales convolucionales.
+\item Simular y evaluar la capacidad de síntesis de neruoimágenes de cada uno de los dos modelos generativos implentados. Debido a la alta dimensionalidad de las imágenes cerebrales empleadas, se tendrá que realizar la síntesis por cada región dado que el análisis completo de una imagen necesitaría unos recursos computacionales y de memoria que no están disponibles en los equipos en los que se realizan las pruebas.
+\par La necesidad de analizar las régiones por separado conlleva que se necesiten un conjunto de funcionalidades que permitan manejar este tratamiento de las imágenes. Una de estas funcionalidades es la encargada de reconstruir el cerebro completo a partir de las imágenes 3D de regiones cerabrales en caso de utilizar el modelo convolucional.
+\item Eváluar la capacidad de los diseños implementados de distinguir entre los suejetos AD de los suejetos NOR, esto es la capacidad de clasificar de forma correcta las distintas neuroimágenes. 
 \end{itemize}
 
 

@@ -1,0 +1,13 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Evoluci\'on de la reconstrucci\'on de una region}{\reset@font\mtcSfont 95}{section.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Ejemplo con VAE}{\reset@font\mtcSSfont 95}{subsection.5.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.2}Ejemplo con CVAE}{\reset@font\mtcSSfont 97}{subsection.5.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}Reconstrucci\'on completa del cerebro}{\reset@font\mtcSfont 99}{section.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Ejemplo con CVAE}{\reset@font\mtcSSfont 100}{subsection.5.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}Ejemplo con VAE}{\reset@font\mtcSSfont 102}{subsection.5.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}Visualizaci\'on del c\'odigo de la capa latente}{\reset@font\mtcSfont 104}{section.5.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.4}Exploraci\'on del c\'odigo de la capa latente}{\reset@font\mtcSfont 106}{section.5.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.5}Clasificaci\'on}{\reset@font\mtcSfont 109}{section.5.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.5.1}VAE con MRI}{\reset@font\mtcSSfont 110}{subsection.5.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.5.2}VAE con PET}{\reset@font\mtcSSfont 111}{subsection.5.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.5.3}CVAE con MRI}{\reset@font\mtcSSfont 112}{subsection.5.5.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.5.4}CVAE con PET}{\reset@font\mtcSSfont 113}{subsection.5.5.4}}

@@ -1,14 +1,30 @@
 \chapterbeginx{Conclusiones y líneas futuras}
 
-	Después de todo el desarrollo del proyecto, es pertinente hacer una valoración final del mismo, respecto a los resultados obtenidos, las expectativas o el resultado de la experiencia acumulada.
+\par En este trabajo se ha analizado la técnica generativa denominada Autoencoder Variacional realizándose dos implementaciones Software de dicha técnica utilizando el lenguaje \textit{Python}. Esta modelo de aprendizaje no supervisado está basado en aprendizaje profundo, es por ello que se ha empleado la librería \textit{Tensorflow} que da soporte a la implementación de redes neuronales para su ejecución tanto en CPU como en GPU. Algunos de los aspectos a destacar, así como algunas de las contribuciones realizadas durante el desarrollo del trabajo son las siguientes:
 
-	En esta sección se exponen todos esos conceptos y enuncian unas conclusiones finales.
-	
-	Además, considerando también el estado de la técnica, se pueden deducir líneas futuras de trabajo, proponer otros puntos de vista o cualquier otra sugerencia como postámbulo del presente trabajo, para ser considerada por el lector o el tribunal evaluador.
+\begin{itemize}
 
-\begin{flushright}
-{\large \pfcauthorname}\nli
-\today
-\end{flushright}
-	
+\item Se ha implementado un modelo de VAE basado en redes neuronales densas. El modelo es facilmente configurable tanto en variables de configuración como es la tasa de aprendizaje o en parámetros estructurales como son el número de capas del modelo o el número de neuronas para cada capa.
+
+\item Se ha implementado un modelo de VAE basado en redes neuronales convolucionales. En este caso las variables de configuración son modificables fácilmente, y se han habilitado una serie de modelos que habilitan la posibilidad de selecionar entres distintas estructuras para el sistema.
+
+\par Esta capacidad  para variar  tanto los parámetros del modelo como ciertos aspectos estructurales permite evaluar difentes configuraciones con objeto de obtener la óptima. 
+
+\item Se ha evaluado la capacidad de los modelos implementados de discernir entre pacientes AD y NOR emplenado tanto muestras PET como MRI. 
+\par Para las imagenenes MRI se ha obtenido una precisión  máxima de clasificación de hasta el 84 \% para el VAE. En otros estudios, empleándose este mismo espacio muestral se han conseguido resultados superiores al 90 \%, por lo que son bastante superiores a los conseguidos en este trabajo. No obstante el objetivo no era conseguir un clasificador óptimo que consiguiera competir con los modelos actuales sino demostrar la capacidad de discernir entre las neuroimagenes de un sujeto NOR y las de uno AD.
+\par Para las imágenes PET se ha obtenido una precisión máxima en torno al 90 \%. De nuevo estos resultados no compiten con los modelos del estado del arte actual que ronda el 95 \% con este mismo espacio muestral.
+
+\item El objetivo principal del trabajo era conseguir realizar la síntesis de neuroimágenes 3D a partir de la caracterización del VAE. No obstante, las síntesis realizadas utilzando el código generado por las propias imágenes del espacio muestral han generado unas imágenes que apenas se asemejaban a las originales. 
+\par Tanto para el modelo VAE de redes densas como para el CVAE se ha tenido un resultado nefasto para la síntesis aunque hay diversos aspectos en la implementación de ambos modelos que son diferentes. Esto genera la duda de si el problema está en la implementación del modelo o en el método VAE en sí que no se ajuste al objetivo de este trabajo. 
+\par En las simulaciones de visualización del código latente se ha comprobado como es posible separar para algunas regiones el código generado para imágenes de sujetos AD y para sujetos NOR. Esto nos indica que el autoencoder es capaz de generar un código diferente para los dos tipos de sujetos. Sin embargo durante la fase de reconstrucción se tiene que los códigos generan de nuevo el mismo tipo de imagen. Una imagen final que puede representar un valor medio de imagen que permite reducir el error de regeneración durante el proceso de entrenamiento.
+\par En resumen, es realmente desconcertante que códigos latentes diferenciables entre NOR y AD generen finalmente un mismo tipo de imagen, o al menos muy similar. 
+
+\item Otro aspecto importante es que el uso de redes convolucionales 3D como modelo extracción de características para el VAE no es una metodología que se haya usado en muchos trabajos relativos a esta temática, al menos durante la fase inicial de este proyecto no se encontro ningún código de implementación sobre \textit{Tensorflow} de este tipo de red. Además, \textit{Tensorflow} no dispone de la función encargada de realizar el proceso de agrupamiento (\textit{pooling}) para imágenes 3D, lo cuál puede conlleva la imposibilidad de probar esta funcionalidad de reducción de características en el sistema. 
+
+\subsection{Líneas futuras}
+\par En este trabaja la implementación se ha apoyado en \textit{Tensorflow} para la realización de los diseños. Existen diversas librerías sobre \textit{Python} que facilitan el mismo conjunto de funcionalidades que \textit{Tensorflow}, tales librerías son \textit{Keras} o \textit{Theano}, es por ello que una posible línea de trabajo sería realizar la implementación sobre alguna de estas librería y evaluar si los resultados de la síntesis de imágenes son similares. Esto nos permitiría descartar si los problemas de este trabajo son debidos a las implementaciones aquí realizadas.
+
+\par Además de VAE, existen otros tipos de técnicas generativas que se basan en el uso de aprendizaje profundo. Las redes generativas adversarias, que fueren brevemente comentadas en la sección \ref{sec_redesAdversarias}, constituyen un método caracterizado por generar una síntesis de imágenes más realista que el VAE pero que es ciertamente más complejo de entrenar y de llegar a una configuración óptima de los parámetros. 
+\end{itemize}
+
 \chapterend

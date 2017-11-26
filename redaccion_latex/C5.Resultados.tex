@@ -6,32 +6,296 @@
 % Fecha:  	2014-02-01
 % Versión:	0.5.0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapterbegin{Resultados}
-\label{chp:Resultados}
+\chapterbegin{Pruebas y Resultados}
+\label{chp_pruebas_resultados}
 
-\section{Reconstruccion}
+\section{Evolución de la reconstrucción de una region}
+\par Una manera interesante de evaluar que los sistemas diseñados funcionan correctamente es comprobar que las neuroimágenes 3D generadas se asemejan a las originales. Durante el proceso de caracterización del sistema, esto es, el proceso de entrenamiento de los distintos pesos de la red es posible comprobar como las imágenes generadas se asemejan cada vez más a la original, según se va desarrollando el procedimiento y van aumentado el número de iteracciones de entrenamiento realizadas.
+
+
+\subsection{Ejemplo con VAE}
+
+
+\par En esta simulación, se ha empleado el diseño del autoencoder variacional con la configuración expuesta en la tabla \ref{fig_tabConfVae}. Una captura de la imagen en 3D para distintas iteracciones se puede observar en la figura \ref{fig_evolucionRecontrucción}.
+
+\par Se aprecia claramente como para las iteracciones iniciales  (100 repeticiones) apenas se aprecia la estructura del elmento final y conforme se va desarrollando el proceso de entrenamiento esta estructura se va aproximando cada vez más al aspecto de la región original.
+
+\begin{longtable}{|c|c|}
+
+\hline
+Tipo de Imagen               & PET              \\ \hline
+Muestra     		          & 1                \\ \hline
+Región                       & 3                \\ \hline
+Número de Capas              & 3                \\ \hline
+Neuronas por Capa 			  & {[3896, 1000, 500]} \\\hline
+Tasa de aprendizaje          & 0.000005         \\ \hline
+Stride                       & 2                \\ \hline
+Función de Activación        & elu            \\ \hline
+Tamaño del batch de muestras & 64              \\ \hline
+Dropout                			& 0.90        \\ \hline
+Regularización Lambda L2     & 0.0001           \\ \hline
+\caption{Tabla con la configuración de los distintos parámetros para la simulación de la figura \ref{fig_evolucionRecontrucción}}
+\label{fig_tabConfVae}
+\end{longtable}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.60]{images/evolucionReconstruccionVAE.png}
+\caption{Evolución de la regeneración de la imagen 3D  de la region nº3 del atlas AAL en función de la iteracción en la que se encuentre en el proceso de entrenamiento para un VAE.}
+\label{fig_evolucionRecontrucción}
+\end{figure}
+
+
 
 \newpage
+\subsection{Ejemplo con CVAE}
+
+
+\begin{longtable}{|c|c|c|}
+
+
+\hline
+Tipo de Imagen               & PET              \\ \hline
+Muestra     		          & 1                \\ \hline
+Región                       & 3                \\ \hline
+Número de Capas              & 3                \\ \hline
+Tamaño de Imagen             & {[}14, 43, 42{]} \\ \hline
+Tasa de aprendizaje          & 0.0001           \\ \hline
+Tamaño del Kernel            & 5                \\ \hline
+Tamaño Capa Latente          & 50               \\ \hline
+Stride                       & 2                \\ \hline
+Función de Activación        & lrelu            \\ \hline
+Tamaño del batch de muestras & 50               \\ \hline
+Tasa de decaimiento                  & 0        \\ \hline
+Regularización Lambda L2     & 0.0001           \\ \hline
+\caption{Tabla con la configuración de los distintos parámetros para la simulaión de la figura \ref{fig_evolucionRecontrucciónCVAE}}
+\label{fig_tabConfCVae}
+\end{longtable}
+
+
+
+
+\par En este caso se ha empleado el diseño del autoencoder variacional convolucional con la configuración expuesta en la tabla \ref{fig_tabConfVae}. Una captura de la imagen en 3D para distintos momentos del proceso de entrenamiento puede observarse en la figura \ref{fig_evolucionRecontrucción}.
+\par Observando dicha imagen se puede apreciar como según se va desarrollando el proceso de entrenamiento la imagen resultante se asemeja cada vez más a la imagen original. No obstante si comparamos la imagen de la figura \ref{fig_tabConfVae}, del VAE con respecto a la imagen \ref{fig_evolucionRecontrucción} se puede apreciar como el proceso de entrenamiento es más lento en el caso del autoencoder convolucional, ya que se necesitan más iteracciones para conseguie una imagen que se asemeje a la original.
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.60]{images/evolucionReconstruccionCVAE.png}
+\caption{Evolución de la regeneración de la imagen 3D  de la region nº3 del atlas AAL en función de la iteracción en la que se encuentre en el proceso de entrenamiento para un CVAE.}
+\label{fig_evolucionRecontrucciónCVAE}
+\end{figure}
+
+\clearpage
+\newpage
+\section{Reconstrucción completa del cerebro}
+
+\par En este simulación se prentede reconstruir un cerebro completo a partir de cada una de las muestras. Para ello, es necesario realizar un conjunto de procedimientos cuyo flujo de realización ha sido esquematizado en la figura \ref{fig_sintesisProcedimiento}. \par Dado que el sistema diseñado es capaz de caracterizar las régiones, no el cerebro completo ya que sería tremendamente costoso computacionalmente, se deberá realizar un procedimiento basado en la síntesis de las régiones cerebrales, para su posterior reconstrucción o reubicación de cada una de estas régiones en el cerebro. 
+\par Es necesario disponer de un VAE o CVAE, dependiendo del diseño empleado, para cada una de las régiones previamente entrenado. En el esquema de la figura \ref{fig_sintesisProcedimiento} se ha incluido un bloque con este paso aunque por lo general el entrenamiento del VAE solo ha de realizarse una vez ya que es posible almacenar dicho modelo ya caracterizado.  
+\par Dadao un modelo de VAE caracterizado para cada región se procederá con la codicación de cada región cerebral de la muestra en cuestión. Esto generará un valor de media y otro de desiviación típica para el código latente asociado a cada región. Se seleccionará el valor de la media como entrada al bloque decodificador del VAE, lo cual producirá a la salida una reconstrucción de la región. 
+\par Finalmente cuando se tenga una reconstrucción de cada una de las regiones, se realizará un procedimiento para encajar los vóxles de cada region en la imagen del cerebro final. 
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.80]{images/sintesisCerebro.png}
+\caption{Diagrama de la secuencia de pasos necesarios para llevar a cabo la síntesis completa del cerebro}
+\label{fig_sintesisProcedimiento}
+\end{figure}
+
+\clearpage
+\newpage
+\subsection{Ejemplo con CVAE}
+
+\par En este caso se va a realizar la reconstrucción  completa del cerebro sobre el autoencoder variacional convolucional. Se mostrará la reconstrucción de una neuroimagen de un sujeto AD y de un sujeto NOR.
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.80]{images/Reconstructed_ADvsOriginal_AD.png}
+\caption{Secciones sagital, horizontal y transversal de la neuroimagen reconstruida a la izquierda y de la neuroimagen original a la derecha. Se trata de una neuroimagen de un paciente AD y la reconstrucción ha sido realizada sobre un CVAE}
+\label{fig_reconstructedADvae}
+\end{figure}
+
+\par En la figura \ref{fig_reconstructedADvae} se tiene el resultado de la reconstrución para un paciente  mientras que en la figura \ref{fig_reconstructedNORvae} se tiene la reconstrucción para uno NOR. 
+\par Se tiene un resultado nefasto ya que la reconstrucción en ambas imagenes no se asemejan a las imagenes originales. Además la imagen reconstruida es similar en ambos casos, lo cual indica que el proceso de decodificación de alguna manera provoa que el código latente genere una misma imagen final. 
+\par En la sección \ref{sec_latente} y en la sección final de los resultados de clasificación se puede verificar que basándonos en el análisis del código latente generado a partir de las muestras ambos tipos de sujetos (AD y NOR), lo cual hace indicar que el proceso de codificación es capaz de generar un código distinto para cada tipo de sujeto. 
+\par Por lo tanto el hecho de que la imagen reconstruida en esta simulación sea muy similar para ambos sujetos indica que el problema esta en la fase de decodificación.
+
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.80]{images/Reconstructed_NORvsOriginal_NOR.png}
+\caption{Secciones sagital, horizontal y transversal de la neuroimagen reconstruida a la izquierda y de la neuroimagen original a la derecha. Se trata de una neuroimagen de un paciente AD y la reconstrucción ha sido realizada sobre un CVAE}
+\label{fig_reconstructedNORvae}
+\end{figure}
+
+
+\clearpage
+\newpage
+\subsection{Ejemplo con VAE}
+\par En esta segunda prueba se ha empleado un modelo de VAE y se ha realizado la simulación tanto en la neuroimagen de  un sujeto AD como en uno NOR.
+
+\par En la figura \ref{fig_reconstructedCVAEad} se tiene el resultado de la reconstrución para un paciente  mientras que en la figura \ref{fig_reconstructedCVAEnor} se tiene la reconstrucción para uno NOR. 
+\par Se tiene un resultado similar que para el CVAE dado que a pesar de que las imágenes originales de los sujetos AD y NOR  son claramente diferntes, se tiene que la imagen reconstruida para ambos caso es muy similar.
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.80]{images/vae_sample_41.png}
+\caption{Secciones sagital, horizontal y transversal de la neuroimagen reconstruida a la izquierda y de la neuroimagen original a la derecha. Se trata de una neuroimagen de un paciente NOR y la reconstrucción ha sido realizada sobre un VAE.}
+\label{fig_reconstructedCVAEad}
+\end{figure}
+
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.80]{images/sample_93.png}
+\caption{Secciones sagital, horizontal y transversal de la neuroimagen reconstruida a la izquierda y de la neuroimagen original a la derecha. Se trata de una neuroimagen de un paciente AD y la reconstrucción ha sido realizada sobre un VAE.}
+\label{fig_reconstructedCVAEnor}
+\end{figure}
+
+\clearpage
+\newpage
+\section{Visualización del código de la capa latente}\label{sec_latente}
+\par En esta sección se pretende comprobar como en el código latente generado para cada tipo de region es posible diferenciar entre neuroimágenes de sujetos NOR y AD.  Se ha aplicado un modelo de VAE con una capa latente de 100 neuronas. 
+\par Con este objetivo, se ha aplicado el proceso de codificación sobre el espacio muestral de las imágenes PET, obteniendose un vector de código latente para cada región.  Cada vector tendrá una dimensionalidad igual al tamaño de la capa latente.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.90]{images/scatterPlot.png}
+\caption{Representación en tres dimensiones de la dispersión del código latente generado por un modeo VAE. Para la obtención de los valores de tres variables para el código de cada región se ha aplicado PCA sobre el código latente.}
+\label{fig_reconstructedCVAE}
+\end{figure}
+
+\par Sobre el espacio codificado se ha aplicado un algoritmo denominado PCA (Análisis de Componentes Principales) que nos permite reducir la dimensionalidad. Este algoritmo se basa en aplicar una transformación del espacio vectorial en el que están expresados los valores de las muestras. Técnicamente, el PCA busca la proyección según la cual los datos queden mejor representados en términos de mínimos cuadrados.  
+
+\par En la figura \ref{fig_reconstructedCVAE} se tiene el resultado de esta simulación donde se puede observar a simple vista como el código de los sujetos NOR es separable del de los sujetos AD. Esto nos indica que el modelo de VAE empleado es capaz de diferencia entre los dos tipos de imagen y, por lo tanto, es de esperar que la capacidad de clasificación del sistema sea alta.
+\par Es importante notar, que al aplicar PCA para reducir un código de dimensionalidad 100 a 3 se pierde parte de la información. Es probable que esta simplificación provoque que sea más díficil separar visualmente el grupo de pacientes NOR de los AD en la imagen mostrada, dado que en cierta medida esta pérdida de información implica la homogenización de los datos. 
+
+
+
+\clearpage
+\newpage
+\section{Exploración del código de la capa latente} \label{sec_latente}
+
+\par En la simulación expuesta en esta sección se prentede explorar y comprobar como la variación del código latente generado a partir de una imagen tiene su influencia en la imagen final reconstruida.
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.75]{images/extrapolacionLatente.png}
+\caption{Diagrama del procedimiento de extrapolación sobre el código latente para cada una de las regiones. En el cuadro rojo se indica donde se realiza dicho proceso.}
+\label{extrapolingDiagram}
+\end{figure}
+
+\par La idea general  del proceso llevado a cabo es generar, para cada region, el código latente asociado a dos muestras representantivas tanto del tipo de imagenes de sujetos AD como a los sujetos NOR y desplazar este código latente en la dirección contraria a la posición del código de la muestra del otro tipo. Esta dirección viene determinada por la resta entre el código latente generado para la imagen del sujeto NOR menos el código de la imagen del sujeto AD. Esto nos da una refencia vectorial de la distancia entre los dos códigos latentes y será esta distancia la que se usará para aumentar aún más la distancia entre ambas muestras. 
+\par En la figura \ref{extraploingOriginal} se tiene una figura donde se pueden observar las neurimagenes cerebrales empleadas. Es fácil comprobar como el paciente AD tiene una actividad cerebral mucho menor en comparación al paciente NOR.
+\par En la figura de la imagen \ref{extrapolingDiagram} se tiene representado un diagrama sobre el proceso que se ha realizado en esta simulación. Es importante notar que el proceso representado se deberá de aplicar para cada una de las 116 regiones del cerebro. Obviamente una vez que se haya realizado la reconstrucción de cada regon a partir del código latente modificado, será necesario realizar la ubicación de los vóxeles de todas las regiones para conseguir reconstruir totalmente el cerebro.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.80]{images/extraploingOriginal.png}
+\caption{Secciones sagital, transversal y horizontal de dos neroimagenes originales, a la izquierda la de un sujeto NOR y la derecha un sujeto AD.  La reconstrucción ha sido realizada sobre un VAE.}
+\label{extraploingOriginal}
+\end{figure}
+
+\par En la figura  \ref{fig_exploracionReconstruida} se tiene el resultado de esta simulación. A continuación se realizará un comentario para cada una de las secciones representadas
+\begin{itemize}
+\item Sección sagital. Se aprecia en la parte izquierda-alta no tiene activación en el sujeto NOR mientras que en el AD está muy activada. Lo contrario ocurre con en la parte alta situada a la derecha donde la activación se da en el sujeto AD. Si comparamos con la imagen original, ver fig \ref {extraploingOriginal}, se observa como la parte derecha-alta se activa más en el sujeto NOR, lo cual puede ser el origen del ejecto antes comentado.
+\item Seccion transversal. En la imagen original hay mayor activaion de manera globa en el sujeto NOR que en el AD. Sin embargo, no se aprecian grandes diferencias en las imágenes reconstruidas.
+\item Sección Horzontal. Ocurre algo similar a lo ocurrido con la sección sagital. La zona alta-izquierda en la imagen del sujeto NOR tiene mucha activación, mientra que en el sujeto AD apenas tiene activación. No obstante en este caso no se aprecia una gran diferencia de activación en la zona alta-derecha para el sujeto NOR con respecto al AD.
+\end{itemize}
+
+\par Por lo tanto,  la dirección del cambio del código lantente debido a la extrapolación ha provcoado estos cambios, o dicho de otro modo, las variables latentes modificadas son las encargadas de regular la activación las zonas de las neuroimagenes en las cuales se observan las mayores diferencias entre los sujetos AD y los NOR. 
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.80]{images/extrapolingReconstructed.png}
+\caption{Secciones sagital, transversal y horizontal de dos neroimagenes reconstruidas con un modelo VAE, a la izquierda la de un sujeto NOR y la derecha un sujeto AD.}
+\label{fig_exploracionReconstruida}
+\end{figure}
+
+
+
+\clearpage
+\newpage
 \section{Clasificación}
+\par El conjunto de pruebas de esta sección tiene como objetivo evaluar la capacidad del código latente generado por el VAE para discernir entre los tipos de sujetos AD y NOR. Para ello, se realizará un proceso de clasificación que utilizará como datos de entrada el código latente generado por el autoencoder tal y como quedó expuesto en la sección \ref{sec:clasificacion}.
 
 
+\par Se han realizado un total de cuatro simulaciones diferentes empleando cada uno de los dos modelos de autoencoder diseñados tanto VAE como CVAE con los dos espacios muestrales disponibles, estos son las imágenes MRI y las imágenes PET.
 
+\par Las métricas empleadas para evaluar la efectividad y calidad de la clasificación son las expuestas en la sección \ref{ch_metricasEvaluacion}. De manera general, tanto el indicador F1 como el valor de la precisión serán las métricas en las que nos centraremos para comentar los resultados dado que son las que mejor repesenta la capacidad de clasificación del sistema. 
+
+\par Un aspecto importante del proceso de clasificación es la evaluación conjunta que ha de realizarse para aunar los datos generados por la evaluación de cada región, esta última se realiza sobre el código latente generado para cada región cerebral. Cabe recordar que cada VAE o CVAE caracterizará una región por lo que se necesitarán un total 116 \textit{autonencoders} para llevar a cabo el proceso de clasificación, cada uno de los cuáles se deberá de ajustar conforme a la región que caracterice. Se han empleado tres métodos diferentes de evaluación conjunta los cuáles están expuestos dentro de la sección de trabajo realizado, ver \ref{sec_evalConjunta}. Los métodos emplados son el SVM (Máquina de Vectores de Soporte), el CMV (Voto por Mayoría Complejo) y el SMV (Voto por Mayoría Simple).
+
+\par Con objeto de garantizar la validez de los resultados de clasificación se han empleado técnicas de validación cruzada como es el \textit{K-fold}, diviéndose el espacio muestral en 10 grupos y realizándose la prueba de clasificación 10 veces tomando uno de los grupo como espacio de test. Esta técnica quedó expuesta dentro de los fundamentos teóricos en la sección 	\ref{sec_validacionCruzada}.
+\newpage
+\subsection{VAE con MRI}
+
+\par En esta prueba se ha utilizado el modelo VAE y se ha realizado un barrido de valores sobre el número de neuronas de la capa latente. Es de esperar que conforme aumentemos la dimensionalidad de la capa latente, el sistema sea capaz de codificar más información en el código latente y por lo tanto se tengan mejores resultados. 
 
 \begin{figure}[!hb]
 \centering
-\includegraphics[scale=0.40]{images/SweepLatentLayerPET.png}
-\caption{Resultados de clasificación sobre las imágenes PET aplicando las tres técnicas de evaluacion conjunta de resultados. (Izquierda) Voto por Mayoría Simple. (Centro) Máquina de Vectores de Soporte. (Derecha) Voto por Mayoría Complejo.}
-\label{fig:curva_roc}
-\end{figure}
-
-
-\begin{figure}[!hb]
-\centering
-\includegraphics[scale=0.40]{images/MRI_VAE_LatentLayer.png}
+\includegraphics[scale=0.36]{images/clasificacionMriVaeLatent.png}
 \caption{Resultados de clasificación sobre las imágenes MRI aplicando las tres técnicas de evaluacion conjunta de resultados. (Izquierda) Voto por Mayoría Simple. (Centro) Máquina de Vectores de Soporte. (Derecha) Voto por Mayoría Complejo.}
-\label{fig:curva_roc}
+\label{fig_clasificacionVaeMri}
 \end{figure}
 
+
+\par En la figura \ref{fig_clasificacionVaePet} se comprueba como al aumentar el tamaño de la capa latente se consiguen mejores resultados, especialmente para el caso del clasificador SVM.
+\par Si comparamos los tres tipos de clasificación conjunta observamos que los denominados SMV y CMV se comportan de manera muy similar y no consiguen superar valores del 80\% para ningua de las métricas empleadas. Sin embargo, en el método SVM se observa como evolucionan progresivamente los valores de las métricas conforme aumentamos el valor de la capa latente hasta llegar a valores de precisión dle 85\% y de puntuación cercanos al 84 \% .
+
+
+\subsection{VAE con PET}
+
+\par En esta prueba se emplea de nuevo un modelo de VAE de redes neuronales densas pero en este caso aplicado sobre las imágnes PET. Se realizar un barrido sobre la dimensionalidad del código latente, o lo que es lo mismo, sobre el número de neuronas de la capa lantente. 
+\begin{figure}[!hb]
+\centering
+\includegraphics[scale=0.36]{images/clasificacionPetVaeLatent.png}
+\caption{Resultados de clasificación sobre las imágenes PET aplicando las tres técnicas de evaluacion conjunta de resultados. (Izquierda) Voto por Mayoría Simple. (Centro) Máquina de Vectores de Soporte. (Derecha) Voto por Mayoría Complejo.}
+\label{fig_clasificacionVaePet}
+\end{figure}
+
+
+\par En la figura \ref{fig_clasificacionVaePet} se puede comprobar como nuevo los mejores valores de clasificacion se consiguen para el método SVM. Como mejores resultados se consiguen para una capa latente de 150 neuronas una puntuación F1 del 90,90 \% y de precisión 90,60\%.
+
+
+
+
+\subsection{CVAE con MRI}
+
+\par En esta prueba se ha empleado un CVAE y se ha realizado un barrido sobre el tamaño del kernel del procedimiennto de convolución del autoencoder. Se ha utilizado como espacio muestral las imágenes MRI. 
+
+\begin{figure}[!hb]
+\centering
+\includegraphics[scale=0.39]{images/clasificacionMRIkernel.png}
+\caption{Resultados de clasificación sobre las imágenes MRI empleando un CVAE y  variando el tamaño del kernel empleado. En la figura se tiene una gráfica por cada una de las tres técnicas de evaluacion conjunta de resultados empleadas. (Izquierda) Voto por Mayoría Simple. (Centro) Máquina de Vectores de Soporte. (Derecha) Voto por Mayoría Complejo.}
+\label{fig_clasificacionCvaeMri}
+\end{figure}
+
+
+\newpage
+\subsection{CVAE con PET}
+
+\par En esta prueba se ha empleado un CVAE y se ha realizado un barrido sobre el tamaño del kernel del procedimiennto de convolución del autoencoder. Se ha utilizado como espacio muestral las imágenes PET. 
+
+\begin{figure}[!hb]
+\centering
+\includegraphics[scale=0.36]{images/clasificacionPetCvae.png}
+\caption{Resultados de clasificación sobre las imágenes MRI utiliando un CVAE y aplicando un barrido en el tamaño del kernel de Convolución. Cada imagen se corresponde con un método de evaluacion conjunta de resultados. (Izquierda) Voto por Mayoría Simple. (Centro) Máquina de Vectores de Soporte. (Derecha) Voto por Mayoría Complejo.}
+\label{fig_clasificacionCvaePet}
+\end{figure}
+
+\par En este caso se han obtenido valores en las métricas de evaluación menores en comparación con lo obtenido en la simulaciones de clasificación con el VAE. A priori, era de esperar que el modelo convolucional funcionará mejor ya que este modelo de redes neuronales es capaz de analizar y caracterizar las imágenes. No obstante, esta simulación no ha podido realizarse de forma completa debido a problemas con el servidor en el cuál realizamos las simulaciones. Algunas de las problemáticas que han podido alterar el resultado son:
+
+\begin{itemize}
+\item Se ha empleado un K-fold de tres grupos en lugar de diez, lo cual reduce el espacio muestral de entrenamiento y, por lo tanto, reduce la capacidad de generalización y de conseguir un ajuste óptimo de los pesos del sistema. 
+\item El modelo de CVAE utilizado, caracterizado por los parámeros de configuración, no es el más óptimo posible dado que posteriormente durante la realización de diversas pruebas se ha comprobado que otros modelos con diferentes ajustes te parámetros funcionaban mejor. No se ha podido realizar la simulación con estos modelos más óptimos debido a problemas con el servidor.
+\end{itemize}
 
 
 %\minitoc

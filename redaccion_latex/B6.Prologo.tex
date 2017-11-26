@@ -6,36 +6,28 @@
 % Fecha:  2014-02-01
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+
 \chapterbeginx{Resumen}
+\par Este proyecto estudió el uso de técnicas generativas aplicadas a la síntesis de neuroimágenes. La síntesis de neuroimágenes es un campo de un alto interés dado el elevado coste económico  que tiene la adquisición de forma natural de este tipo de imágenes. Además, uno modelo eficaz de síntesis reduciría uno de los principales problemas que se encuentran los investigadores cuando se pretende generar modelos de diagnostico de Alzheimer asistido por computador. Este problema, denominado maldición de la dimensionalidad, es debido a la pequeña cantidad de muestras de neuroimágenes en comparación a la alta dimensionalidad de dichas imágenes. 
+\par Además de evaluar la capacidad de síntesis, este proyecto analizó  la capacidad de extracción de características del modelo generativo empleado, comprobando si la codificación realizada es capaz de extraer aquellos patrónes que permiten distinguir entre sujetos sanos y sujetos con Alzheimer.
+\par En este trabjao se ha empleado el modelo basado en aprendizaje automático conocido como autoencoder variacional. Este método ha sido introducido recientemente y presenta la novedad  con respecto a modelos de autoencoder anteriores de generar un código latente variacional. Se trata de un código definido por una función normal de distribución, la cual dota de cierta libertad, dentro de lo márgenes de la distribución, a la futura imagen regenerada a partir de dicho código.
+\par Se han diseñado dos variantes basadas en el modelo del autoencoder variacional,  una haciendo uso de redes neuronales densas y otra basada en redes neuronales convolucionales. Se ha evaluado tanto la capacidad de codificación así como la capacidad de regeneración de los dos modelos diseñados. 
+\par Los resultados obtenidos demuestran la capacidad del método para obtener las características principales de las neuronimágenes ya que se consiguen valores en la clasificación cercanos a los del estado actual del arte. No obstante, la síntesis de ima?enes realizada resulta inefectiva ya que las imágenes generadas por un mismo modelo para distinas imagenes de origin generan imágenes muy similares en las que no se aprecian los detalles iniciales de las imágenes.
 
-%\minitoc
-	Aquí debe escribirse el prólogo del proyecto fin de carrera.
-	\medskip
-	
-	La calidad en la presentación de los textos y las flexibilidad de \LaTeX\ me llevaron a aprenderlo, a pesar de su difícil curva de aprendizaje.\nli
-	Espero que esta plantilla ayude notablemente a suavizar este inconveniente.
-	
-	Quiero agradecer a las personas que han colaborado en la realización de esta plantilla \LaTeX. Es un sistema muy rápido y cómodo en la generación de este tipo de documentos técnicos y su lectura es francamente agradable.
-	
-	Animo a todo el mundo a utilizarlo.
-	
-	Desde la página de la escuela hay disponible también un \miindex{manual de estilo} para ayudar en la redacción y el acabado del proyecto.
-	Puede consultarse en~\cite{GuiaEstilo}~\footnote{
-		\url{http://www.uma.es/media/files/Manual_de_Estilo_TFG_ETSIT.pdf}
-	}.
+ 
 
-	También sería interesante hacer dos manuales más: 
-\begin{itemize}
-	\item{Uno de \LaTeX, que explique con más detalle cómo utilizar este sistema. Aunque en Internet hay muchos disponibles, un manual rápido y directo suavizaría aún más la curva de aprendizaje.\nli
-		Quizá, lo más importante es que integre todos los elementos que un usuario necesita, ya que normalmente es necesario acudir a varias fuentes y eso suele requerir demasiado tiempo.\nli
-		El capítulo~\ref{chp:ManLaTeX} contiene información orientada a un iniciado en este sistema.}
-	
-	\item{Y otro, que explique herramientas y métodos útiles que un proyectando puede necesitar en la elaboración del proyecto, tal como llevar un control de versiones de la documentación o el código fuente desarrollado utilizando Assembla\TM. Este último manual es interesante también para muchos jóvenes profesionales, especialmente en el área de desarrollo de sistemas.}
-\end{itemize}
+\chapterend
 
-	Me reservo el derecho de hacerlo, dado el escaso tiempo del que dispongo.
-	\bigskip
-	
-	Muchas gracias.
+
+
+
+\chapterbeginx{Summary}
+\par Este proyecto estudia el uso de técnica generativas aplicadas a la sintesís de neuroimágenes. La síntesis de neuroimágenes es un campo de un alto interés dado el elevado coste económico  que tiene la adquisición de forma natural este tipo de imágenes. Además, uno modelo eficaz de síntesis reduciría uno de los principales problemas que se encuentran los investigadores a la hora de generar modelos CAD (Diagnóstico Asistido por Computador) conocido como maldición de la dimensionalidad.
+\par A lo largo de este trabajo se analizará el modelo basado en aprendizaje automático conocido como autoencoder variacional. Este método de autoencoder ha sido introducido recientemente y presenta la novedad  con respecto a modelos de autoencoder anteriores de generar un código latente variacional. Se trata de un código definido por una función normal de distribución, lo cual de dota de cierta libertad, dentro de lo márgenes de la distribución, a la futura imagen regenerada a partir de dicho código.
+\par Se diseñaran dos variantes basadas en el modelo del autoencoder variacional,  una haciendo uso de redes neuronales densas y otra basada en redes neuronales convolucionales. Se evaluará tanto la capacidad de codificación así como la capacidad de regeneración de los dos modelos diseñados. 
+ 
+
 
 \chapterend
